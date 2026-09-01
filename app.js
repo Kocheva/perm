@@ -1,0 +1,455 @@
+const DATA_URL = "./data/perm_leaders_map.json";
+
+const app = document.querySelector("#app");
+let data;
+
+const state = {
+  mode: "organizations",
+  municipalityId: "",
+  topicId: "",
+  roleId: "",
+  fund: "",
+  year: "",
+  orgProfile: "",
+  moreOpen: false,
+};
+
+const esc = (value = "") => String(value ?? "")
+  .replaceAll("&", "&amp;")
+  .replaceAll("<", "&lt;")
+  .replaceAll(">", "&gt;")
+  .replaceAll('"', "&quot;")
+  .replaceAll("'", "&#039;");
+
+const compact = new Intl.NumberFormat("ru-RU", { notation: "compact", maximumFractionDigits: 1 });
+const integer = new Intl.NumberFormat("ru-RU", { maximumFractionDigits: 0 });
+const money = new Intl.NumberFormat("ru-RU", { maximumFractionDigits: 0 });
+
+function groupBy(items, getKey) {
+  return items.reduce((groups, item) => {
+    const key = getKey(item);
+    if (key !== null && key !== undefined) (groups[key] ||= []).push(item);
+    return groups;
+  }, {});
+}
+
+function sumKnownFunding(projects) {
+  return projects.reduce((sum, p) => sum + (p.amount_available && Number.isFinite(Number(p.grant_amount)) ? Number(p.grant_amount) : 0), 0);
+}
+
+function urlSafe(value) {
+  try {
+    const url = new URL(value);
+    return ["http:", "https:"].includes(url.protocol) ? url.href : "";
+  } catch { return ""; }
+}
+
+function buildIndexes() {
+  data.topicById = Object.fromEntries(data.topics.map((x) => [x.topic_id, x]));
+  data.municipalityById = Object.fromEntries(data.municipalities.map((x) => [x.municipality_id, x]));
+  data.roleById = Object.fromEntries(data.roles.map((x) => [x.role_id, x]));
+  data.orgById = Object.fromEntries(data.organizations.map((x) => [x.org_id, x]));
+  data.personById = Object.fromEntries(data.people.map((x) => [x.person_id, x]));
+  data.projectById = Object.fromEntries(data.projects.map((x) => [x.project_id, x]));
+  data.practiceById = Object.fromEntries(data.practices.map((x) => [x.practice_id, x]));
+  data.orgLinksByPerson = groupBy(data.person_organization_links, (x) => x.person_id);
+  data.personLinksByOrg = groupBy(data.person_organization_links, (x) => x.org_id);
+  data.activitiesByPerson = groupBy(data.activities.filter((x) => x.person_evidence_status === "person_verified"), (x) => x.person_id);
+  data.activitiesByTopic = groupBy(data.activities, (x) => x.topic_id);
+  data.councilsByPerson = groupBy(data.council_memberships, (x) => x.person_id);
+  data.practicesByPerson = groupBy(data.practices, (x) => x.person_id);
+  data.projectsByOrg = groupBy(data.projects, (x) => x.org_id);
+  data.projectLinksByPerson = groupBy(data.person_project_links, (x) => x.person_id);
+}
+
+function selectedFilters(overrides = {}) {
+  return {
+    municipalityId: state.municipalityId,
+    topicId: state.topicId,
+    roleId: state.roleId,
+    fund: state.fund,
+    year: state.year,
+    orgProfile: state.orgProfile,
+    ...overrides,
+  };
+}
+
+function personsForRole(roleId) {
+  return roleId ? data.people.filter((p) => p.role_ids.includes(roleId)) : data.people;
+}
+
+function eligibleOrgIds(filters) {
+  if (!filters.roleId) return null;
+  const personIds = new Set(personsForRole(filters.roleId).map((p) => p.person_id));
+  return new Set(data.person_organization_links.filter((l) => personIds.has(l.person_id)).map((l) => l.org_id));
+}
+
+function computeScope(filters = selectedFilters()) {
+  const roleOrgIds = eligibleOrgIds(filters);
+  const hasAdditionalProjectFilter = Boolean(filters.fund || filters.year);
+
+  const matchingProjectForOrg = (orgId) => (data.projectsByOrg[orgId] || []).some((p) =>
+    (!filters.fund || p.fund === filters.fund) &&
+    (!filters.year || String(p.year) === String(filters.year))
+  );
+
+  const organizations = data.organizations.filter((org) =>
+    (!filters.municipalityId || org.municipality_id === filters.municipalityId) &&
+    (!filters.topicId || org.primary_topic_id === filters.topicId) &&
+    (!filters.orgProfile || org.org_profile_type === filters.orgProfile) &&
+    (!roleOrgIds || roleOrgIds.has(org.org_id)) &&
+    (!hasAdditionalProjectFilter || matchingProjectForOrg(org.org_id))
+  );
+
+  const projects = data.projects.filter((project) => {
+    const org = data.orgById[project.org_id];
+    return Boolean(org) &&
+      (!filters.municipalityId || project.municipality_id === filters.municipalityId) &&
+      (!filters.topicId || project.topic_id === filters.topicId) &&
+      (!filters.orgProfile || org.org_profile_type === filters.orgProfile) &&
+      (!roleOrgIds || roleOrgIds.has(project.org_id)) &&
+      (!filters.fund || project.fund === filters.fund) &&
+      (!filters.year || String(project.year) === String(filters.year));
+  });
+
+  const people = data.people.filter((person) => {
+    const orgIds = person.organization_ids || [];
+    const projectPool = orgIds.flatMap((id) => data.projectsByOrg[id] || []);
+    const hasProjectFilterMatch = projectPool.some((p) =>
+      (!filters.fund || p.fund === filters.fund) &&
+      (!filters.year || String(p.year) === String(filters.year))
+    );
+    return (!filters.municipalityId || person.municipality_id === filters.municipalityId) &&
+      (!filters.topicId || person.topic_ids.includes(filters.topicId)) &&
+      (!filters.roleId || person.role_ids.includes(filters.roleId)) &&
+      (!filters.orgProfile || orgIds.some((id) => data.orgById[id]?.org_profile_type === filters.orgProfile)) &&
+      (!hasAdditionalProjectFilter || hasProjectFilterMatch);
+  });
+
+  return {
+    organizations,
+    projects,
+    people,
+    funding: sumKnownFunding(projects),
+    unknownFundingCount: projects.filter((p) => !p.amount_available).length,
+  };
+}
+
+function header() {
+  return `
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="#/" aria-label="На главную">
+          <span class="brand-mark">ПК</span>
+          <span><strong>Карта лидеров Пермского края</strong><span>Организации · проекты · практики</span></span>
+        </a>
+        <div class="global-search">
+          <label class="hidden" for="global-search-input">Поиск по людям, организациям и проектам</label>
+          <input id="global-search-input" type="search" autocomplete="off" placeholder="Найти человека, организацию или проект" aria-controls="search-results" />
+          <div id="search-results" class="search-results hidden" role="listbox"></div>
+        </div>
+        <span class="search-hint">${integer.format(data.config.counts.people)} персон</span>
+      </div>
+    </header>`;
+}
+
+function footer() {
+  return `<footer class="footer">Данные загружаются из JSON. Неизвестные суммы не включены в итог финансирования. Обновлено: ${esc(data.config.generated_at)}.</footer>`;
+}
+
+function option(value, label, selected = false) {
+  return `<option value="${esc(value)}" ${selected ? "selected" : ""}>${esc(label)}</option>`;
+}
+
+function filterLabel(type, id) {
+  if (type === "municipalityId") return data.municipalityById[id]?.display_name || id;
+  if (type === "topicId") return data.topicById[id]?.topic_short_name || id;
+  if (type === "roleId") return data.roleById[id]?.role_short_name || id;
+  if (type === "orgProfile") return id;
+  return id;
+}
+
+function activeChips() {
+  const keys = ["municipalityId", "topicId", "roleId", "fund", "year", "orgProfile"];
+  const chips = keys.filter((key) => state[key]).map((key) => `
+    <span class="filter-chip">${esc(filterLabel(key, state[key]))}<button type="button" data-clear-filter="${key}" aria-label="Убрать фильтр">×</button></span>`);
+  return chips.length ? `<div class="active-chips">${chips.join("")}</div>` : "";
+}
+
+function filters() {
+  const municipalityOptions = [option("", `Все муниципалитеты · ${data.municipalities.length}`, !state.municipalityId)]
+    .concat(data.municipalities.map((m) => option(m.municipality_id, `${m.display_name} · ${computeScope(selectedFilters({ municipalityId: m.municipality_id })).people.length}`, state.municipalityId === m.municipality_id)));
+  const topicOptions = [option("", `Все темы · ${data.topics.length}`, !state.topicId)]
+    .concat(data.topics.map((t) => option(t.topic_id, `${t.topic_short_name} · ${computeScope(selectedFilters({ topicId: t.topic_id })).people.length}`, state.topicId === t.topic_id)));
+  const roleOptions = [option("", `Все роли · ${data.roles.length}`, !state.roleId)]
+    .concat(data.roles.map((r) => option(r.role_id, `${r.role_short_name} · ${computeScope(selectedFilters({ roleId: r.role_id })).people.length}`, state.roleId === r.role_id)));
+  const profiles = [...new Set(data.organization_profiles.map((x) => x.profile_name))];
+  return `
+    <section class="filter-card" aria-label="Фильтры карты">
+      <div class="filter-main">
+        <div class="field"><label for="municipality-filter">Муниципалитет</label><select id="municipality-filter" data-filter="municipalityId">${municipalityOptions.join("")}</select></div>
+        <div class="field"><label for="topic-filter">Тема</label><select id="topic-filter" data-filter="topicId">${topicOptions.join("")}</select></div>
+        <div class="field"><label for="role-filter">Роль</label><select id="role-filter" data-filter="roleId">${roleOptions.join("")}</select></div>
+        <div class="filter-actions">
+          <button class="button" type="button" data-action="toggle-more" aria-expanded="${state.moreOpen}">${state.moreOpen ? "Скрыть" : "Ещё фильтры"}</button>
+          <button class="button ghost" type="button" data-action="reset">Сбросить</button>
+        </div>
+      </div>
+      <div class="more-filters ${state.moreOpen ? "" : "hidden"}">
+        <div class="field"><label for="fund-filter">Фонд</label><select id="fund-filter" data-filter="fund"><option value="">Все фонды</option>${data.config.funds.map((x) => option(x, x, state.fund === x)).join("")}</select></div>
+        <div class="field"><label for="year-filter">Год</label><select id="year-filter" data-filter="year"><option value="">Все годы</option>${[...data.config.years].reverse().map((x) => option(x, x, String(state.year) === String(x))).join("")}</select></div>
+        <div class="field"><label for="profile-filter">Профиль организации</label><select id="profile-filter" data-filter="orgProfile"><option value="">Все профили</option>${profiles.map((x) => option(x, x, state.orgProfile === x)).join("")}</select></div>
+      </div>
+      ${activeChips()}
+    </section>`;
+}
+
+function modeSwitch() {
+  const modes = [
+    ["organizations", "Организации"], ["projects", "Проекты"], ["funding", "Финансирование"],
+  ];
+  return `<div class="mode-switch" role="group" aria-label="Режим данных">${modes.map(([id, label]) => `<button type="button" data-mode="${id}" class="${state.mode === id ? "active" : ""}">${label}</button>`).join("")}</div>`;
+}
+
+function contextTitle() {
+  const bits = [];
+  if (state.municipalityId) bits.push(data.municipalityById[state.municipalityId]?.display_name);
+  if (state.topicId) bits.push(data.topicById[state.topicId]?.topic_name);
+  return bits.length ? bits.join(" · ") : "Весь Пермский край";
+}
+
+function summary(scope) {
+  const knownProjects = scope.projects.length - scope.unknownFundingCount;
+  return `
+    <section class="summary-card" aria-label="Сводка выбранного среза">
+      <div class="summary-copy">
+        <p class="eyebrow" style="color:#9ed6c6">Текущий срез</p>
+        <h2>${esc(contextTitle())}</h2>
+        <p>Карточки ниже пересчитаны по выбранным условиям. Темы организаций и темы проектов считаются независимо, чтобы не смешивать две логики классификации.</p>
+      </div>
+      <div class="metric"><strong>${integer.format(scope.organizations.length)}</strong><span>организаций</span></div>
+      <div class="metric"><strong>${integer.format(scope.projects.length)}</strong><span>проектов</span></div>
+      <div class="metric"><strong>${compact.format(scope.funding)} ₽</strong><span>известное финансирование · ${knownProjects} проектов</span></div>
+    </section>`;
+}
+
+function municipalityCards() {
+  const cards = data.municipalities.map((m) => {
+    const scope = computeScope(selectedFilters({ municipalityId: m.municipality_id }));
+    return `
+      <button type="button" class="municipality-card ${state.municipalityId === m.municipality_id ? "active" : ""}" data-municipality="${esc(m.municipality_id)}">
+        <strong>${esc(m.display_name)}</strong>
+        <span class="micro-metrics">
+          <span><b>${scope.organizations.length}</b>организаций</span>
+          <span><b>${scope.projects.length}</b>проектов</span>
+          <span><b>${compact.format(scope.funding)}</b>₽</span>
+        </span>
+      </button>`;
+  });
+  return `<section class="panel"><div class="panel-head"><h2>17 муниципалитетов</h2><p>Стабильная картограмма вместо перегруженного графа</p></div><div class="municipality-grid">${cards.join("")}</div></section>`;
+}
+
+function topicCards() {
+  const cards = data.topics.map((t) => {
+    const scope = computeScope(selectedFilters({ topicId: t.topic_id }));
+    const mainValue = state.mode === "organizations" ? scope.organizations.length : state.mode === "projects" ? scope.projects.length : scope.funding;
+    const mainLabel = state.mode === "organizations" ? "организаций" : state.mode === "projects" ? "проектов" : "₽ известного финансирования";
+    return `
+      <article class="topic-card ${state.topicId === t.topic_id ? "active" : ""}" style="--topic-color:${esc(t.color)}">
+        <h3>${esc(t.topic_name)}</h3>
+        <div class="topic-count">${state.mode === "funding" ? compact.format(mainValue) : integer.format(mainValue)}</div>
+        <div class="topic-meta">${mainLabel} · ${scope.people.length} персон</div>
+        <div class="topic-actions"><button type="button" data-topic="${esc(t.topic_id)}">Выбрать</button><a href="#/topic/${encodeURIComponent(t.topic_id)}">Открыть тему →</a></div>
+      </article>`;
+  });
+  return `<section class="panel"><div class="panel-head"><h2>Темы и роли</h2><p>15 канонических тем</p></div><div class="topic-grid">${cards.join("")}</div></section>`;
+}
+
+function personCard(person) {
+  const municipality = data.municipalityById[person.municipality_id]?.display_name;
+  const roles = person.role_ids.slice(0, 3).map((id) => `<span class="tag role">${esc(data.roleById[id]?.role_short_name || id)}</span>`).join("");
+  const topics = person.topic_ids.slice(0, 2).map((id) => `<span class="tag">${esc(data.topicById[id]?.topic_short_name || id)}</span>`).join("");
+  return `<a class="person-card" href="#/person/${encodeURIComponent(person.person_id)}">
+    <div class="person-card-top"><div><h3>${esc(person.person_name)}</h3><p>${esc(municipality || "Муниципалитет не указан")}</p></div><span class="confirmations">${person.confirmations_count} подтв.</span></div>
+    <div class="tags">${roles}${topics}${person.practice_count ? `<span class="tag">Практики · ${person.practice_count}</span>` : ""}</div>
+  </a>`;
+}
+
+function peoplePanel(scope) {
+  const sorted = [...scope.people].sort((a, b) => b.confirmations_count - a.confirmations_count || a.person_name.localeCompare(b.person_name, "ru"));
+  return `<aside class="panel people-panel"><div class="panel-head"><h2>Лидеры</h2><p>${sorted.length} в срезе</p></div><div class="people-list">${sorted.length ? sorted.map(personCard).join("") : `<div class="empty">По выбранным условиям персон не найдено</div>`}</div></aside>`;
+}
+
+function mainPage() {
+  const scope = computeScope();
+  return `${header()}<main id="main" class="page-shell">
+    <p class="eyebrow">Публичная навигация по социальной сфере</p>
+    <h1>Кто, где и в каких темах действует</h1>
+    <p class="lead">Один экран объединяет муниципалитеты, темы, роли и подтверждённые практики. Выбирайте условия как «шведский стол» — все карточки и показатели пересчитаются.</p>
+    ${filters()}
+    ${modeSwitch()}
+    ${summary(scope)}
+    <div class="dashboard-grid"><div>${municipalityCards()}${topicCards()}</div>${peoplePanel(scope)}</div>
+  </main>${footer()}`;
+}
+
+function roleTags(person) {
+  return person.role_ids.length ? `<div class="tags">${person.role_ids.map((id) => `<span class="tag role">${esc(data.roleById[id]?.role_name || id)}</span>`).join("")}</div>` : `<p class="notice">Публичная роль по именным источникам пока не подтверждена.</p>`;
+}
+
+function practiceBox(practice) {
+  const source = practice.source_urls?.map((url) => urlSafe(url)).find(Boolean);
+  return `<article class="practice-box">
+    <h3>${esc(practice.practice_name)}</h3>
+    <p>${esc(practice.format_or_technology || "Механизм требует дополнительного описания.")}</p>
+    ${practice.transferability_summary ? `<p><strong>Что можно тиражировать:</strong> ${esc(practice.transferability_summary)}</p>` : ""}
+    <small>${esc(practice.territory || "")} · ${esc(practice.publication_status)}</small>
+    ${source ? `<p><a class="source-link" target="_blank" rel="noopener noreferrer" href="${esc(source)}">Источник ↗</a></p>` : ""}
+  </article>`;
+}
+
+function personPage(personId) {
+  const person = data.personById[personId];
+  if (!person) return notFound("Персона не найдена");
+  const orgs = person.organization_ids.map((id) => data.orgById[id]).filter(Boolean);
+  const activities = [...(data.activitiesByPerson[personId] || [])].sort((a, b) => (b.year || 0) - (a.year || 0));
+  const councils = data.councilsByPerson[personId] || [];
+  const practices = data.practicesByPerson[personId] || [];
+  const projectLinks = data.projectLinksByPerson[personId] || [];
+  const projects = projectLinks.map((x) => data.projectById[x.project_id]).filter(Boolean);
+  const municipality = data.municipalityById[person.municipality_id]?.display_name;
+  return `${header()}<main id="main" class="page-shell">
+    <section class="detail-hero"><a class="back-link" href="#/">← Вернуться к карте</a><p class="eyebrow">Карточка персоны</p><h1>${esc(person.person_name)}</h1><p class="lead">${esc(person.person_summary || "Краткое описание пока не заполнено.")}</p>${roleTags(person)}</section>
+    <div class="detail-layout"><div>
+      <section class="detail-section"><h2>Подтверждённая публичная деятельность</h2><div class="fact-grid">
+        <div class="fact-box"><strong>${activities.length}</strong><span>публичных фактов</span></div>
+        <div class="fact-box"><strong>${councils.length}</strong><span>участий в советах</span></div>
+        <div class="fact-box"><strong>${practices.length}</strong><span>тиражируемых практик</span></div>
+      </div></section>
+      ${practices.length ? `<section class="detail-section"><h2>Практики</h2>${practices.map(practiceBox).join("")}</section>` : ""}
+      <section class="detail-section"><h2>Хронология подтверждений</h2>${activities.length ? `<div class="timeline">${activities.map((a) => `<article class="timeline-item"><small>${esc(a.year || "Год не указан")} · ${esc(a.activity_kind)} · ${esc(a.platform_name || "Площадка не указана")}</small><strong>${esc(a.activity_title)}</strong>${a.quote ? `<p>${esc(a.quote)}</p>` : ""}${urlSafe(a.source_url) ? `<p><a class="source-link" target="_blank" rel="noopener noreferrer" href="${esc(urlSafe(a.source_url))}">Открыть источник ↗</a></p>` : ""}</article>`).join("")}</div>` : `<div class="empty">Именные источники публичной активности пока не добавлены</div>`}</section>
+      <section class="detail-section"><h2>Проекты</h2>${projects.length ? `<ul class="data-list">${projects.map((p) => `<li><strong>${esc(p.project_title)}</strong><small>${esc(p.year)} · ${esc(p.fund)}${p.project_goal ? ` · Цель: ${esc(p.project_goal)}` : ""}</small></li>`).join("")}</ul>` : `<p class="notice">Проекты не выводятся: в исходных данных нет подтверждённых периодов руководства или прямых персональных связей с проектами. Это защищает от ложной атрибуции.</p>`}</section>
+    </div><aside>
+      <section class="detail-section"><h2>Профиль</h2><ul class="data-list"><li><strong>Муниципалитет</strong><small>${esc(municipality || "Не указан")}</small></li><li><strong>Подтверждения</strong><small>${person.confirmations_count}</small></li><li><strong>Последний год активности</strong><small>${esc(person.last_activity_year || "Не указан")}</small></li></ul></section>
+      <section class="detail-section"><h2>Темы</h2><div class="tags">${person.topic_ids.map((id) => `<a class="tag" href="#/topic/${encodeURIComponent(id)}">${esc(data.topicById[id]?.topic_name || id)}</a>`).join("")}</div></section>
+      <section class="detail-section"><h2>Организации</h2><ul class="data-list">${orgs.map((o) => `<li><a href="#/organization/${encodeURIComponent(o.org_id)}"><strong>${esc(o.organization_name_short || o.organization_name)}</strong></a><small>${esc(o.org_profile_type || "")}</small></li>`).join("") || `<li><small>Связи не указаны</small></li>`}</ul></section>
+      ${councils.length ? `<section class="detail-section"><h2>Советы и рабочие группы</h2><ul class="data-list">${councils.map((c) => `<li><strong>${esc(c.council_name)}</strong><small>${esc(c.person_role || "")} · ${esc(c.membership_status || "")}</small></li>`).join("")}</ul></section>` : ""}
+    </aside></div>
+  </main>${footer()}`;
+}
+
+function topicPage(topicId) {
+  const topic = data.topicById[topicId];
+  if (!topic) return notFound("Тема не найдена");
+  const scope = computeScope({ municipalityId: "", topicId, roleId: "", fund: "", year: "", orgProfile: "" });
+  const practices = data.practices.filter((p) => p.primary_topic_id === topicId);
+  const activities = (data.activitiesByTopic[topicId] || []).filter((a) => a.person_evidence_status === "person_verified");
+  const roleCounts = data.roles.map((r) => ({ ...r, count: scope.people.filter((p) => p.role_ids.includes(r.role_id)).length })).filter((r) => r.count);
+  const municipalityRows = data.municipalities.map((m) => ({ m, s: computeScope({ municipalityId: m.municipality_id, topicId, roleId: "", fund: "", year: "", orgProfile: "" }) })).filter((x) => x.s.organizations.length || x.s.projects.length || x.s.people.length);
+  return `${header()}<main id="main" class="page-shell">
+    <section class="detail-hero" style="border-top:7px solid ${esc(topic.color)}"><a class="back-link" href="#/">← Вернуться к карте</a><p class="eyebrow">Карточка темы</p><h1>${esc(topic.topic_name)}</h1><p class="lead">Организации учитываются по основной теме организации; проекты и финансирование — по теме конкретного проекта.</p><div class="fact-grid"><div class="fact-box"><strong>${scope.organizations.length}</strong><span>организаций</span></div><div class="fact-box"><strong>${scope.projects.length}</strong><span>проектов</span></div><div class="fact-box"><strong>${scope.people.length}</strong><span>персон</span></div></div></section>
+    <div class="detail-layout"><div>
+      <section class="detail-section"><h2>Лидеры темы</h2><div class="people-list">${[...scope.people].sort((a,b) => b.confirmations_count-a.confirmations_count).map(personCard).join("") || `<div class="empty">Нет персон</div>`}</div></section>
+      ${practices.length ? `<section class="detail-section"><h2>Тиражируемые практики</h2>${practices.map(practiceBox).join("")}</section>` : ""}
+      <section class="detail-section"><h2>Проекты</h2><ul class="data-list">${scope.projects.slice(0, 40).map((p) => `<li><a href="#/project/${encodeURIComponent(p.project_id)}"><strong>${esc(p.project_title)}</strong></a><small>${esc(p.year)} · ${esc(p.fund)}${p.project_goal ? ` · ${esc(p.project_goal)}` : " · цель не указана в источнике"}</small></li>`).join("") || `<li><small>Нет проектов</small></li>`}</ul>${scope.projects.length > 40 ? `<p class="notice">Показаны первые 40 из ${scope.projects.length} проектов.</p>` : ""}</section>
+    </div><aside>
+      <section class="detail-section"><h2>Роли</h2><ul class="data-list">${roleCounts.map((r) => `<li><strong>${esc(r.role_name)}</strong><small>${r.count} персон</small></li>`).join("") || `<li><small>Нет подтверждённых ролей</small></li>`}</ul></section>
+      <section class="detail-section"><h2>Муниципалитеты</h2><ul class="data-list">${municipalityRows.map(({m,s}) => `<li><strong>${esc(m.display_name)}</strong><small>${s.organizations.length} организаций · ${s.projects.length} проектов · ${s.people.length} персон</small></li>`).join("")}</ul></section>
+      <section class="detail-section"><h2>Публичные подтверждения</h2><p>${activities.length} именных фактов по теме.</p></section>
+    </aside></div>
+  </main>${footer()}`;
+}
+
+function organizationPage(orgId) {
+  const org = data.orgById[orgId];
+  if (!org) return notFound("Организация не найдена");
+  const topic = data.topicById[org.primary_topic_id];
+  const municipality = data.municipalityById[org.municipality_id];
+  const people = (data.personLinksByOrg[orgId] || []).map((l) => data.personById[l.person_id]).filter(Boolean);
+  const projects = data.projectsByOrg[orgId] || [];
+  const known = projects.filter((p) => p.amount_available);
+  const websites = [...(org.website_urls || []), ...(org.social_urls || [])].map(urlSafe).filter(Boolean);
+  return `${header()}<main id="main" class="page-shell"><section class="detail-hero"><a class="back-link" href="#/">← Вернуться к карте</a><p class="eyebrow">Карточка организации</p><h1>${esc(org.organization_name_short || org.organization_name)}</h1><p class="lead">${esc(org.organization_name)}</p><div class="fact-grid"><div class="fact-box"><strong>${projects.length}</strong><span>проектов</span></div><div class="fact-box"><strong>${compact.format(sumKnownFunding(projects))} ₽</strong><span>известное финансирование</span></div><div class="fact-box"><strong>${people.length}</strong><span>связанных персон</span></div></div></section>
+  <div class="detail-layout"><div><section class="detail-section"><h2>Проекты</h2><ul class="data-list">${projects.map((p) => `<li><a href="#/project/${encodeURIComponent(p.project_id)}"><strong>${esc(p.project_title)}</strong></a><small>${esc(p.year)} · ${esc(p.fund)} · ${p.amount_available ? `${money.format(p.grant_amount)} ₽` : "сумма неизвестна"}${p.project_goal ? ` · Цель: ${esc(p.project_goal)}` : ""}</small></li>`).join("") || `<li><small>Нет проектов</small></li>`}</ul></section></div><aside><section class="detail-section"><h2>Профиль</h2><ul class="data-list"><li><strong>Муниципалитет</strong><small>${esc(municipality?.display_name || "Не указан")}</small></li><li><strong>Тема</strong><small><a href="#/topic/${encodeURIComponent(org.primary_topic_id)}">${esc(topic?.topic_name || "Не указана")}</a></small></li><li><strong>Профиль</strong><small>${esc(org.org_profile_type || "Не указан")}</small></li><li><strong>Известные суммы</strong><small>${known.length} из ${projects.length} проектов</small></li></ul>${websites.map((x) => `<p><a class="source-link" target="_blank" rel="noopener noreferrer" href="${esc(x)}">Внешняя ссылка ↗</a></p>`).join("")}</section><section class="detail-section"><h2>Люди</h2>${people.map(personCard).join("") || `<div class="empty">Связи не указаны</div>`}</section></aside></div></main>${footer()}`;
+}
+
+function projectPage(projectId) {
+  const p = data.projectById[projectId];
+  if (!p) return notFound("Проект не найден");
+  const org = data.orgById[p.org_id];
+  const topic = data.topicById[p.topic_id];
+  const municipality = data.municipalityById[p.municipality_id];
+  return `${header()}<main id="main" class="page-shell"><section class="detail-hero"><a class="back-link" href="#/">← Вернуться к карте</a><p class="eyebrow">Карточка проекта</p><h1>${esc(p.project_title)}</h1><p class="lead">${p.project_goal ? `<strong>Цель:</strong> ${esc(p.project_goal)}` : "Цель проекта отсутствует в исходном наборе и не была дополнена автоматически."}</p></section><div class="detail-layout"><div><section class="detail-section"><h2>Основные сведения</h2><ul class="data-list"><li><strong>Организация</strong><small><a href="#/organization/${encodeURIComponent(p.org_id)}">${esc(org?.organization_name_short || org?.organization_name || p.org_id)}</a></small></li><li><strong>Тема проекта</strong><small><a href="#/topic/${encodeURIComponent(p.topic_id)}">${esc(topic?.topic_name || p.topic_id)}</a></small></li><li><strong>Муниципалитет</strong><small>${esc(municipality?.display_name || "Не указан")}</small></li></ul></section></div><aside><section class="detail-section"><h2>Финансирование</h2><div class="fact-box"><strong>${p.amount_available ? `${money.format(p.grant_amount)} ₽` : "Неизвестно"}</strong><span>${esc(p.fund || "Фонд не указан")} · ${esc(p.year || "Год не указан")}</span></div>${!p.amount_available ? `<p class="notice">Отсутствующая сумма не считается нулевой.</p>` : ""}</section></aside></div></main>${footer()}`;
+}
+
+function notFound(title) {
+  return `${header()}<main id="main" class="page-shell"><section class="error-card"><h1>${esc(title)}</h1><p><a href="#/">Вернуться на главную</a></p></section></main>${footer()}`;
+}
+
+function parseRoute() {
+  const path = location.hash.replace(/^#\/?/, "").split("/").filter(Boolean);
+  return { section: path[0] || "home", id: decodeURIComponent(path[1] || "") };
+}
+
+function render() {
+  const route = parseRoute();
+  if (route.section === "person") app.innerHTML = personPage(route.id);
+  else if (route.section === "topic") app.innerHTML = topicPage(route.id);
+  else if (route.section === "organization") app.innerHTML = organizationPage(route.id);
+  else if (route.section === "project") app.innerHTML = projectPage(route.id);
+  else app.innerHTML = mainPage();
+  bindCommon();
+  if (route.section === "home") bindMain();
+  document.title = route.section === "home" ? data.config.title : `${document.querySelector("h1")?.textContent || "Карточка"} — ${data.config.title}`;
+  window.scrollTo({ top: 0, behavior: "auto" });
+}
+
+function bindCommon() {
+  const input = document.querySelector("#global-search-input");
+  const results = document.querySelector("#search-results");
+  if (!input || !results) return;
+  input.addEventListener("input", () => {
+    const query = input.value.trim().toLocaleLowerCase("ru");
+    if (query.length < 2) { results.classList.add("hidden"); results.innerHTML = ""; return; }
+    const contains = (value) => String(value || "").toLocaleLowerCase("ru").includes(query);
+    const people = data.people.filter((p) => contains(p.person_name)).slice(0, 6);
+    const orgs = data.organizations.filter((o) => contains(o.organization_name) || contains(o.organization_name_short)).slice(0, 5);
+    const projects = data.projects.filter((p) => contains(p.project_title) || contains(p.project_goal)).slice(0, 5);
+    const block = (title, items, renderer) => items.length ? `<div class="search-section-title">${title}</div>${items.map(renderer).join("")}` : "";
+    results.innerHTML = block("Люди", people, (p) => `<a class="search-item" role="option" href="#/person/${encodeURIComponent(p.person_id)}">${esc(p.person_name)}<small>${esc(data.municipalityById[p.municipality_id]?.display_name || "")}</small></a>`) +
+      block("Организации", orgs, (o) => `<a class="search-item" role="option" href="#/organization/${encodeURIComponent(o.org_id)}">${esc(o.organization_name_short || o.organization_name)}<small>${esc(data.topicById[o.primary_topic_id]?.topic_short_name || "")}</small></a>`) +
+      block("Проекты", projects, (p) => `<a class="search-item" role="option" href="#/project/${encodeURIComponent(p.project_id)}">${esc(p.project_title)}<small>${esc(p.year || "")} · ${esc(p.fund || "")}</small></a>`);
+    if (!results.innerHTML) results.innerHTML = `<div class="empty">Совпадений нет</div>`;
+    results.classList.remove("hidden");
+  });
+  input.addEventListener("keydown", (event) => { if (event.key === "Escape") results.classList.add("hidden"); });
+  document.addEventListener("click", (event) => { if (!event.target.closest(".global-search")) results.classList.add("hidden"); }, { once: true });
+}
+
+function bindMain() {
+  document.querySelectorAll("[data-filter]").forEach((select) => select.addEventListener("change", () => { state[select.dataset.filter] = select.value; render(); }));
+  document.querySelectorAll("[data-mode]").forEach((button) => button.addEventListener("click", () => { state.mode = button.dataset.mode; render(); }));
+  document.querySelectorAll("[data-municipality]").forEach((button) => button.addEventListener("click", () => { state.municipalityId = state.municipalityId === button.dataset.municipality ? "" : button.dataset.municipality; render(); }));
+  document.querySelectorAll("[data-topic]").forEach((button) => button.addEventListener("click", () => { state.topicId = state.topicId === button.dataset.topic ? "" : button.dataset.topic; render(); }));
+  document.querySelectorAll("[data-clear-filter]").forEach((button) => button.addEventListener("click", () => { state[button.dataset.clearFilter] = ""; render(); }));
+  document.querySelector("[data-action='toggle-more']")?.addEventListener("click", () => { state.moreOpen = !state.moreOpen; render(); });
+  document.querySelector("[data-action='reset']")?.addEventListener("click", () => {
+    Object.assign(state, { municipalityId: "", topicId: "", roleId: "", fund: "", year: "", orgProfile: "" });
+    render();
+  });
+}
+
+async function start() {
+  try {
+    const response = await fetch(DATA_URL, { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    data = await response.json();
+    buildIndexes();
+    window.addEventListener("hashchange", render);
+    render();
+  } catch (error) {
+    app.innerHTML = `<main class="error-card"><h1>Не удалось загрузить данные</h1><p>Откройте сайт через HTTP-сервер, а не напрямую как локальный файл.</p><pre>${esc(error.message)}</pre></main>`;
+  }
+}
+
+start();
