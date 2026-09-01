@@ -140,7 +140,7 @@ function header() {
     <header class="topbar">
       <div class="topbar-inner">
         <a class="brand" href="#/" aria-label="На главную">
-          <span class="brand-mark">ПК</span>
+          <span class="brand-logo-frame"><img class="brand-logo" src="./assets/grani-logo-base.png" alt="Центр ГРАНИ" /></span>
           <span><strong>Карта лидеров Пермского края</strong><span>Организации · проекты · практики</span></span>
         </a>
         <div class="global-search">
@@ -177,21 +177,13 @@ function activeChips() {
 }
 
 function filters() {
-  const municipalityOptions = [option("", `Все муниципалитеты · ${data.municipalities.length}`, !state.municipalityId)]
-    .concat(data.municipalities.map((m) => option(m.municipality_id, `${m.display_name} · ${computeScope(selectedFilters({ municipalityId: m.municipality_id })).people.length}`, state.municipalityId === m.municipality_id)));
-  const topicOptions = [option("", `Все темы · ${data.topics.length}`, !state.topicId)]
-    .concat(data.topics.map((t) => option(t.topic_id, `${t.topic_short_name} · ${computeScope(selectedFilters({ topicId: t.topic_id })).people.length}`, state.topicId === t.topic_id)));
-  const roleOptions = [option("", `Все роли · ${data.roles.length}`, !state.roleId)]
-    .concat(data.roles.map((r) => option(r.role_id, `${r.role_short_name} · ${computeScope(selectedFilters({ roleId: r.role_id })).people.length}`, state.roleId === r.role_id)));
   const profiles = [...new Set(data.organization_profiles.map((x) => x.profile_name))];
   return `
     <section class="filter-card" aria-label="Фильтры карты">
       <div class="filter-main">
-        <div class="field"><label for="municipality-filter">Муниципалитет</label><select id="municipality-filter" data-filter="municipalityId">${municipalityOptions.join("")}</select></div>
-        <div class="field"><label for="topic-filter">Тема</label><select id="topic-filter" data-filter="topicId">${topicOptions.join("")}</select></div>
-        <div class="field"><label for="role-filter">Роль</label><select id="role-filter" data-filter="roleId">${roleOptions.join("")}</select></div>
+        <div><strong>Дополнительные фильтры</strong><span style="display:block;color:var(--muted);font-size:12px;margin-top:3px">Фонд, год и профиль организации</span></div>
         <div class="filter-actions">
-          <button class="button" type="button" data-action="toggle-more" aria-expanded="${state.moreOpen}">${state.moreOpen ? "Скрыть" : "Ещё фильтры"}</button>
+          <button class="button" type="button" data-action="toggle-more" aria-expanded="${state.moreOpen}">${state.moreOpen ? "Скрыть" : "Показать"}</button>
           <button class="button ghost" type="button" data-action="reset">Сбросить</button>
         </div>
       </div>
@@ -202,6 +194,26 @@ function filters() {
       </div>
       ${activeChips()}
     </section>`;
+}
+
+function facetFilters() {
+  const allRoleCount = computeScope(selectedFilters({ roleId: "" })).people.length;
+  const roleChips = [
+    `<button type="button" class="facet-chip ${!state.roleId ? "active" : ""}" data-role=""><span>Все роли</span><span class="facet-count">${allRoleCount}</span></button>`,
+    ...data.roles.map((role) => {
+      const count = computeScope(selectedFilters({ roleId: role.role_id })).people.length;
+      return `<button type="button" class="facet-chip ${state.roleId === role.role_id ? "active" : ""}" data-role="${esc(role.role_id)}"><span>${esc(role.role_short_name)}</span><span class="facet-count">${count}</span></button>`;
+    }),
+  ];
+  const allTopicCount = computeScope(selectedFilters({ topicId: "" })).people.length;
+  const topicChips = [
+    `<button type="button" class="facet-chip ${!state.topicId ? "active" : ""}" data-topic=""><span>Все темы</span><span class="facet-count">${allTopicCount}</span></button>`,
+    ...data.topics.map((topic) => {
+      const count = computeScope(selectedFilters({ topicId: topic.topic_id })).people.length;
+      return `<button type="button" class="facet-chip ${state.topicId === topic.topic_id ? "active" : ""}" data-topic="${esc(topic.topic_id)}"><span>${esc(topic.topic_short_name)}</span><span class="facet-count">${count}</span></button>`;
+    }),
+  ];
+  return `<div class="facet-grid"><div><p class="facet-group-title">Роль</p><div class="facet-chips">${roleChips.join("")}</div></div><div><p class="facet-group-title">Тема</p><div class="facet-chips">${topicChips.join("")}</div></div></div>`;
 }
 
 function modeSwitch() {
@@ -223,7 +235,7 @@ function summary(scope) {
   return `
     <section class="summary-card" aria-label="Сводка выбранного среза">
       <div class="summary-copy">
-        <p class="eyebrow" style="color:#9ed6c6">Текущий срез</p>
+        <p class="eyebrow">Текущий срез</p>
         <h2>${esc(contextTitle())}</h2>
         <p>Карточки ниже пересчитаны по выбранным условиям. Темы организаций и темы проектов считаются независимо, чтобы не смешивать две логики классификации.</p>
       </div>
@@ -234,35 +246,46 @@ function summary(scope) {
 }
 
 function municipalityCards() {
-  const cards = data.municipalities.map((m) => {
-    const scope = computeScope(selectedFilters({ municipalityId: m.municipality_id }));
+  const ranked = data.municipalities
+    .map((m) => ({ m, scope: computeScope(selectedFilters({ municipalityId: m.municipality_id })) }))
+    .sort((a, b) => b.scope.projects.length - a.scope.projects.length || b.scope.funding - a.scope.funding || a.m.display_name.localeCompare(b.m.display_name, "ru"));
+  const cards = ranked.map(({ m, scope }, index) => {
+    const topicCount = new Set([
+      ...scope.organizations.map((o) => o.primary_topic_id),
+      ...scope.projects.map((p) => p.topic_id),
+      ...scope.people.flatMap((p) => p.topic_ids || []),
+    ].filter(Boolean)).size;
     return `
-      <button type="button" class="municipality-card ${state.municipalityId === m.municipality_id ? "active" : ""}" data-municipality="${esc(m.municipality_id)}">
+      <button type="button" class="municipality-card ${index < 3 ? "top-rank" : ""} ${state.municipalityId === m.municipality_id ? "active" : ""}" data-municipality="${esc(m.municipality_id)}">
+        <span class="municipality-rank">${index + 1}</span>
         <strong>${esc(m.display_name)}</strong>
+        <span class="municipality-projects"><b>${scope.projects.length}</b><span>проектов</span></span>
         <span class="micro-metrics">
           <span><b>${scope.organizations.length}</b>организаций</span>
-          <span><b>${scope.projects.length}</b>проектов</span>
+          <span><b>${scope.people.length}</b>персон</span>
+          <span><b>${topicCount}</b>тем</span>
           <span><b>${compact.format(scope.funding)}</b>₽</span>
         </span>
       </button>`;
   });
-  return `<section class="panel"><div class="panel-head"><h2>17 муниципалитетов</h2><p>Стабильная картограмма вместо перегруженного графа</p></div><div class="municipality-grid">${cards.join("")}</div></section>`;
+  return `<section class="panel"><div class="panel-head"><h2>17 муниципалитетов</h2><p>Рейтинг по числу проектов · нажмите карточку для выбора территории</p></div><div class="municipality-grid">${cards.join("")}</div></section>`;
 }
 
 function topicCards() {
-  const cards = data.topics.map((t) => {
+  const brandColors = ["#E51A4B", "#7A87A2", "#B2B3B3"];
+  const cards = data.topics.map((t, index) => {
     const scope = computeScope(selectedFilters({ topicId: t.topic_id }));
     const mainValue = state.mode === "organizations" ? scope.organizations.length : state.mode === "projects" ? scope.projects.length : scope.funding;
     const mainLabel = state.mode === "organizations" ? "организаций" : state.mode === "projects" ? "проектов" : "₽ известного финансирования";
     return `
-      <article class="topic-card ${state.topicId === t.topic_id ? "active" : ""}" style="--topic-color:${esc(t.color)}">
+      <article class="topic-card ${state.topicId === t.topic_id ? "active" : ""}" style="--topic-color:${brandColors[index % brandColors.length]}">
         <h3>${esc(t.topic_name)}</h3>
         <div class="topic-count">${state.mode === "funding" ? compact.format(mainValue) : integer.format(mainValue)}</div>
         <div class="topic-meta">${mainLabel} · ${scope.people.length} персон</div>
         <div class="topic-actions"><button type="button" data-topic="${esc(t.topic_id)}">Выбрать</button><a href="#/topic/${encodeURIComponent(t.topic_id)}">Открыть тему →</a></div>
       </article>`;
   });
-  return `<section class="panel"><div class="panel-head"><h2>Темы и роли</h2><p>15 канонических тем</p></div><div class="topic-grid">${cards.join("")}</div></section>`;
+  return `${modeSwitch()}<section class="panel"><div class="panel-head"><h2>Темы и роли</h2><p>Выберите тему и роль — числа пересчитаются</p></div>${facetFilters()}<hr class="topics-divider" /><div class="topic-grid">${cards.join("")}</div></section>`;
 }
 
 function personCard(person) {
@@ -287,7 +310,6 @@ function mainPage() {
     <h1>Кто, где и в каких темах действует</h1>
     <p class="lead">Один экран объединяет муниципалитеты, темы, роли и подтверждённые практики. Выбирайте условия как «шведский стол» — все карточки и показатели пересчитаются.</p>
     ${filters()}
-    ${modeSwitch()}
     ${summary(scope)}
     <div class="dashboard-grid"><div>${municipalityCards()}${topicCards()}</div>${peoplePanel(scope)}</div>
   </main>${footer()}`;
@@ -328,7 +350,7 @@ function personPage(personId) {
       </div></section>
       ${practices.length ? `<section class="detail-section"><h2>Практики</h2>${practices.map(practiceBox).join("")}</section>` : ""}
       <section class="detail-section"><h2>Хронология подтверждений</h2>${activities.length ? `<div class="timeline">${activities.map((a) => `<article class="timeline-item"><small>${esc(a.year || "Год не указан")} · ${esc(a.activity_kind)} · ${esc(a.platform_name || "Площадка не указана")}</small><strong>${esc(a.activity_title)}</strong>${a.quote ? `<p>${esc(a.quote)}</p>` : ""}${urlSafe(a.source_url) ? `<p><a class="source-link" target="_blank" rel="noopener noreferrer" href="${esc(urlSafe(a.source_url))}">Открыть источник ↗</a></p>` : ""}</article>`).join("")}</div>` : `<div class="empty">Именные источники публичной активности пока не добавлены</div>`}</section>
-      <section class="detail-section"><h2>Проекты</h2>${projects.length ? `<ul class="data-list">${projects.map((p) => `<li><strong>${esc(p.project_title)}</strong><small>${esc(p.year)} · ${esc(p.fund)}${p.project_goal ? ` · Цель: ${esc(p.project_goal)}` : ""}</small></li>`).join("")}</ul>` : `<p class="notice">Проекты не выводятся: в исходных данных нет подтверждённых периодов руководства или прямых персональных связей с проектами. Это защищает от ложной атрибуции.</p>`}</section>
+      <section class="detail-section"><h2>Проекты</h2>${projects.length ? `<ul class="data-list">${projects.sort((a,b) => (b.year || 0) - (a.year || 0)).map((p) => `<li><a href="#/project/${encodeURIComponent(p.project_id)}"><strong>${esc(p.project_title)}</strong></a><small>${esc(p.year)} · ${esc(p.fund)} · ${p.amount_available ? `${money.format(p.grant_amount)} ₽` : "сумма неизвестна"}</small><p>${p.project_goal ? `<strong>Цель:</strong> ${esc(p.project_goal)}` : "Цель отсутствует в исходной таблице."}</p></li>`).join("")}</ul>` : `<p class="notice">Для этой публичной персоны связь с проектами в исходной таблице не указана.</p>`}</section>
     </div><aside>
       <section class="detail-section"><h2>Профиль</h2><ul class="data-list"><li><strong>Муниципалитет</strong><small>${esc(municipality || "Не указан")}</small></li><li><strong>Подтверждения</strong><small>${person.confirmations_count}</small></li><li><strong>Последний год активности</strong><small>${esc(person.last_activity_year || "Не указан")}</small></li></ul></section>
       <section class="detail-section"><h2>Темы</h2><div class="tags">${person.topic_ids.map((id) => `<a class="tag" href="#/topic/${encodeURIComponent(id)}">${esc(data.topicById[id]?.topic_name || id)}</a>`).join("")}</div></section>
@@ -347,7 +369,7 @@ function topicPage(topicId) {
   const roleCounts = data.roles.map((r) => ({ ...r, count: scope.people.filter((p) => p.role_ids.includes(r.role_id)).length })).filter((r) => r.count);
   const municipalityRows = data.municipalities.map((m) => ({ m, s: computeScope({ municipalityId: m.municipality_id, topicId, roleId: "", fund: "", year: "", orgProfile: "" }) })).filter((x) => x.s.organizations.length || x.s.projects.length || x.s.people.length);
   return `${header()}<main id="main" class="page-shell">
-    <section class="detail-hero" style="border-top:7px solid ${esc(topic.color)}"><a class="back-link" href="#/">← Вернуться к карте</a><p class="eyebrow">Карточка темы</p><h1>${esc(topic.topic_name)}</h1><p class="lead">Организации учитываются по основной теме организации; проекты и финансирование — по теме конкретного проекта.</p><div class="fact-grid"><div class="fact-box"><strong>${scope.organizations.length}</strong><span>организаций</span></div><div class="fact-box"><strong>${scope.projects.length}</strong><span>проектов</span></div><div class="fact-box"><strong>${scope.people.length}</strong><span>персон</span></div></div></section>
+    <section class="detail-hero" style="border-top:7px solid #E51A4B"><a class="back-link" href="#/">← Вернуться к карте</a><p class="eyebrow">Карточка темы</p><h1>${esc(topic.topic_name)}</h1><p class="lead">Организации учитываются по основной теме организации; проекты и финансирование — по теме конкретного проекта.</p><div class="fact-grid"><div class="fact-box"><strong>${scope.organizations.length}</strong><span>организаций</span></div><div class="fact-box"><strong>${scope.projects.length}</strong><span>проектов</span></div><div class="fact-box"><strong>${scope.people.length}</strong><span>персон</span></div></div></section>
     <div class="detail-layout"><div>
       <section class="detail-section"><h2>Лидеры темы</h2><div class="people-list">${[...scope.people].sort((a,b) => b.confirmations_count-a.confirmations_count).map(personCard).join("") || `<div class="empty">Нет персон</div>`}</div></section>
       ${practices.length ? `<section class="detail-section"><h2>Тиражируемые практики</h2>${practices.map(practiceBox).join("")}</section>` : ""}
@@ -431,6 +453,7 @@ function bindMain() {
   document.querySelectorAll("[data-mode]").forEach((button) => button.addEventListener("click", () => { state.mode = button.dataset.mode; render(); }));
   document.querySelectorAll("[data-municipality]").forEach((button) => button.addEventListener("click", () => { state.municipalityId = state.municipalityId === button.dataset.municipality ? "" : button.dataset.municipality; render(); }));
   document.querySelectorAll("[data-topic]").forEach((button) => button.addEventListener("click", () => { state.topicId = state.topicId === button.dataset.topic ? "" : button.dataset.topic; render(); }));
+  document.querySelectorAll("[data-role]").forEach((button) => button.addEventListener("click", () => { state.roleId = state.roleId === button.dataset.role ? "" : button.dataset.role; render(); }));
   document.querySelectorAll("[data-clear-filter]").forEach((button) => button.addEventListener("click", () => { state[button.dataset.clearFilter] = ""; render(); }));
   document.querySelector("[data-action='toggle-more']")?.addEventListener("click", () => { state.moreOpen = !state.moreOpen; render(); });
   document.querySelector("[data-action='reset']")?.addEventListener("click", () => {
