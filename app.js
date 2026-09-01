@@ -55,6 +55,7 @@ function buildIndexes() {
   data.orgLinksByPerson = groupBy(data.person_organization_links, (x) => x.person_id);
   data.personLinksByOrg = groupBy(data.person_organization_links, (x) => x.org_id);
   data.activitiesByPerson = groupBy(data.activities.filter((x) => x.person_evidence_status === "person_verified"), (x) => x.person_id);
+  data.recognitionByPerson = groupBy(data.activities.filter((x) => x.activity_kind === "recognition" && x.person_id), (x) => x.person_id);
   data.activitiesByTopic = groupBy(data.activities, (x) => x.topic_id);
   data.councilsByPerson = groupBy(data.council_memberships, (x) => x.person_id);
   data.practicesByPerson = groupBy(data.practices, (x) => x.person_id);
@@ -325,9 +326,143 @@ function practiceBox(practice) {
     <h3>${esc(practice.practice_name)}</h3>
     <p>${esc(practice.format_or_technology || "Механизм требует дополнительного описания.")}</p>
     ${practice.transferability_summary ? `<p><strong>Что можно тиражировать:</strong> ${esc(practice.transferability_summary)}</p>` : ""}
-    <small>${esc(practice.territory || "")} · ${esc(practice.publication_status)}</small>
+    ${practice.territory ? `<small>${esc(practice.territory)}</small>` : ""}
     ${source ? `<p><a class="source-link" target="_blank" rel="noopener noreferrer" href="${esc(source)}">Источник ↗</a></p>` : ""}
   </article>`;
+}
+
+function organizationName(org) {
+  return org?.organization_name_short || org?.organization_name || org?.org_id || "Организация";
+}
+
+function cleanPublicValue(value) {
+  const text = String(value ?? "").trim();
+  return !text || /^(unknown|undefined|null|неизвестно|не указано)$/i.test(text) ? "" : text;
+}
+
+function splitUrls(value) {
+  if (Array.isArray(value)) return value.flatMap(splitUrls);
+  return String(value || "").split(/[;\n]+/).map((x) => x.trim()).filter(Boolean);
+}
+
+function personExternalLinks(orgs) {
+  const seen = new Set();
+  const links = [];
+  orgs.forEach((org) => {
+    const candidates = [
+      ...splitUrls(org.website_urls), ...splitUrls(org.site_url),
+      ...splitUrls(org.social_urls), ...splitUrls(org.social_url), ...splitUrls(org.tg_url),
+    ];
+    candidates.forEach((value) => {
+      const url = urlSafe(value);
+      if (!url || seen.has(url)) return;
+      seen.add(url);
+      const parsed = new URL(url);
+      const host = parsed.hostname.replace(/^www\./, "").toLowerCase();
+      const type = host === "vk.com" || host.endsWith(".vk.com") ? "vk" : host === "t.me" || host.endsWith(".t.me") || host === "telegram.me" ? "telegram" : "site";
+      const label = type === "vk" ? "VK" : type === "telegram" ? "Telegram" : host;
+      links.push({ url, type, label });
+    });
+  });
+  if (!links.length) return "";
+  return `<div class="person-links" aria-label="Сайт и социальные сети организации"><span>Сайт и соцсети организации</span><div>${links.map((link) => `<a class="person-link ${link.type}" target="_blank" rel="noopener noreferrer" href="${esc(link.url)}">${esc(link.label)} ↗</a>`).join("")}</div></div>`;
+}
+
+function personOrganizationIntro(person, orgs) {
+  const leaderIds = new Set(person.leader_organization_ids || []);
+  if (!orgs.length) return "";
+  return `<div class="person-org-intro">${orgs.map((org) => `<div><span>${leaderIds.has(org.org_id) ? "Руководитель" : "Связь с организацией"}</span> — <a href="#/organization/${encodeURIComponent(org.org_id)}">${esc(organizationName(org))}</a></div>`).join("")}</div>${personExternalLinks(orgs)}`;
+}
+
+const activityRoleNames = {
+  speaker: "Спикер",
+  trainer: "Тренер",
+  expert: "Эксперт",
+  moderator: "Модератор",
+  organizer: "Организатор",
+  author: "Автор",
+};
+
+function activityRoleName(value) {
+  const key = cleanPublicValue(value).toLowerCase();
+  return activityRoleNames[key] || cleanPublicValue(value);
+}
+
+function activityTitleLink(activity, fallback) {
+  const title = cleanPublicValue(activity.activity_title) || fallback;
+  const url = urlSafe(activity.source_url);
+  return url ? `<a target="_blank" rel="noopener noreferrer" href="${esc(url)}"><strong>${esc(title)}</strong></a>` : `<strong>${esc(title)}</strong>`;
+}
+
+function expandableCards(items, renderItem, limit = 6) {
+  const first = items.slice(0, limit).map(renderItem).join("");
+  const rest = items.slice(limit);
+  return `${first}${rest.length ? `<details class="content-more"><summary>Показать ещё ${rest.length}</summary><div class="content-more-list">${rest.map(renderItem).join("")}</div></details>` : ""}`;
+}
+
+function eventCard(activity) {
+  const roleKey = cleanPublicValue(activity.role_class).toLowerCase();
+  const role = activityRoleName(roleKey);
+  const meta = [activity.year, cleanPublicValue(activity.platform_name)].filter(Boolean).join(" · ");
+  return `<article class="activity-card" data-event-item data-event-role="${esc(roleKey)}">
+    <div class="activity-card-meta"><span>${esc(meta || "Сведения о площадке не указаны")}</span>${role ? `<span class="activity-role">${esc(role)}</span>` : ""}</div>
+    ${activityTitleLink(activity, "Участие в публичном мероприятии")}
+    ${activity.quote ? `<p>${esc(activity.quote)}</p>` : ""}
+  </article>`;
+}
+
+function publicationCard(activity) {
+  const typeKey = cleanPublicValue(activity.publication_type) || "other";
+  const typeLabel = typeKey === "other" ? "Публикация" : typeKey.charAt(0).toUpperCase() + typeKey.slice(1);
+  const meta = [cleanPublicValue(activity.platform_name), activity.year].filter(Boolean).join(" · ");
+  return `<article class="publication-card" data-publication-item data-publication-type="${esc(typeKey)}">
+    <div class="activity-card-meta"><span>${esc(meta || "Источник не указан")}</span><span class="activity-role">${esc(typeLabel)}</span></div>
+    ${activityTitleLink(activity, "Публикация")}
+    ${activity.quote ? `<blockquote>${esc(activity.quote)}</blockquote>` : ""}
+  </article>`;
+}
+
+function recognitionCard(activity) {
+  const org = data.orgById[activity.org_id];
+  const result = cleanPublicValue(activity.award_or_nomination) || cleanPublicValue(activity.project_or_practice_name);
+  const recipient = activity.person_evidence_status === "person_verified" ? "" : organizationName(org);
+  return `<article class="recognition-card">
+    <div class="recognition-mark" aria-hidden="true">★</div><div>
+      ${activityTitleLink(activity, "Публичное признание")}
+      ${result ? `<p>${esc(result)}</p>` : ""}
+      <small>${[recipient ? `Получатель: ${recipient}` : "", activity.year].filter(Boolean).map(esc).join(" · ")}</small>
+    </div>
+  </article>`;
+}
+
+function councilCard(council) {
+  const role = cleanPublicValue(council.person_role);
+  const period = council.start_year && council.end_year ? `${council.start_year}–${council.end_year}` : council.start_year ? `с ${council.start_year} года` : council.end_year ? `до ${council.end_year} года` : cleanPublicValue(council.period_note);
+  const url = urlSafe(council.source_url);
+  const title = esc(council.council_name || "Совет или экспертный орган");
+  return `<li>${url ? `<a target="_blank" rel="noopener noreferrer" href="${esc(url)}"><strong>${title}</strong></a>` : `<strong>${title}</strong>`}${[role, period].filter(Boolean).length ? `<small>${[role, period].filter(Boolean).map(esc).join(" · ")}</small>` : ""}</li>`;
+}
+
+function roleCountChips(events) {
+  const counts = new Map();
+  events.forEach((activity) => {
+    const key = cleanPublicValue(activity.role_class).toLowerCase();
+    if (key) counts.set(key, (counts.get(key) || 0) + 1);
+  });
+  const order = ["speaker", "trainer", "expert", "moderator", "organizer", "author"];
+  const keys = [...order.filter((key) => counts.has(key)), ...[...counts.keys()].filter((key) => !order.includes(key))];
+  if (!keys.length) return "";
+  return `<div class="activity-filters" role="group" aria-label="Фильтр мероприятий по роли"><button class="activity-filter active" type="button" data-person-event-role="" aria-pressed="true">Все <b>${events.length}</b></button>${keys.map((key) => `<button class="activity-filter" type="button" data-person-event-role="${esc(key)}" aria-pressed="false">${esc(activityRoleName(key))} <b>${counts.get(key)}</b></button>`).join("")}</div>`;
+}
+
+function publicationCountChips(publications) {
+  const counts = new Map();
+  publications.forEach((activity) => {
+    const key = cleanPublicValue(activity.publication_type) || "other";
+    counts.set(key, (counts.get(key) || 0) + 1);
+  });
+  const label = (key) => key === "other" ? "Другие" : key.charAt(0).toUpperCase() + key.slice(1);
+  return `<div class="activity-filters" role="group" aria-label="Фильтр публикаций по типу"><button class="activity-filter active" type="button" data-person-publication-type="" aria-pressed="true">Все <b>${publications.length}</b></button>${[...counts].map(([key, count]) => `<button class="activity-filter" type="button" data-person-publication-type="${esc(key)}" aria-pressed="false">${esc(label(key))} <b>${count}</b></button>`).join("")}</div>`;
 }
 
 function personPage(personId) {
@@ -335,27 +470,33 @@ function personPage(personId) {
   if (!person) return notFound("Персона не найдена");
   const orgs = person.organization_ids.map((id) => data.orgById[id]).filter(Boolean);
   const activities = [...(data.activitiesByPerson[personId] || [])].sort((a, b) => (b.year || 0) - (a.year || 0));
+  const events = activities.filter((a) => a.activity_kind === "event_role");
+  const publications = activities.filter((a) => a.activity_kind === "publication");
+  const recognition = [...(data.recognitionByPerson[personId] || [])].sort((a, b) => (b.year || 0) - (a.year || 0));
   const councils = data.councilsByPerson[personId] || [];
   const practices = data.practicesByPerson[personId] || [];
   const projectLinks = data.projectLinksByPerson[personId] || [];
   const projects = projectLinks.map((x) => data.projectById[x.project_id]).filter(Boolean);
   const municipality = data.municipalityById[person.municipality_id]?.display_name;
   return `${header()}<main id="main" class="page-shell">
-    <section class="detail-hero"><a class="back-link" href="#/">← Вернуться к карте</a><p class="eyebrow">Карточка персоны</p><h1>${esc(person.person_name)}</h1><p class="lead">${esc(person.person_summary || "Краткое описание пока не заполнено.")}</p>${roleTags(person)}</section>
+    <section class="detail-hero person-hero"><a class="back-link" href="#/">← Вернуться к карте</a><p class="eyebrow">Карточка персоны</p><h1>${esc(person.person_name)}</h1><p class="lead">${esc(person.person_summary || "Краткое описание пока не заполнено.")}</p>${personOrganizationIntro(person, orgs)}${roleTags(person)}</section>
     <div class="detail-layout"><div>
-      <section class="detail-section"><h2>Подтверждённая публичная деятельность</h2><div class="fact-grid">
-        <div class="fact-box"><strong>${activities.length}</strong><span>публичных фактов</span></div>
+      <section class="detail-section"><h2>Публичная деятельность</h2><div class="fact-grid person-fact-grid">
+        <div class="fact-box"><strong>${events.length}</strong><span>выступлений и экспертных участий</span></div>
+        <div class="fact-box"><strong>${publications.length}</strong><span>публикаций и комментариев</span></div>
         <div class="fact-box"><strong>${councils.length}</strong><span>участий в советах</span></div>
-        <div class="fact-box"><strong>${practices.length}</strong><span>тиражируемых практик</span></div>
+        <div class="fact-box"><strong>${practices.length}</strong><span>практик</span></div>
       </div></section>
       ${practices.length ? `<section class="detail-section"><h2>Практики</h2>${practices.map(practiceBox).join("")}</section>` : ""}
-      <section class="detail-section"><h2>Хронология подтверждений</h2>${activities.length ? `<div class="timeline">${activities.map((a) => `<article class="timeline-item"><small>${esc(a.year || "Год не указан")} · ${esc(a.activity_kind)} · ${esc(a.platform_name || "Площадка не указана")}</small><strong>${esc(a.activity_title)}</strong>${a.quote ? `<p>${esc(a.quote)}</p>` : ""}${urlSafe(a.source_url) ? `<p><a class="source-link" target="_blank" rel="noopener noreferrer" href="${esc(urlSafe(a.source_url))}">Открыть источник ↗</a></p>` : ""}</article>`).join("")}</div>` : `<div class="empty">Именные источники публичной активности пока не добавлены</div>`}</section>
-      <section class="detail-section"><h2>Проекты</h2>${projects.length ? `<ul class="data-list">${projects.sort((a,b) => (b.year || 0) - (a.year || 0)).map((p) => `<li><a href="#/project/${encodeURIComponent(p.project_id)}"><strong>${esc(p.project_title)}</strong></a><small>${esc(p.year)} · ${esc(p.fund)} · ${p.amount_available ? `${money.format(p.grant_amount)} ₽` : "сумма неизвестна"}</small><p>${p.project_goal ? `<strong>Цель:</strong> ${esc(p.project_goal)}` : "Цель отсутствует в исходной таблице."}</p></li>`).join("")}</ul>` : `<p class="notice">Для этой публичной персоны связь с проектами в исходной таблице не указана.</p>`}</section>
+      ${events.length ? `<section class="detail-section"><div class="section-heading-row"><h2>Выступления и экспертная работа</h2><span>${events.length}</span></div>${roleCountChips(events)}<div class="activity-list">${expandableCards(events, eventCard, 7)}</div></section>` : ""}
+      ${publications.length ? `<section class="detail-section"><div class="section-heading-row"><h2>Публикации и комментарии</h2><span>${publications.length}</span></div>${publicationCountChips(publications)}<div class="publication-list">${expandableCards(publications, publicationCard, 6)}</div></section>` : ""}
+      ${recognition.length ? `<section class="detail-section"><h2>Публичное признание</h2><div class="recognition-list">${recognition.map(recognitionCard).join("")}</div></section>` : ""}
+      ${councils.length ? `<section class="detail-section"><h2>Советы и экспертные органы</h2><ul class="data-list council-list">${councils.map(councilCard).join("")}</ul></section>` : ""}
+      ${projects.length ? `<section class="detail-section"><h2>Проекты организации</h2><ul class="data-list project-list">${projects.sort((a,b) => (b.year || 0) - (a.year || 0)).map((p) => `<li><a href="#/project/${encodeURIComponent(p.project_id)}"><strong>${esc(p.project_title)}</strong></a><small>${[p.year, p.fund, p.amount_available ? `${money.format(p.grant_amount)} ₽` : "сумма неизвестна"].filter(Boolean).map(esc).join(" · ")}</small>${p.project_goal ? `<p class="project-goal"><span>Цель:</span> ${esc(p.project_goal)}</p>` : ""}</li>`).join("")}</ul></section>` : ""}
     </div><aside>
-      <section class="detail-section"><h2>Профиль</h2><ul class="data-list"><li><strong>Муниципалитет</strong><small>${esc(municipality || "Не указан")}</small></li><li><strong>Подтверждения</strong><small>${person.confirmations_count}</small></li><li><strong>Последний год активности</strong><small>${esc(person.last_activity_year || "Не указан")}</small></li></ul></section>
+      <section class="detail-section"><h2>Профиль</h2><ul class="data-list"><li><strong>Муниципалитет</strong><small>${esc(municipality || "Не указан")}</small></li><li><strong>Последний год активности</strong><small>${esc(person.last_activity_year || "Не указан")}</small></li></ul></section>
       <section class="detail-section"><h2>Темы</h2><div class="tags">${person.topic_ids.map((id) => `<a class="tag" href="#/topic/${encodeURIComponent(id)}">${esc(data.topicById[id]?.topic_name || id)}</a>`).join("")}</div></section>
       <section class="detail-section"><h2>Организации</h2><ul class="data-list">${orgs.map((o) => `<li><a href="#/organization/${encodeURIComponent(o.org_id)}"><strong>${esc(o.organization_name_short || o.organization_name)}</strong></a><small>${esc(o.org_profile_type || "")}</small></li>`).join("") || `<li><small>Связи не указаны</small></li>`}</ul></section>
-      ${councils.length ? `<section class="detail-section"><h2>Советы и рабочие группы</h2><ul class="data-list">${councils.map((c) => `<li><strong>${esc(c.council_name)}</strong><small>${esc(c.person_role || "")} · ${esc(c.membership_status || "")}</small></li>`).join("")}</ul></section>` : ""}
     </aside></div>
   </main>${footer()}`;
 }
@@ -373,7 +514,7 @@ function topicPage(topicId) {
     <div class="detail-layout"><div>
       <section class="detail-section"><h2>Лидеры темы</h2><div class="people-list">${[...scope.people].sort((a,b) => b.confirmations_count-a.confirmations_count).map(personCard).join("") || `<div class="empty">Нет персон</div>`}</div></section>
       ${practices.length ? `<section class="detail-section"><h2>Тиражируемые практики</h2>${practices.map(practiceBox).join("")}</section>` : ""}
-      <section class="detail-section"><h2>Проекты</h2><ul class="data-list">${scope.projects.slice(0, 40).map((p) => `<li><a href="#/project/${encodeURIComponent(p.project_id)}"><strong>${esc(p.project_title)}</strong></a><small>${esc(p.year)} · ${esc(p.fund)}${p.project_goal ? ` · ${esc(p.project_goal)}` : " · цель не указана в источнике"}</small></li>`).join("") || `<li><small>Нет проектов</small></li>`}</ul>${scope.projects.length > 40 ? `<p class="notice">Показаны первые 40 из ${scope.projects.length} проектов.</p>` : ""}</section>
+      <section class="detail-section"><h2>Проекты</h2><ul class="data-list">${scope.projects.slice(0, 40).map((p) => `<li><a href="#/project/${encodeURIComponent(p.project_id)}"><strong>${esc(p.project_title)}</strong></a><small>${[p.year, p.fund].filter(Boolean).map(esc).join(" · ")}</small>${p.project_goal ? `<p class="project-goal"><span>Цель:</span> ${esc(p.project_goal)}</p>` : ""}</li>`).join("") || `<li><small>Нет проектов</small></li>`}</ul>${scope.projects.length > 40 ? `<p class="notice">Показаны первые 40 из ${scope.projects.length} проектов.</p>` : ""}</section>
     </div><aside>
       <section class="detail-section"><h2>Роли</h2><ul class="data-list">${roleCounts.map((r) => `<li><strong>${esc(r.role_name)}</strong><small>${r.count} персон</small></li>`).join("") || `<li><small>Нет подтверждённых ролей</small></li>`}</ul></section>
       <section class="detail-section"><h2>Муниципалитеты</h2><ul class="data-list">${municipalityRows.map(({m,s}) => `<li><strong>${esc(m.display_name)}</strong><small>${s.organizations.length} организаций · ${s.projects.length} проектов · ${s.people.length} персон</small></li>`).join("")}</ul></section>
@@ -401,7 +542,7 @@ function projectPage(projectId) {
   const org = data.orgById[p.org_id];
   const topic = data.topicById[p.topic_id];
   const municipality = data.municipalityById[p.municipality_id];
-  return `${header()}<main id="main" class="page-shell"><section class="detail-hero"><a class="back-link" href="#/">← Вернуться к карте</a><p class="eyebrow">Карточка проекта</p><h1>${esc(p.project_title)}</h1><p class="lead">${p.project_goal ? `<strong>Цель:</strong> ${esc(p.project_goal)}` : "Цель проекта отсутствует в исходном наборе и не была дополнена автоматически."}</p></section><div class="detail-layout"><div><section class="detail-section"><h2>Основные сведения</h2><ul class="data-list"><li><strong>Организация</strong><small><a href="#/organization/${encodeURIComponent(p.org_id)}">${esc(org?.organization_name_short || org?.organization_name || p.org_id)}</a></small></li><li><strong>Тема проекта</strong><small><a href="#/topic/${encodeURIComponent(p.topic_id)}">${esc(topic?.topic_name || p.topic_id)}</a></small></li><li><strong>Муниципалитет</strong><small>${esc(municipality?.display_name || "Не указан")}</small></li></ul></section></div><aside><section class="detail-section"><h2>Финансирование</h2><div class="fact-box"><strong>${p.amount_available ? `${money.format(p.grant_amount)} ₽` : "Неизвестно"}</strong><span>${esc(p.fund || "Фонд не указан")} · ${esc(p.year || "Год не указан")}</span></div>${!p.amount_available ? `<p class="notice">Отсутствующая сумма не считается нулевой.</p>` : ""}</section></aside></div></main>${footer()}`;
+  return `${header()}<main id="main" class="page-shell"><section class="detail-hero"><a class="back-link" href="#/">← Вернуться к карте</a><p class="eyebrow">Карточка проекта</p><h1>${esc(p.project_title)}</h1>${p.project_goal ? `<p class="lead"><strong>Цель:</strong> ${esc(p.project_goal)}</p>` : ""}</section><div class="detail-layout"><div><section class="detail-section"><h2>Основные сведения</h2><ul class="data-list"><li><strong>Организация</strong><small><a href="#/organization/${encodeURIComponent(p.org_id)}">${esc(org?.organization_name_short || org?.organization_name || p.org_id)}</a></small></li><li><strong>Тема проекта</strong><small><a href="#/topic/${encodeURIComponent(p.topic_id)}">${esc(topic?.topic_name || p.topic_id)}</a></small></li><li><strong>Муниципалитет</strong><small>${esc(municipality?.display_name || "Не указан")}</small></li></ul></section></div><aside><section class="detail-section"><h2>Финансирование</h2><div class="fact-box"><strong>${p.amount_available ? `${money.format(p.grant_amount)} ₽` : "Сумма не указана"}</strong><span>${esc(p.fund || "Фонд не указан")} · ${esc(p.year || "Год не указан")}</span></div></section></aside></div></main>${footer()}`;
 }
 
 function notFound(title) {
@@ -422,6 +563,7 @@ function render() {
   else app.innerHTML = mainPage();
   bindCommon();
   if (route.section === "home") bindMain();
+  if (route.section === "person") bindPerson();
   document.title = route.section === "home" ? data.config.title : `${document.querySelector("h1")?.textContent || "Карточка"} — ${data.config.title}`;
   window.scrollTo({ top: 0, behavior: "auto" });
 }
@@ -460,6 +602,25 @@ function bindMain() {
     Object.assign(state, { municipalityId: "", topicId: "", roleId: "", fund: "", year: "", orgProfile: "" });
     render();
   });
+}
+
+function bindPerson() {
+  const bindFilter = ({ buttonSelector, itemSelector, buttonKey, itemKey }) => {
+    const buttons = [...document.querySelectorAll(buttonSelector)];
+    const items = [...document.querySelectorAll(itemSelector)];
+    buttons.forEach((button) => button.addEventListener("click", () => {
+      const value = button.dataset[buttonKey] || "";
+      buttons.forEach((item) => {
+        const active = item === button;
+        item.classList.toggle("active", active);
+        item.setAttribute("aria-pressed", String(active));
+      });
+      items.forEach((item) => { item.hidden = Boolean(value) && item.dataset[itemKey] !== value; });
+      button.closest(".detail-section")?.querySelectorAll(".content-more").forEach((details) => { details.open = Boolean(value); });
+    }));
+  };
+  bindFilter({ buttonSelector: "[data-person-event-role]", itemSelector: "[data-event-item]", buttonKey: "personEventRole", itemKey: "eventRole" });
+  bindFilter({ buttonSelector: "[data-person-publication-type]", itemSelector: "[data-publication-item]", buttonKey: "personPublicationType", itemKey: "publicationType" });
 }
 
 async function start() {
