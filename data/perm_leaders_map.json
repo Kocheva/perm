@@ -1,7 +1,7 @@
 {
   "config": {
     "dataset_id": "perm_leaders_map_v2",
-    "title": "Карта лидеров Пермского края",
+    "title": "Карта проектных лидеров Пермского края",
     "region_name": "Пермский край",
     "generated_at": "2026-09-01",
     "data_model_version": "2.0.0",
