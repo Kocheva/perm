@@ -688,7 +688,7 @@ function parseRoute() {
 
 function render(options = {}) {
   const preserveScroll = Boolean(options?.preserveScroll);
-  const previousScroll = window.scrollY;
+  const previousScroll = Number.isFinite(window.scrollY) ? window.scrollY : 0;
   const route = parseRoute();
   if (route.section === "person") app.innerHTML = personPage(route.id);
   else if (route.section === "topic") app.innerHTML = topicPage(route.id);
@@ -726,16 +726,17 @@ function bindCommon() {
 }
 
 function bindMain() {
-  document.querySelectorAll("[data-filter]").forEach((select) => select.addEventListener("change", () => { state[select.dataset.filter] = select.value; render(); }));
-  document.querySelectorAll("[data-mode]").forEach((button) => button.addEventListener("click", () => { state.mode = button.dataset.mode; render(); }));
-  document.querySelectorAll("[data-municipality]").forEach((button) => button.addEventListener("click", () => { state.municipalityId = state.municipalityId === button.dataset.municipality ? "" : button.dataset.municipality; render(); }));
-  document.querySelectorAll("[data-topic]").forEach((button) => button.addEventListener("click", () => { state.topicId = state.topicId === button.dataset.topic ? "" : button.dataset.topic; render(); }));
-  document.querySelectorAll("[data-role]").forEach((button) => button.addEventListener("click", () => { state.roleId = state.roleId === button.dataset.role ? "" : button.dataset.role; render(); }));
-  document.querySelectorAll("[data-clear-filter]").forEach((button) => button.addEventListener("click", () => { state[button.dataset.clearFilter] = ""; render(); }));
-  document.querySelector("[data-action='toggle-more']")?.addEventListener("click", () => { state.moreOpen = !state.moreOpen; render(); });
+  const rerender = () => render({ preserveScroll: true });
+  document.querySelectorAll("[data-filter]").forEach((select) => select.addEventListener("change", () => { state[select.dataset.filter] = select.value; rerender(); }));
+  document.querySelectorAll("[data-mode]").forEach((button) => button.addEventListener("click", () => { state.mode = button.dataset.mode; rerender(); }));
+  document.querySelectorAll("[data-municipality]").forEach((button) => button.addEventListener("click", () => { state.municipalityId = state.municipalityId === button.dataset.municipality ? "" : button.dataset.municipality; rerender(); }));
+  document.querySelectorAll("[data-topic]").forEach((button) => button.addEventListener("click", () => { state.topicId = state.topicId === button.dataset.topic ? "" : button.dataset.topic; rerender(); }));
+  document.querySelectorAll("[data-role]").forEach((button) => button.addEventListener("click", () => { state.roleId = state.roleId === button.dataset.role ? "" : button.dataset.role; rerender(); }));
+  document.querySelectorAll("[data-clear-filter]").forEach((button) => button.addEventListener("click", () => { state[button.dataset.clearFilter] = ""; rerender(); }));
+  document.querySelector("[data-action='toggle-more']")?.addEventListener("click", () => { state.moreOpen = !state.moreOpen; rerender(); });
   document.querySelector("[data-action='reset']")?.addEventListener("click", () => {
     Object.assign(state, { municipalityId: "", topicId: "", roleId: "", fund: "", year: "", orgProfile: "" });
-    render();
+    rerender();
   });
 }
 
