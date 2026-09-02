@@ -3,7 +3,7 @@
     "dataset_id": "perm_leaders_map_v2",
     "title": "Карта проектных лидеров Пермского края",
     "region_name": "Пермский край",
-    "generated_at": "2026-09-01",
+    "generated_at": "2026-09-02",
     "data_model_version": "2.0.0",
     "default_mode": "organizations",
     "project_attribution_mode": "confirmed_leadership_links",
@@ -24,13 +24,13 @@
       2026
     ],
     "counts": {
-      "people": 230,
-      "organizations": 141,
-      "projects": 650,
-      "activities_total": 249,
-      "activities_person_verified": 174,
+      "people": 151,
+      "organizations": 140,
+      "projects": 648,
+      "activities_total": 244,
+      "activities_person_verified": 169,
       "council_memberships": 20,
-      "practices": 18,
+      "practices": 17,
       "topics": 15,
       "municipalities": 17
     },
@@ -284,8 +284,8 @@
       "is_uncertain_geo": 0,
       "geo_comment": null,
       "organizations_count_source": 4,
-      "projects_count_source": 14,
-      "known_funding_sum": 13199937.82,
+      "projects_count_source": 11,
+      "known_funding_sum": 8967029.82,
       "coordinate_status": "validated_for_basemap_v1"
     },
     {
@@ -300,8 +300,8 @@
       "is_uncertain_geo": 0,
       "geo_comment": null,
       "organizations_count_source": 9,
-      "projects_count_source": 42,
-      "known_funding_sum": 35699149.78,
+      "projects_count_source": 36,
+      "known_funding_sum": 30536834.78,
       "coordinate_status": "validated_for_basemap_v1"
     },
     {
@@ -331,9 +331,9 @@
       "cluster_type": "small",
       "is_uncertain_geo": 0,
       "geo_comment": null,
-      "organizations_count_source": 1,
-      "projects_count_source": 2,
-      "known_funding_sum": 970848,
+      "organizations_count_source": 0,
+      "projects_count_source": 0,
+      "known_funding_sum": 0,
       "coordinate_status": "validated_for_basemap_v1"
     },
     {
@@ -364,8 +364,8 @@
       "is_uncertain_geo": 0,
       "geo_comment": null,
       "organizations_count_source": 6,
-      "projects_count_source": 20,
-      "known_funding_sum": 16570557.71,
+      "projects_count_source": 17,
+      "known_funding_sum": 14064387.71,
       "coordinate_status": "validated_for_basemap_v1"
     },
     {
@@ -379,9 +379,9 @@
       "cluster_type": "main",
       "is_uncertain_geo": 0,
       "geo_comment": null,
-      "organizations_count_source": 100,
-      "projects_count_source": 529,
-      "known_funding_sum": 785134647.4399999,
+      "organizations_count_source": 93,
+      "projects_count_source": 470,
+      "known_funding_sum": 727766596.8299999,
       "coordinate_status": "validated_for_basemap_v1"
     },
     {
@@ -397,7 +397,7 @@
       "geo_comment": null,
       "organizations_count_source": 3,
       "projects_count_source": 16,
-      "known_funding_sum": 8575394.73,
+      "known_funding_sum": 8575394.729999999,
       "coordinate_status": "validated_for_basemap_v1"
     },
     {
@@ -411,9 +411,9 @@
       "cluster_type": "small",
       "is_uncertain_geo": 0,
       "geo_comment": null,
-      "organizations_count_source": 5,
-      "projects_count_source": 21,
-      "known_funding_sum": 18729273.88,
+      "organizations_count_source": 4,
+      "projects_count_source": 9,
+      "known_funding_sum": 5920236.03,
       "coordinate_status": "validated_for_basemap_v1"
     },
     {
@@ -427,9 +427,9 @@
       "cluster_type": "small",
       "is_uncertain_geo": 0,
       "geo_comment": null,
-      "organizations_count_source": 2,
-      "projects_count_source": 5,
-      "known_funding_sum": 1187195,
+      "organizations_count_source": 1,
+      "projects_count_source": 2,
+      "known_funding_sum": 99773.5,
       "coordinate_status": "validated_for_basemap_v1"
     },
     {
@@ -487,7 +487,7 @@
       "role_name": "Руководитель организации",
       "role_short_name": "Руководитель",
       "display_order": 1,
-      "people_count": 133
+      "people_count": 134
     },
     {
       "role_id": "ROLE_COUNCIL_MEMBER",
@@ -501,14 +501,14 @@
       "role_name": "Спикер",
       "role_short_name": "Спикер",
       "display_order": 3,
-      "people_count": 17
+      "people_count": 15
     },
     {
       "role_id": "ROLE_TRAINER",
       "role_name": "Тренер",
       "role_short_name": "Тренер",
       "display_order": 4,
-      "people_count": 9
+      "people_count": 7
     },
     {
       "role_id": "ROLE_EXPERT",
@@ -529,7 +529,7 @@
       "role_name": "Автор (статья / комментарий / интервью)",
       "role_short_name": "Автор",
       "display_order": 7,
-      "people_count": 29
+      "people_count": 28
     }
   ],
   "organization_profiles": [
@@ -645,7 +645,7 @@
       "site_url": "https://islam59.ru/",
       "social_url": null,
       "tg_url": null,
-      "public_representatives": "Аблаев Анвар Арипович; Кавыев Разим Мирзиевич",
+      "public_representatives": "Аблаев Анвар Арипович",
       "topics_summary": "Религия и духовно-нравственное просвещение",
       "fund_count": 3,
       "asi_leader_mentions": 0,
@@ -1167,30 +1167,6 @@
       "data_status": "confirmed"
     },
     {
-      "org_id": "ORG_5933012035",
-      "inn": 5933012035,
-      "organization_name": "АВТОНОМНАЯ НЕКОММЕРЧЕСКАЯ ОРГАНИЗАЦИЯ ТЕАТР ТАНЦА \"СОЗВЕЗДИЕ\"",
-      "organization_name_short": null,
-      "leader_name": null,
-      "leader_person_id": null,
-      "municipality_id": "MUN_CHASTYE",
-      "municipality_name": "Частые",
-      "org_legal_type": null,
-      "org_profile_type": "организация культуры",
-      "site_url": null,
-      "social_url": null,
-      "tg_url": null,
-      "public_representatives": null,
-      "topics_summary": "Культура, искусство, креативные практики",
-      "fund_count": 2,
-      "asi_leader_mentions": 0,
-      "primary_topic_id": "T07",
-      "source_topic_name": "Культура, искусство, креативные практики",
-      "website_urls": [],
-      "social_urls": [],
-      "data_status": "confirmed"
-    },
-    {
       "org_id": "ORG_5904220489",
       "inn": 5904220489,
       "organization_name": "РЕГИОНАЛЬНАЯ ОБЩЕСТВЕННАЯ ОРГАНИЗАЦИЯ \"ФЕДЕРАЦИЯ СПОРТИВНОГО ТУРИЗМА И РАФТИНГА ПЕРМСКОГО КРАЯ\"",
@@ -1204,7 +1180,7 @@
       "site_url": "https://rusraftfed.ru/regionalnye-federacii-raftinga/permskij-kraj/; http://www.fst59.ru; https://fst59.vsite.pro/",
       "social_url": "https://vk.com/fst59",
       "tg_url": null,
-      "public_representatives": "Королев Андрей Юрьевич; Малегина Анна Сергеевна; Деменев Николай Павлович; Петрище Сергей Анатольевич",
+      "public_representatives": null,
       "topics_summary": "Спорт, физическая культура, ЗОЖ",
       "fund_count": 2,
       "asi_leader_mentions": 0,
@@ -1234,7 +1210,7 @@
       "site_url": "https://nors-r.ru/otryadi/permskiy-skautskiy-tsentr/; https://permscout.vsite.biz/",
       "social_url": "https://vk.com/club19335165",
       "tg_url": null,
-      "public_representatives": "Соломинина Светлана Александровна; Сидорова Ирина Витальевна",
+      "public_representatives": null,
       "topics_summary": "Молодёжь, студенчество, добровольчество",
       "fund_count": 2,
       "asi_leader_mentions": 0,
@@ -1404,7 +1380,7 @@
       "site_url": "https://aikido-perm.ru/",
       "social_url": "https://vk.com/aikido_dynasty",
       "tg_url": null,
-      "public_representatives": "Летошнев Владимир Вячеславович; Васильев Александр Александрович; Забиров Иршат Викторович; Лукин Роман Владимирович; Надежкин Олег Михайлович",
+      "public_representatives": null,
       "topics_summary": "Спорт, физическая культура, ЗОЖ",
       "fund_count": 2,
       "asi_leader_mentions": 1,
@@ -1545,7 +1521,7 @@
       "site_url": "https://tos-ivasportivnaya.ru/",
       "social_url": null,
       "tg_url": null,
-      "public_representatives": "Фетисова Галина Леонидовна; Кузнецова Инна Владимировна; Торбеев Дмитрий Иванович",
+      "public_representatives": null,
       "topics_summary": "Городская среда, ТОС, благоустройство",
       "fund_count": 3,
       "asi_leader_mentions": 0,
@@ -1730,7 +1706,7 @@
       "site_url": null,
       "social_url": "https://vk.com/dobronogovka",
       "tg_url": null,
-      "public_representatives": "Шустова Людмила Филипповна",
+      "public_representatives": null,
       "topics_summary": "Гражданские инициативы, НКО и местное развитие",
       "fund_count": 2,
       "asi_leader_mentions": null,
@@ -1756,7 +1732,7 @@
       "site_url": "https://xn--59-dlc5avq.xn--p1ai/",
       "social_url": "https://vk.com/ksvoperm",
       "tg_url": null,
-      "public_representatives": "Казанцева Евгения Викторовна; Рощина Екатерина Алексеевна",
+      "public_representatives": null,
       "topics_summary": "Патриотическое воспитание и историческая память",
       "fund_count": 3,
       "asi_leader_mentions": 1,
@@ -1784,7 +1760,7 @@
       "site_url": "https://www.xn--59-6kcm8becibz.xn--p1ai/",
       "social_url": "https://vk.com/nasmnogo59; https://vk.com/perm_semeynaya",
       "tg_url": null,
-      "public_representatives": "Ольга Пушкова; Виталия Юдина; Полина Старкова",
+      "public_representatives": null,
       "topics_summary": "Дети, семья, родительство",
       "fund_count": 4,
       "asi_leader_mentions": 1,
@@ -1943,7 +1919,7 @@
       "site_url": "https://semya59.ru/",
       "social_url": "https://vk.com/semya59ru",
       "tg_url": "https://t.me/semya59",
-      "public_representatives": "Галина Прорубникова; Анна Верещагина; Наталья Южанина; Варвара Паршакова; Наталья Фомина",
+      "public_representatives": "Галина Прорубникова",
       "topics_summary": "Дети, семья, родительство",
       "fund_count": 2,
       "asi_leader_mentions": 3,
@@ -2705,7 +2681,7 @@
       "site_url": "https://chudesami.ru/; https://dedmorozim.ru/agentstvo/",
       "social_url": "https://vk.com/bolshezhizniperm",
       "tg_url": "https://t.me/dedmorozim",
-      "public_representatives": "Евгения Ковина; Резеда Исламова; Лидия Тетерина; Татьяна Титова; Дмитрий Жебелев",
+      "public_representatives": "Дмитрий Жебелев",
       "topics_summary": "Социальная помощь, здоровье, реабилитация",
       "fund_count": 2,
       "asi_leader_mentions": 7,
@@ -2735,7 +2711,7 @@
       "site_url": "https://dedmorozim.ru/",
       "social_url": "https://vk.com/dedmorozim",
       "tg_url": "https://t.me/dedmorozim",
-      "public_representatives": "Дмитрий Жебелев; Татьяна Титова",
+      "public_representatives": "Дмитрий Жебелев",
       "topics_summary": "Инклюзия, инвалидность, ОВЗ",
       "fund_count": 2,
       "asi_leader_mentions": 7,
@@ -2820,7 +2796,7 @@
       "site_url": "https://grany-center.org/",
       "social_url": "https://vk.com/granyperm; https://t.me/centergrany",
       "tg_url": "https://t.me/centergrany",
-      "public_representatives": "Константин Сулимов; Ольга Шилова; Анна Фадеева; Денис Самойлов",
+      "public_representatives": "Константин Сулимов | Ольга Шилова | Анна Фадеева | Денис Самойлов",
       "topics_summary": "Гражданские инициативы, НКО и местное развитие",
       "fund_count": 3,
       "asi_leader_mentions": 28,
@@ -2840,8 +2816,8 @@
       "inn": 5902045055,
       "organization_name": "ПЕРМСКАЯ РЕГИОНАЛЬНАЯ ОБЩЕСТВЕННАЯ ОРГАНИЗАЦИЯ ВЕТЕРАНОВ (ПЕНСИОНЕРОВ) ВОЙНЫ, ТРУДА, ВООРУЖЕННЫХ СИЛ И ПРАВООХРАНИТЕЛЬНЫХ ОРГАНОВ",
       "organization_name_short": null,
-      "leader_name": null,
-      "leader_person_id": null,
+      "leader_name": "Максютенко Надежда Ивановна",
+      "leader_person_id": "PER_0003",
       "municipality_id": "MUN_PERM",
       "municipality_name": "Пермь",
       "org_legal_type": null,
@@ -2849,7 +2825,7 @@
       "site_url": "https://veteran.tilda.ws/",
       "social_url": "https://vk.com/public211154076",
       "tg_url": null,
-      "public_representatives": "Королёва Наталья Николаевна",
+      "public_representatives": null,
       "topics_summary": "Пожилые, ветераны, забота и память",
       "fund_count": 1,
       "asi_leader_mentions": null,
@@ -2964,7 +2940,7 @@
       "site_url": null,
       "social_url": "https://vk.com/public223008005",
       "tg_url": null,
-      "public_representatives": "Никулин Николай Георгиевич",
+      "public_representatives": null,
       "topics_summary": "Патриотическое воспитание и историческая память",
       "fund_count": 2,
       "asi_leader_mentions": null,
@@ -3018,7 +2994,7 @@
       "site_url": "https://xn--90afareschdvd1b0g.xn--p1ai/; http://фонд-еды.рф; https://matroskin-perm.ru/; http://feedtogether.ru",
       "social_url": "https://vk.com/zzzperm",
       "tg_url": null,
-      "public_representatives": "Дария Тютикова; Георгий Ситников; Екатерина Каменкова; Мария Филиппова; Марина Реснянская",
+      "public_representatives": "Георгий Ситников",
       "topics_summary": "Экология, животные, природоохранная деятельность",
       "fund_count": 3,
       "asi_leader_mentions": 0,
@@ -3155,7 +3131,7 @@
       "site_url": "https://homelessperm.ru/",
       "social_url": "https://vk.com/homelessperm",
       "tg_url": "https://t.me/homelessperm",
-      "public_representatives": "Сергей Жаврид; Павел Суслов; Никита Худяков; Илона Киселёва; Евгения Бояршинова",
+      "public_representatives": null,
       "topics_summary": "Социальная помощь, здоровье, реабилитация",
       "fund_count": 3,
       "asi_leader_mentions": 0,
@@ -3380,7 +3356,7 @@
       "site_url": "https://edprojects.ru/; https://iloveschool.help/",
       "social_url": "https://vk.com/iloveschoolhelp",
       "tg_url": null,
-      "public_representatives": "Елена Попова; Анна Иванова",
+      "public_representatives": null,
       "topics_summary": "Образование, просвещение, наставничество",
       "fund_count": 3,
       "asi_leader_mentions": 3,
@@ -3409,7 +3385,7 @@
       "site_url": "https://тмап.рф",
       "social_url": "https://vk.com/tvo_mas",
       "tg_url": null,
-      "public_representatives": "Чумаков Вячеслав Викторович; Шадрина Виктория Анатольевна",
+      "public_representatives": null,
       "topics_summary": "Культура, искусство, креативные практики",
       "fund_count": 2,
       "asi_leader_mentions": 0,
@@ -3466,7 +3442,7 @@
       "site_url": "http://molodexpert.ru/; https://молодежныйэксперт.рф/",
       "social_url": "https://vk.com/molodexpert",
       "tg_url": null,
-      "public_representatives": "Вдовина Дарья Михайловна; Мизёва Татьяна Ивановна",
+      "public_representatives": null,
       "topics_summary": "Молодёжь, студенчество, добровольчество",
       "fund_count": 2,
       "asi_leader_mentions": null,
@@ -3607,7 +3583,7 @@
       "site_url": "http://pobedaperm.ru",
       "social_url": null,
       "tg_url": null,
-      "public_representatives": "Фистин Иван Андреевич",
+      "public_representatives": null,
       "topics_summary": "Патриотическое воспитание и историческая память",
       "fund_count": 3,
       "asi_leader_mentions": null,
@@ -3633,7 +3609,7 @@
       "site_url": "https://cpgi59.ru/",
       "social_url": "https://vk.com/cpgi59",
       "tg_url": null,
-      "public_representatives": "Комкова Анна Викторовна",
+      "public_representatives": null,
       "topics_summary": "Гражданские инициативы, НКО и местное развитие",
       "fund_count": 2,
       "asi_leader_mentions": null,
@@ -3846,7 +3822,7 @@
       "site_url": "https://www.pkovoi.ru/",
       "social_url": null,
       "tg_url": "https://t.me/PermVOI",
-      "public_representatives": "Базуев Иван Евгеньевич",
+      "public_representatives": null,
       "topics_summary": "Инклюзия, инвалидность, ОВЗ",
       "fund_count": 3,
       "asi_leader_mentions": null,
@@ -3928,7 +3904,7 @@
       "site_url": "https://idea4city.ru/",
       "social_url": "https://vk.com/idea4city; https://www.youtube.com/@idea4city",
       "tg_url": null,
-      "public_representatives": "Дарья Юмасурина; Артём Первушин; Александр Поморцев",
+      "public_representatives": null,
       "topics_summary": "Гражданские инициативы, НКО и местное развитие",
       "fund_count": 2,
       "asi_leader_mentions": 6,
@@ -4093,7 +4069,7 @@
       "site_url": "https://shvmiskra.ru/",
       "social_url": null,
       "tg_url": null,
-      "public_representatives": "Федотова Анастасия; Гурова Анастасия; Кутукова Натали; Даша Пешехонова",
+      "public_representatives": null,
       "topics_summary": "Молодёжь, студенчество, добровольчество",
       "fund_count": 2,
       "asi_leader_mentions": 0,
@@ -4203,7 +4179,7 @@
       "site_url": "https://www.vospriatie.ru/; https://aspectus-perm.ru/",
       "social_url": "https://vk.com/vos_priatie",
       "tg_url": null,
-      "public_representatives": "Екатерина Лившиц; Анастасия Фирсова; Александр Красовский; Мира Плюснина; Милана Григорьева",
+      "public_representatives": "Екатерина Лившиц",
       "topics_summary": "Инклюзия, инвалидность, ОВЗ",
       "fund_count": 3,
       "asi_leader_mentions": 0,
@@ -4232,7 +4208,7 @@
       "site_url": "https://kes-basket.ru/",
       "social_url": "https://vk.com/kesbasket",
       "tg_url": "https://t.me/kesbasket",
-      "public_representatives": "Светлана Антипова; Дмитрий Самарин; Ольга Попова; Михаил Пермяков; Дарья Шайхумарданова",
+      "public_representatives": null,
       "topics_summary": "Спорт, физическая культура, ЗОЖ",
       "fund_count": 1,
       "asi_leader_mentions": 0,
@@ -4291,7 +4267,7 @@
       "site_url": "https://avtoretro59.ru/",
       "social_url": "https://vk.com/avtoretro59",
       "tg_url": "https://t.me/avtoretro59",
-      "public_representatives": "Анна Черепанова",
+      "public_representatives": null,
       "topics_summary": "Краеведение, наследие, туризм, локальная идентичность",
       "fund_count": 2,
       "asi_leader_mentions": 0,
@@ -4320,7 +4296,7 @@
       "site_url": "https://pravdavmeste.gosuslugi.ru/; https://atlas-nko.ru/card/1115900001469",
       "social_url": "https://vk.com/pravdavmeste",
       "tg_url": null,
-      "public_representatives": "Мария Копытова; Анна Гурьева; Марина Кокшарова",
+      "public_representatives": null,
       "topics_summary": "Гражданские инициативы, НКО и местное развитие",
       "fund_count": 3,
       "asi_leader_mentions": 3,
@@ -4404,7 +4380,7 @@
       "site_url": null,
       "social_url": "https://vk.com/public205843616",
       "tg_url": null,
-      "public_representatives": "Климова Ирина Евгеньевна",
+      "public_representatives": null,
       "topics_summary": "Инклюзия, инвалидность, ОВЗ",
       "fund_count": 1,
       "asi_leader_mentions": null,
@@ -14392,42 +14368,6 @@
       "project_goal_status": "provided"
     },
     {
-      "project_id": "PRJ_000628",
-      "source_project_id": null,
-      "org_id": "ORG_5933012035",
-      "project_title": "Частоостровский Бал-Вояж",
-      "fund": "ФГГ",
-      "year": 2021,
-      "contest": null,
-      "grant_amount": 601116.5,
-      "amount_available": true,
-      "amount_comment": null,
-      "topic_id": "T07",
-      "municipality_id": "MUN_CHASTYE",
-      "project_status": "winner",
-      "top_10_flag": "Топ 10",
-      "project_goal": "Популяризация этикета, нравственных, культурных и семейных ценностей России XVIII - XIX века, через организацию танцевального фестиваля \"Частоостровский бал Вояж» и зимний Бал-Маскарад , а также пропаганда классического танцевального искусства в Частинском муниципальном округе и за его пределами.",
-      "project_goal_status": "provided"
-    },
-    {
-      "project_id": "PRJ_000629",
-      "source_project_id": null,
-      "org_id": "ORG_5933012035",
-      "project_title": "Исторический бал в глубинке Урала",
-      "fund": "ФПГ",
-      "year": 2021,
-      "contest": null,
-      "grant_amount": 486305,
-      "amount_available": true,
-      "amount_comment": null,
-      "topic_id": "T07",
-      "municipality_id": "MUN_CHASTYE",
-      "project_status": "winner",
-      "top_10_flag": null,
-      "project_goal": "Популяризация этикета, нравственных, культурных и семейных ценностей России XIX века, через организацию танцевального фестиваля \"Исторический бал в глубинке Урала», а также пропаганда классического танцевального искусства в Частинском муниципальном округе.",
-      "project_goal_status": "provided"
-    },
-    {
       "project_id": "PRJ_000630",
       "source_project_id": null,
       "org_id": "ORG_5933012356",
@@ -16283,90 +16223,6 @@
       "data_status": "confirmed"
     },
     {
-      "person_id": "PER_0170",
-      "person_name": "Александр Красовский",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Руководитель столярного направления инклюзивной мастерской «Будетляне» ПГОО «Аспектус», отвечающий за создание доступных музейных экспонатов, музыкальных инструментов и арт-объектов. (Восприятие)",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5902709475"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T04",
-      "topic_ids": [
-        "T04"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T04"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_0232",
-      "person_name": "Александр Поморцев",
-      "municipality_id": "MUN_DOBRYANKA",
-      "person_summary": "Фандрайзер АНО «Агентство городских инициатив», участвующий в привлечении ресурсов для городских, экологических и благотворительных проектов Добрянки. (Добрянка)",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5914997669"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T13",
-      "topic_ids": [
-        "T13"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T13"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_WEB_8A855427BD",
-      "person_name": "Александрова Елена Витальевна",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Бизнес-тренер образовательного курса; публичный опыт подтверждён участием в проекте «Социальный контракт: Учимся вместе!» (2021).",
-      "public_activity_note": null,
-      "organization_ids": [],
-      "leader_organization_ids": [],
-      "role_ids": [
-        "ROLE_TRAINER"
-      ],
-      "primary_topic_id": "T03",
-      "topic_ids": [
-        "T03"
-      ],
-      "evidence_topic_ids": [
-        "T03"
-      ],
-      "affiliated_topic_ids": [],
-      "practice_ids": [],
-      "activity_count": 1,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 1,
-      "last_activity_year": 2021,
-      "has_confirmed_public_activity": true,
-      "data_status": "confirmed"
-    },
-    {
       "person_id": "PER_0196",
       "person_name": "Алексей Курносов",
       "municipality_id": "MUN_PERM",
@@ -16458,146 +16314,6 @@
       "data_status": "confirmed"
     },
     {
-      "person_id": "PER_0169",
-      "person_name": "Анастасия Фирсова",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Руководитель музейного направления ПГОО «Аспектус» и координатор проектов, развивает инклюзивные музейные практики и культурно-просветительские инициативы. (Восприятие)",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5902709475"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T04",
-      "topic_ids": [
-        "T04"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T04"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_0226",
-      "person_name": "Анна Верещагина",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Менеджер проектов организации «Территория семьи», участвующая в программах помощи родителям, детям и семьям, оказавшимся в трудной жизненной ситуации. (semya59.ru)",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5908072070"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T01",
-      "topic_ids": [
-        "T01"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T01"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_0191",
-      "person_name": "Анна Гурьева",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Специалист ПРОО «ПравДА вместе» и координатор молодёжного ресурсного центра «Компас добра», развивает профилактическое волонтёрство и наставничество для подростков и молодёжи. (storage.yandexcloud.net)",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5903994345"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T13",
-      "topic_ids": [
-        "T13"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T13"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_0153",
-      "person_name": "Анна Иванова",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Координатор и руководитель проектов АНО «Платформа образовательных проектов», занимающаяся образовательными, культурными и инклюзивными программами для детей, подростков и взрослых. (edprojects.ru)",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5902051740"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T06",
-      "topic_ids": [
-        "T06"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T06"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_0248",
-      "person_name": "Анна Николаевна Горнова",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Специалист и спикер проектов организации «Счастье жить», консультирующая семьи детей с инвалидностью и участвующая в просветительских мероприятиях по реабилитации и защите прав семей. (nesekretno.ru)",
-      "public_activity_note": "speaker; Серия поддерживающих вебинаров для семей с детьми-инвалидами и ОВЗ; 2022",
-      "organization_ids": [
-        "ORG_5906995266"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T04",
-      "topic_ids": [
-        "T04"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T04"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
       "person_id": "PER_0159",
       "person_name": "Анна Фадеева",
       "municipality_id": "MUN_PERM",
@@ -16632,90 +16348,6 @@
       "last_activity_year": 2025,
       "has_confirmed_public_activity": true,
       "data_status": "confirmed"
-    },
-    {
-      "person_id": "PER_0206",
-      "person_name": "Анна Черепанова",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Заместитель директора и соорганизатор Пермского автомобильного музея «Ретро-Гараж», занимающаяся развитием музея и популяризацией автомобильного и промышленного наследия. (newsko.ru)",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5906134362"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T08",
-      "topic_ids": [
-        "T08"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T08"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_PERM_NEW_B228D27BC8",
-      "person_name": "Арсений Подгородецких",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Спикер и руководитель соцмедиа-проектов медиагруппы «Магма»; публичный опыт — «Медиашкола НКО 2.0», четвертая встреча (2026).",
-      "public_activity_note": null,
-      "organization_ids": [],
-      "leader_organization_ids": [],
-      "role_ids": [
-        "ROLE_SPEAKER"
-      ],
-      "primary_topic_id": "T13",
-      "topic_ids": [
-        "T13"
-      ],
-      "evidence_topic_ids": [
-        "T13"
-      ],
-      "affiliated_topic_ids": [],
-      "practice_ids": [],
-      "activity_count": 1,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 1,
-      "last_activity_year": 2026,
-      "has_confirmed_public_activity": true,
-      "data_status": "confirmed"
-    },
-    {
-      "person_id": "PER_0231",
-      "person_name": "Артём Первушин",
-      "municipality_id": "MUN_DOBRYANKA",
-      "person_summary": "ИТ-специалист АНО «Агентство городских инициатив», отвечающий за цифровые решения и VR-компоненты городских и образовательных проектов Добрянки. (Агентство городских инициатив)",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5914997669"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T13",
-      "topic_ids": [
-        "T13"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T13"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
     },
     {
       "person_id": "PER_0043",
@@ -16780,34 +16412,6 @@
       "last_activity_year": null,
       "has_confirmed_public_activity": false,
       "data_status": "confirmed"
-    },
-    {
-      "person_id": "PER_0162",
-      "person_name": "Базуев Иван Евгеньевич",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Председатель Свердловской районной организации ВОИ и член правления краевой организации, участвующий в проектах по социальной адаптации, обучению и расширению возможностей людей с инвалидностью. (pkovoi.ru)",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5902703018"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T04",
-      "topic_ids": [
-        "T04"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T04"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
     },
     {
       "person_id": "PER_0051",
@@ -17196,34 +16800,6 @@
       "data_status": "confirmed"
     },
     {
-      "person_id": "PER_0228",
-      "person_name": "Варвара Паршакова",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Координатор организации «Территория семьи», участвующая в работе социального склада и оказании комплексной помощи семьям с детьми в кризисной ситуации.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5908072070"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T01",
-      "topic_ids": [
-        "T01"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T01"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
       "person_id": "PER_0125",
       "person_name": "Васенина Татьяна Владимировна",
       "municipality_id": "MUN_OSA",
@@ -17256,90 +16832,6 @@
       "data_status": "confirmed"
     },
     {
-      "person_id": "PER_0221",
-      "person_name": "Васильев Александр Александрович",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Тренер-инструктор спортивного клуба айкидо «Династия», проводящий занятия для детей и взрослых и участвующий в семейных и социально ориентированных спортивных программах.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5908071598"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T09",
-      "topic_ids": [
-        "T09"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T09"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_0180",
-      "person_name": "Вдовина Дарья Михайловна",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Заместитель директора АНО «Молодёжный эксперт», участвующая в разработке молодёжных проектов, образовательных форматов, методических материалов и организации мероприятий.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5903117369"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T02",
-      "topic_ids": [
-        "T02"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T02"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_0246",
-      "person_name": "Виктория Иващенко",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Старший юрист организации «Счастье жить», консультирующая семьи детей с инвалидностью и проводящая правовые вебинары о льготах, выплатах, реабилитации и защите прав.",
-      "public_activity_note": "speaker; Правовые вебинары «Счастье жить» для родителей детей с инвалидностью; 2022",
-      "organization_ids": [
-        "ORG_5906995266"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T04",
-      "topic_ids": [
-        "T04"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T04"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
       "person_id": "PER_0102",
       "person_name": "Винецкий Рудольф Валентинович",
       "municipality_id": "MUN_KRASNOKAMSK",
@@ -17370,34 +16862,6 @@
       "last_activity_year": null,
       "has_confirmed_public_activity": false,
       "data_status": "confirmed"
-    },
-    {
-      "person_id": "PER_0216",
-      "person_name": "Виталия Юдина",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Координатор организации «Насмного», участвующая в программах поддержки семьи, материнства, отцовства и детства, а также в семейных и образовательных проектах.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5907996583"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T01",
-      "topic_ids": [
-        "T01"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T01"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
     },
     {
       "person_id": "PER_0149",
@@ -17945,168 +17409,6 @@
       "data_status": "confirmed"
     },
     {
-      "person_id": "PER_0212",
-      "person_name": "Гурова Анастасия",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Преподаватель организации «Феникс», участвующая в подготовке вожатых и развитии методической базы детских и оздоровительных лагерей.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5906169950"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T02",
-      "topic_ids": [
-        "T02"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T02"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_0201",
-      "person_name": "Дария Тютикова",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Координатор и бывший директор по развитию фонда «Добрый мир», занимающаяся развитием организации, публичной отчётностью и благотворительными проектами помощи животным и людям.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5905999405"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T11",
-      "topic_ids": [
-        "T11"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T11"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_PERM_NEW_1283589490",
-      "person_name": "Дарья Лузина",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Офис-менеджер Фонда грантов губернатора Пермского края; организационно сопровождает региональные события инфраструктуры поддержки НКО.",
-      "public_activity_note": null,
-      "organization_ids": [],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": null,
-      "topic_ids": [],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_0179",
-      "person_name": "Дарья Шайхумарданова",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Директор по международным и массовым спортивным мероприятиям Школьной баскетбольной лиги «КЭС-БАСКЕТ», участвующая в организации крупных соревнований и развитии школьного баскетбола.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5903086093"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T09",
-      "topic_ids": [
-        "T09"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T09"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_0230",
-      "person_name": "Дарья Юмасурина",
-      "municipality_id": "MUN_DOBRYANKA",
-      "person_summary": "Менеджер проектов Агентства городских инициатив, организующая городские, экологические и волонтёрские проекты в Добрянке.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5914997669"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T13",
-      "topic_ids": [
-        "T13"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T13"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_0214",
-      "person_name": "Даша Пешехонова",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Контент-менеджер организации «Феникс» и редактор сообщества «Вожатник», обеспечивающая информационное сопровождение и популяризацию вожатского движения.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5906169950"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T02",
-      "topic_ids": [
-        "T02"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T02"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
       "person_id": "PER_0028",
       "person_name": "Дежин Юрий Евгеньевич",
       "municipality_id": "MUN_PERM",
@@ -18137,34 +17439,6 @@
       "last_activity_year": null,
       "has_confirmed_public_activity": false,
       "data_status": "confirmed"
-    },
-    {
-      "person_id": "PER_0199",
-      "person_name": "Деменев Николай Павлович",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Председатель маршрутно-квалификационной комиссии Федерации спортивного туризма и рафтинга Пермского края, занимающийся оценкой маршрутов и развитием безопасного спортивного туризма.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5904220489"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T09",
-      "topic_ids": [
-        "T09"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T09"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
     },
     {
       "person_id": "PER_0100",
@@ -18267,34 +17541,6 @@
       "last_activity_year": 2022,
       "has_confirmed_public_activity": true,
       "data_status": "confirmed"
-    },
-    {
-      "person_id": "PER_0176",
-      "person_name": "Дмитрий Самарин",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Генеральный директор Школьной баскетбольной лиги «КЭС-БАСКЕТ», руководящий развитием всероссийских соревнований и массового школьного спорта.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5903086093"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T09",
-      "topic_ids": [
-        "T09"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T09"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
     },
     {
       "person_id": "PER_0124",
@@ -18428,118 +17674,6 @@
       "data_status": "confirmed"
     },
     {
-      "person_id": "PER_0167",
-      "person_name": "Евгения Бояршинова",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Психолог «Территории передышки», оказывающая психологическую поддержку бездомным людям и участвующая в программах их социальной адаптации.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5902709394"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T03",
-      "topic_ids": [
-        "T03"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T03"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_0184",
-      "person_name": "Евгения Ковина",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Административный директор агентства «Дедморозим», обеспечивающая организационную работу программ медицинской, паллиативной и социальной помощи подопечным.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5903132529"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T03",
-      "topic_ids": [
-        "T03"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T03"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_0247",
-      "person_name": "Егор Крупин",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Юрист организации «Счастье жить», оказывающий правовую помощь семьям детей с инвалидностью и проводящий просветительские вебинары о льготах и социальных гарантиях.",
-      "public_activity_note": "speaker; Правовые вебинары «Счастье жить» для родителей детей с инвалидностью; 2022",
-      "organization_ids": [
-        "ORG_5906995266"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T04",
-      "topic_ids": [
-        "T04"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T04"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_0203",
-      "person_name": "Екатерина Каменкова",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Руководитель приюта «Матроскин» благотворительного фонда «Добрый мир», организующая помощь, лечение, содержание и устройство бездомных животных.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5905999405"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T11",
-      "topic_ids": [
-        "T11"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T11"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
       "person_id": "PER_0168",
       "person_name": "Екатерина Лившиц",
       "municipality_id": "MUN_PERM",
@@ -18572,84 +17706,6 @@
       "last_activity_year": 2025,
       "has_confirmed_public_activity": true,
       "data_status": "confirmed"
-    },
-    {
-      "person_id": "PER_PERM_NEW_1C76567784",
-      "person_name": "Екатерина Овчинникова",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Региональный директор слёта и директор МКУ; опыт организации — IX Международный слёт «Заповедная Парма» (2024).",
-      "public_activity_note": null,
-      "organization_ids": [],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": null,
-      "topic_ids": [],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_PERM_NEW_A228A6A2BC",
-      "person_name": "Екатерина Шафиева",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Главный редактор радиовещания медиагруппы «Магма»; обучает представителей НКО работе с брендом, репутацией и доверием благополучателей и партнёров.",
-      "public_activity_note": null,
-      "organization_ids": [],
-      "leader_organization_ids": [],
-      "role_ids": [
-        "ROLE_TRAINER"
-      ],
-      "primary_topic_id": "T13",
-      "topic_ids": [
-        "T13"
-      ],
-      "evidence_topic_ids": [
-        "T13"
-      ],
-      "affiliated_topic_ids": [],
-      "practice_ids": [],
-      "activity_count": 1,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 1,
-      "last_activity_year": 2026,
-      "has_confirmed_public_activity": true,
-      "data_status": "confirmed"
-    },
-    {
-      "person_id": "PER_0152",
-      "person_name": "Елена Попова",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Соучредитель и финансовый директор «Платформы образовательных проектов», отвечающая за финансовое сопровождение образовательных, культурных и цифровых инициатив организации.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5902051740"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T06",
-      "topic_ids": [
-        "T06"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T06"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
     },
     {
       "person_id": "PER_0010",
@@ -18695,36 +17751,6 @@
       "practice_count": 1,
       "confirmations_count": 4,
       "last_activity_year": 2025,
-      "has_confirmed_public_activity": true,
-      "data_status": "confirmed"
-    },
-    {
-      "person_id": "PER_NEW_IMPORTANCE_ERSHOVA_GV",
-      "person_name": "Ершова Галина Васильевна",
-      "municipality_id": "MUN_BEREZNIKI",
-      "person_summary": "Педагог дополнительного образования ДЮЦ «Каскад» и бессменный руководитель поискового отряда «Феникс». Развивает поисковую, архивную, музейную и просветительскую работу с подростками по сохранению исторической памяти.",
-      "public_activity_note": "Новая персона: найдена через importance, включена только после независимого подтверждения в издании ПГНИУ и персональных методических материалах.",
-      "organization_ids": [],
-      "leader_organization_ids": [],
-      "role_ids": [
-        "ROLE_AUTHOR"
-      ],
-      "primary_topic_id": "T10",
-      "topic_ids": [
-        "T10"
-      ],
-      "evidence_topic_ids": [
-        "T10"
-      ],
-      "affiliated_topic_ids": [],
-      "practice_ids": [
-        "PRACTICE_ERSHOVA_FENIX"
-      ],
-      "activity_count": 1,
-      "council_membership_count": 0,
-      "practice_count": 1,
-      "confirmations_count": 2,
-      "last_activity_year": 2023,
       "has_confirmed_public_activity": true,
       "data_status": "confirmed"
     },
@@ -18821,34 +17847,6 @@
       "last_activity_year": null,
       "has_confirmed_public_activity": false,
       "data_status": "confirmed"
-    },
-    {
-      "person_id": "PER_0222",
-      "person_name": "Забиров Иршат Викторович",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Наставник-инструктор клуба айкидо «Династия» и координатор социальных проектов, проводящий тренировки и программы по безопасности, инклюзивному спорту и развитию детей.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5908071598"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T09",
-      "topic_ids": [
-        "T09"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T09"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
     },
     {
       "person_id": "PER_0030",
@@ -19160,34 +18158,6 @@
       "data_status": "confirmed"
     },
     {
-      "person_id": "PER_0166",
-      "person_name": "Илона Киселёва",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Координатор проекта «Женщины в беде» организации «Территория передышки», сопровождающая женщин в ситуации бездомности и организующая для них кризисное жильё и социальную помощь.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5902709394"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T03",
-      "topic_ids": [
-        "T03"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T03"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
       "person_id": "PER_0001",
       "person_name": "Ильинская Зоя Васильевна",
       "municipality_id": "MUN_PERM",
@@ -19314,62 +18284,6 @@
       "last_activity_year": null,
       "has_confirmed_public_activity": false,
       "data_status": "confirmed"
-    },
-    {
-      "person_id": "PER_0161",
-      "person_name": "Кавыев Разим Мирзиевич",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Представитель Октябрьского мухтасибата Пермского муфтията, участвующий в религиозно-просветительских проектах по сохранению исламских традиций, духовных ценностей и воспитанию молодёжи.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5902702582"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T14",
-      "topic_ids": [
-        "T14"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T14"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_0155",
-      "person_name": "Казанцева Евгения Викторовна",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Координатор Комитета семей воинов Отечества Пермского края, сопровождающая семьи участников СВО и участвующая в проектах социальной, правовой и мемориально-просветительской поддержки.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5902067309"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T10",
-      "topic_ids": [
-        "T10"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T10"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
     },
     {
       "person_id": "PER_0026",
@@ -19537,34 +18451,6 @@
       "data_status": "confirmed"
     },
     {
-      "person_id": "PER_0183",
-      "person_name": "Климова Ирина Евгеньевна",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "В рабочей базе указана как публичный представитель фонда «Счастье здесь», связанный с проведением инклюзивных балов и социокультурных программ для людей с инвалидностью.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5903128040"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T04",
-      "topic_ids": [
-        "T04"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T04"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
       "person_id": "PER_0098",
       "person_name": "Князев Сергей Владимирович",
       "municipality_id": "MUN_BEREZNIKI",
@@ -19659,34 +18545,6 @@
       "last_activity_year": null,
       "has_confirmed_public_activity": false,
       "data_status": "confirmed"
-    },
-    {
-      "person_id": "PER_0189",
-      "person_name": "Комкова Анна Викторовна",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Представитель и автор проектов Центра поддержки гражданских инициатив в Пермском крае, участвующая в развитии добровольческих, общественных и спортивно-патриотических инициатив.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5903140664"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T13",
-      "topic_ids": [
-        "T13"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T13"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
     },
     {
       "person_id": "PER_0060",
@@ -19790,62 +18648,6 @@
       "last_activity_year": 2026,
       "has_confirmed_public_activity": true,
       "data_status": "confirmed"
-    },
-    {
-      "person_id": "PER_0197",
-      "person_name": "Королев Андрей Юрьевич",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Вице-президент Федерации спортивного туризма и рафтинга Пермского края, развивает спортивный и семейный туризм, экспедиционные практики и подготовку туристских маршрутов.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5904220489"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T09",
-      "topic_ids": [
-        "T09"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T09"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_0151",
-      "person_name": "Королёва Наталья Николаевна",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Руководитель ресурсного центра Пермской региональной организации ветеранов, участвующая в проектах наставничества, поддержки старшего поколения и сохранения памяти о военной и трудовой истории.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5902045055"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T05",
-      "topic_ids": [
-        "T05"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T05"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
     },
     {
       "person_id": "PER_0116",
@@ -19974,34 +18776,6 @@
       "last_activity_year": null,
       "has_confirmed_public_activity": false,
       "data_status": "confirmed"
-    },
-    {
-      "person_id": "PER_0208",
-      "person_name": "Кузнецова Инна Владимировна",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "В рабочей базе указана как публичный представитель ТОС «Ива спортивная», участвующая в семейных, спортивно-оздоровительных и соседских проектах микрорайона Ива.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5906159712"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T12",
-      "topic_ids": [
-        "T12"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T12"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
     },
     {
       "person_id": "PER_0121",
@@ -20136,62 +18910,6 @@
       "data_status": "confirmed"
     },
     {
-      "person_id": "PER_0213",
-      "person_name": "Кутукова Натали",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Преподаватель АНО «Феникс», участвующая в подготовке вожатых и развитии образовательных программ и методических материалов для детских оздоровительных лагерей.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5906169950"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T02",
-      "topic_ids": [
-        "T02"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T02"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_0220",
-      "person_name": "Летошнев Владимир Вячеславович",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Старший тренер-инструктор спортивного клуба айкидо «Династия», проводящий занятия для детей и участвующий в развитии клубных спортивных и социальных программ.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5908071598"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T09",
-      "topic_ids": [
-        "T09"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T09"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
       "person_id": "PER_0032",
       "person_name": "Ли Надежда Юрьевна",
       "municipality_id": "MUN_PERM",
@@ -20235,34 +18953,6 @@
       "last_activity_year": 2026,
       "has_confirmed_public_activity": true,
       "data_status": "confirmed"
-    },
-    {
-      "person_id": "PER_0186",
-      "person_name": "Лидия Тетерина",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Координатор Службы качества жизни фонда «Дедморозим», организующая комплексную медицинскую, психологическую, социально-правовую и реабилитационную поддержку подростков и молодых взрослых с тяжёлыми заболеваниями.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5903132529"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T03",
-      "topic_ids": [
-        "T03"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T03"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
     },
     {
       "person_id": "PER_0087",
@@ -20327,34 +19017,6 @@
       "last_activity_year": null,
       "has_confirmed_public_activity": false,
       "data_status": "confirmed"
-    },
-    {
-      "person_id": "PER_0223",
-      "person_name": "Лукин Роман Владимирович",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Тренер-инструктор клуба айкидо «Династия», проводящий занятия с детьми и подростками и участвующий в спортивных и социально ориентированных проектах клуба.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5908071598"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T09",
-      "topic_ids": [
-        "T09"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T09"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
     },
     {
       "person_id": "PER_0241",
@@ -20431,23 +19093,27 @@
       "data_status": "confirmed"
     },
     {
-      "person_id": "PER_0198",
-      "person_name": "Малегина Анна Сергеевна",
+      "person_id": "PER_0003",
+      "person_name": "Максютенко Надежда Ивановна",
       "municipality_id": "MUN_PERM",
-      "person_summary": "Главный тренер сборной Пермского края по спортивному туризму, участвующая в развитии спортивного и семейного туризма, подготовке спортсменов и проведении соревнований.",
+      "person_summary": "Председатель Пермской региональной организации ветеранов, развивает поддержку старшего поколения, наставничество и проекты по сохранению военной и трудовой памяти.",
       "public_activity_note": null,
       "organization_ids": [
-        "ORG_5904220489"
+        "ORG_5902045055"
       ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T09",
+      "leader_organization_ids": [
+        "ORG_5902045055"
+      ],
+      "role_ids": [
+        "ROLE_ORG_LEADER"
+      ],
+      "primary_topic_id": "T05",
       "topic_ids": [
-        "T09"
+        "T05"
       ],
       "evidence_topic_ids": [],
       "affiliated_topic_ids": [
-        "T09"
+        "T05"
       ],
       "practice_ids": [],
       "activity_count": 0,
@@ -20456,7 +19122,7 @@
       "confirmations_count": 0,
       "last_activity_year": null,
       "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
+      "data_status": "confirmed"
     },
     {
       "person_id": "PER_0058",
@@ -20489,118 +19155,6 @@
       "last_activity_year": null,
       "has_confirmed_public_activity": false,
       "data_status": "confirmed"
-    },
-    {
-      "person_id": "PER_0192",
-      "person_name": "Марина Кокшарова",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Заместитель руководителя организации «ПравДА вместе» и координатор краевого профилактического наставничества, сопровождающая муниципальные команды и программы помощи подросткам группы риска.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5903994345"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T13",
-      "topic_ids": [
-        "T13"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T13"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_0205",
-      "person_name": "Марина Реснянская",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Ассистент ветеринарного врача приюта «Матроскин» фонда «Добрый мир», участвующая в лечении, уходе и реабилитации бездомных кошек.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5905999405"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T11",
-      "topic_ids": [
-        "T11"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T11"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_0190",
-      "person_name": "Мария Копытова",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Заместитель руководителя ПРОО «ПравДА вместе» и эксперт ресурсного центра, развивает профилактическое наставничество, добровольческие программы и поддержку детей и подростков группы риска.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5903994345"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T13",
-      "topic_ids": [
-        "T13"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T13"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_0204",
-      "person_name": "Мария Филиппова",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Ветеринарный врач приюта «Матроскин» фонда «Добрый мир», отвечающая за лечение и ветеринарное сопровождение бездомных животных.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5905999405"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T11",
-      "topic_ids": [
-        "T11"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T11"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
     },
     {
       "person_id": "PER_0118",
@@ -20729,118 +19283,6 @@
       "last_activity_year": null,
       "has_confirmed_public_activity": false,
       "data_status": "confirmed"
-    },
-    {
-      "person_id": "PER_0182",
-      "person_name": "Мизёва Татьяна Ивановна",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "В рабочей базе указана как представитель АНО «Молодёжный эксперт», участвующая в проектах по критическому мышлению, молодёжным форматам и экологическим инициативам; независимое подтверждение её актуальной роли не найдено.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5903117369"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T02",
-      "topic_ids": [
-        "T02"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T02"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_0172",
-      "person_name": "Милана Григорьева",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Координатор по социальной работе и методист инклюзивного проекта «ВОСприятие» организации «Аспектус», сопровождающая музейные, театральные и арт-медиационные программы.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5902709475"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T04",
-      "topic_ids": [
-        "T04"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T04"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_0171",
-      "person_name": "Мира Плюснина",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Педагог и модератор инклюзивных программ организации «Аспектус», развивает арт-медиацию, музыкотерапию и творческие мастерские для людей с инвалидностью.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5902709475"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T04",
-      "topic_ids": [
-        "T04"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T04"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_0178",
-      "person_name": "Михаил Пермяков",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Директор по региональному развитию Школьной баскетбольной лиги «КЭС-БАСКЕТ», координирующий работу регионов и развитие массового школьного баскетбола.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5903086093"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T09",
-      "topic_ids": [
-        "T09"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T09"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
     },
     {
       "person_id": "PER_0074",
@@ -20980,62 +19422,6 @@
       "data_status": "confirmed"
     },
     {
-      "person_id": "PER_0224",
-      "person_name": "Надежкин Олег Михайлович",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Наставник-инструктор и член правления клуба айкидо «Династия», проводящий занятия для детей и участвующий в социальных проектах клуба.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5908071598"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T09",
-      "topic_ids": [
-        "T09"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T09"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_0229",
-      "person_name": "Наталья Фомина",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "PR-специалист организации «Территория семьи», отвечающая за информационное сопровождение программ помощи родителям и детям в кризисных ситуациях.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5908072070"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T01",
-      "topic_ids": [
-        "T01"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T01"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
       "person_id": "PER_0242",
       "person_name": "Наталья Шетцель",
       "municipality_id": "MUN_PERM",
@@ -21068,34 +19454,6 @@
       "data_status": "confirmed"
     },
     {
-      "person_id": "PER_0227",
-      "person_name": "Наталья Южанина",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Администратор и куратор швейного коворкинга «Территории семьи», обеспечивающая работу мастерской в рамках комплексной поддержки семей с детьми, оказавшихся в кризисной ситуации.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5908072070"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T01",
-      "topic_ids": [
-        "T01"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T01"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
       "person_id": "PER_0133",
       "person_name": "Некрасова Динара Витальевна",
       "municipality_id": "MUN_PERM",
@@ -21126,62 +19484,6 @@
       "last_activity_year": null,
       "has_confirmed_public_activity": false,
       "data_status": "confirmed"
-    },
-    {
-      "person_id": "PER_0165",
-      "person_name": "Никита Худяков",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Специалист по социальной работе «Территории передышки», сопровождающий бездомных людей и людей в трудной жизненной ситуации в программах социальной помощи.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5902709394"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T03",
-      "topic_ids": [
-        "T03"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T03"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_0238",
-      "person_name": "Никулин Николай Георгиевич",
-      "municipality_id": "MUN_KUDYMKAR",
-      "person_summary": "Представитель Центра гражданского и патриотического воспитания детей и молодёжи, участвующий в проведении стрелковых турниров и проектов по сохранению памяти о ветеранах.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5981011095"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T10",
-      "topic_ids": [
-        "T10"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T10"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
     },
     {
       "person_id": "PER_0017",
@@ -21251,62 +19553,6 @@
       "last_activity_year": null,
       "has_confirmed_public_activity": false,
       "data_status": "confirmed"
-    },
-    {
-      "person_id": "PER_0177",
-      "person_name": "Ольга Попова",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Финансовый директор Школьной баскетбольной лиги «КЭС-БАСКЕТ», отвечающая за финансовое сопровождение всероссийских соревнований и программ развития школьного баскетбола.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5903086093"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T09",
-      "topic_ids": [
-        "T09"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T09"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_0215",
-      "person_name": "Ольга Пушкова",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Проектный менеджер организации «НАСМНОГО», развивает программы поддержки семей, родителей и детей, семейные клубы и практические мастерские.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5907996583"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T01",
-      "topic_ids": [
-        "T01"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T01"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
     },
     {
       "person_id": "PER_0158",
@@ -21505,62 +19751,6 @@
       "data_status": "confirmed"
     },
     {
-      "person_id": "PER_PERM_NEW_07655ED0FB",
-      "person_name": "Павел Власов",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Спикер и дизайнер медиагруппы «Магма»; публичный опыт — «Медиашкола НКО 2.0», четвертая встреча (2026).",
-      "public_activity_note": null,
-      "organization_ids": [],
-      "leader_organization_ids": [],
-      "role_ids": [
-        "ROLE_SPEAKER"
-      ],
-      "primary_topic_id": "T13",
-      "topic_ids": [
-        "T13"
-      ],
-      "evidence_topic_ids": [
-        "T13"
-      ],
-      "affiliated_topic_ids": [],
-      "practice_ids": [],
-      "activity_count": 1,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 1,
-      "last_activity_year": 2026,
-      "has_confirmed_public_activity": true,
-      "data_status": "confirmed"
-    },
-    {
-      "person_id": "PER_0164",
-      "person_name": "Павел Суслов",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Специалист по социальной работе «Территории передышки», сопровождающий бездомных людей в дневном центре и программах восстановления самостоятельной жизни.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5902709394"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T03",
-      "topic_ids": [
-        "T03"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T03"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
       "person_id": "PER_0005",
       "person_name": "Павлов Алексей Константинович",
       "municipality_id": "MUN_PERM",
@@ -21662,34 +19852,6 @@
       "last_activity_year": 2025,
       "has_confirmed_public_activity": true,
       "data_status": "confirmed"
-    },
-    {
-      "person_id": "PER_0200",
-      "person_name": "Петрище Сергей Анатольевич",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Председатель коллегии судей Федерации спортивного туризма и рафтинга Пермского края, участвующий в развитии соревнований, судейства и семейного спортивного туризма.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5904220489"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T09",
-      "topic_ids": [
-        "T09"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T09"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
     },
     {
       "person_id": "PER_0029",
@@ -21882,34 +20044,6 @@
       "last_activity_year": null,
       "has_confirmed_public_activity": false,
       "data_status": "confirmed"
-    },
-    {
-      "person_id": "PER_0217",
-      "person_name": "Полина Старкова",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Координатор мероприятий организации «НАСМНОГО», организующая семейные праздники, образовательные встречи и практические мастерские для родителей и детей.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5907996583"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T01",
-      "topic_ids": [
-        "T01"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T01"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
     },
     {
       "person_id": "PER_0035",
@@ -22140,34 +20274,6 @@
       "data_status": "confirmed"
     },
     {
-      "person_id": "PER_0185",
-      "person_name": "Резеда Исламова",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Заведующая отделением выездной паллиативной помощи детям агентства «Дедморозим», организующая медицинскую поддержку на дому для детей с тяжёлыми заболеваниями и их семей.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5903132529"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T03",
-      "topic_ids": [
-        "T03"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T03"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
       "person_id": "PER_0120",
       "person_name": "Рожнёва Инга Владимировна",
       "municipality_id": "MUN_PERM",
@@ -22236,34 +20342,6 @@
       "last_activity_year": 2022,
       "has_confirmed_public_activity": true,
       "data_status": "confirmed"
-    },
-    {
-      "person_id": "PER_0156",
-      "person_name": "Рощина Екатерина Алексеевна",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Соучредитель и представитель Комитета семей воинов Отечества Пермского края, участвующая в организации социальной, правовой и досуговой поддержки военнослужащих и их семей.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5902067309"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T10",
-      "topic_ids": [
-        "T10"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T10"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
     },
     {
       "person_id": "PER_0007",
@@ -22372,34 +20450,6 @@
       "data_status": "confirmed"
     },
     {
-      "person_id": "PER_0175",
-      "person_name": "Светлана Антипова",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Председатель правления Школьной баскетбольной лиги «КЭС-БАСКЕТ», развивает школьный баскетбол и проводящая спортивные встречи и мастер-классы для детей.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5903086093"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T09",
-      "topic_ids": [
-        "T09"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T09"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
       "person_id": "PER_0101",
       "person_name": "Свистунов Иван Дмитриевич",
       "municipality_id": "MUN_DOBRYANKA",
@@ -22472,34 +20522,6 @@
       "data_status": "confirmed"
     },
     {
-      "person_id": "PER_0163",
-      "person_name": "Сергей Жаврид",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Исполнительный директор «Территории передышки», развивает дневной центр, мобильную помощь и программы сопровождаемого проживания для бездомных людей и людей в беде.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5902709394"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T03",
-      "topic_ids": [
-        "T03"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T03"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
       "person_id": "PER_PERM_ADD_248DF08859",
       "person_name": "Сергей Максимов",
       "municipality_id": "MUN_PERM",
@@ -22532,34 +20554,6 @@
       "last_activity_year": 2026,
       "has_confirmed_public_activity": true,
       "data_status": "confirmed"
-    },
-    {
-      "person_id": "PER_0219",
-      "person_name": "Сидорова Ирина Витальевна",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Скаутмастер Пермского скаутского центра, участвующая в детских экспедиционных, судостроительных и военно-патриотических программах.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5908039435"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T02",
-      "topic_ids": [
-        "T02"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T02"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
     },
     {
       "person_id": "PER_0082",
@@ -22697,34 +20691,6 @@
       "data_status": "confirmed"
     },
     {
-      "person_id": "PER_0218",
-      "person_name": "Соломинина Светлана Александровна",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Скаутмастер и бывший председатель совета Пермского скаутского центра, участвующая в организации патриотических игр, походных и детских образовательных программ.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5908039435"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T02",
-      "topic_ids": [
-        "T02"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T02"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
       "person_id": "PER_0081",
       "person_name": "Сорокин Борис Сергеевич",
       "municipality_id": "MUN_PERM",
@@ -22789,37 +20755,6 @@
       "data_status": "confirmed"
     },
     {
-      "person_id": "PER_0187",
-      "person_name": "Татьяна Титова",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Координатор по работе со СМИ фонда «Дедморозим», отвечающая за публичное освещение программ помощи детям и молодым взрослым с тяжёлыми заболеваниями и их семьям.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5903132529",
-        "ORG_5903994507"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T03",
-      "topic_ids": [
-        "T03",
-        "T04"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T03",
-        "T04"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
       "person_id": "PER_0090",
       "person_name": "Томасова Ирина Юрьевна",
       "municipality_id": "MUN_PERM",
@@ -22852,34 +20787,6 @@
       "data_status": "confirmed"
     },
     {
-      "person_id": "PER_0210",
-      "person_name": "Торбеев Дмитрий Иванович",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Представитель ТОС «Ива спортивная», участвующий в развитии спортивно-оздоровительных, семейных и соседских инициатив микрорайона.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5906159712"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T12",
-      "topic_ids": [
-        "T12"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T12"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
       "person_id": "PER_0243",
       "person_name": "Трофимова Евгения Викторовна",
       "municipality_id": "MUN_PERM_DISTRICT",
@@ -22910,62 +20817,6 @@
       "last_activity_year": null,
       "has_confirmed_public_activity": true,
       "data_status": "confirmed"
-    },
-    {
-      "person_id": "PER_0211",
-      "person_name": "Федотова Анастасия",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Руководитель Школы вожатского мастерства «Искра» организации «Феникс», занимающаяся подготовкой вожатых и развитием методической базы детских лагерей.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5906169950"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T02",
-      "topic_ids": [
-        "T02"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T02"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
-      "person_id": "PER_0207",
-      "person_name": "Фетисова Галина Леонидовна",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Представитель ТОС «Ива спортивная», участвующая в семейных, спортивных и общественных проектах для жителей микрорайона.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5906159712"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T12",
-      "topic_ids": [
-        "T12"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T12"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
     },
     {
       "person_id": "PER_0053",
@@ -23030,34 +20881,6 @@
       "last_activity_year": null,
       "has_confirmed_public_activity": false,
       "data_status": "confirmed"
-    },
-    {
-      "person_id": "PER_0154",
-      "person_name": "Фистин Иван Андреевич",
-      "municipality_id": "MUN_PERM",
-      "person_summary": "Представитель Центра патриотического воспитания «Победа», участвующий в историко-просветительских, мемориальных и молодёжных патриотических проектах.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5902061868"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T10",
-      "topic_ids": [
-        "T10"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T10"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
     },
     {
       "person_id": "PER_0025",
@@ -23200,34 +21023,6 @@
       "data_status": "confirmed"
     },
     {
-      "person_id": "PER_0234",
-      "person_name": "Чумаков Вячеслав Викторович",
-      "municipality_id": "MUN_PERM_DISTRICT",
-      "person_summary": "Соучредитель Творческой мастерской Артёма Палкина, участвующий в развитии театральных и культурно-образовательных проектов для детей и семей.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5948071844"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T07",
-      "topic_ids": [
-        "T07"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T07"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
       "person_id": "PER_0065",
       "person_name": "Чупин Дмитрий Валерьевич",
       "municipality_id": "MUN_PERM",
@@ -23292,34 +21087,6 @@
       "data_status": "confirmed"
     },
     {
-      "person_id": "PER_0235",
-      "person_name": "Шадрина Виктория Анатольевна",
-      "municipality_id": "MUN_PERM_DISTRICT",
-      "person_summary": "Соучредитель и директор проектного офиса Творческой мастерской Артёма Палкина, координирующая партнёрства и портфель культурно-образовательных проектов организации.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5948071844"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T07",
-      "topic_ids": [
-        "T07"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T07"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
-    },
-    {
       "person_id": "PER_0031",
       "person_name": "Шергина Светлана Александровна",
       "municipality_id": "MUN_PERM",
@@ -23355,34 +21122,6 @@
       "last_activity_year": 2024,
       "has_confirmed_public_activity": true,
       "data_status": "confirmed"
-    },
-    {
-      "person_id": "PER_0236",
-      "person_name": "Шустова Людмила Филипповна",
-      "municipality_id": "MUN_CHASTYE",
-      "person_summary": "Волонтёр центра «Залог успеха» и Добро.Центра в Ножовке, участвующая в развитии местных инициатив, добровольчества и проектов сельского сообщества.",
-      "public_activity_note": null,
-      "organization_ids": [
-        "ORG_5981010944"
-      ],
-      "leader_organization_ids": [],
-      "role_ids": [],
-      "primary_topic_id": "T13",
-      "topic_ids": [
-        "T13"
-      ],
-      "evidence_topic_ids": [],
-      "affiliated_topic_ids": [
-        "T13"
-      ],
-      "practice_ids": [],
-      "activity_count": 0,
-      "council_membership_count": 0,
-      "practice_count": 0,
-      "confirmations_count": 0,
-      "last_activity_year": null,
-      "has_confirmed_public_activity": false,
-      "data_status": "directory_only"
     },
     {
       "person_id": "PER_0111",
@@ -23455,90 +21194,6 @@
       "evidence_url": null
     },
     {
-      "link_id": "POL_0004",
-      "person_id": "PER_0170",
-      "org_id": "ORG_5902709475",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0005",
-      "person_id": "PER_0232",
-      "org_id": "ORG_5914997669",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0006",
-      "person_id": "PER_0169",
-      "org_id": "ORG_5902709475",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0007",
-      "person_id": "PER_0226",
-      "org_id": "ORG_5908072070",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0008",
-      "person_id": "PER_0191",
-      "org_id": "ORG_5903994345",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0009",
-      "person_id": "PER_0153",
-      "org_id": "ORG_5902051740",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0010",
-      "person_id": "PER_0248",
-      "org_id": "ORG_5906995266",
-      "relation_type": "speaker",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
       "link_id": "POL_0011",
       "person_id": "PER_0159",
       "org_id": "ORG_5902212468",
@@ -23555,30 +21210,6 @@
       "person_id": "PER_0159",
       "org_id": "ORG_5902709394",
       "relation_type": "award_winner",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0013",
-      "person_id": "PER_0206",
-      "org_id": "ORG_5906134362",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0014",
-      "person_id": "PER_0231",
-      "org_id": "ORG_5914997669",
-      "relation_type": "публичный представитель",
       "is_leader": false,
       "start_year": null,
       "end_year": null,
@@ -23604,18 +21235,6 @@
       "org_id": "ORG_5902052729",
       "relation_type": "руководитель",
       "is_leader": true,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0017",
-      "person_id": "PER_0162",
-      "org_id": "ORG_5902703018",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
       "start_year": null,
       "end_year": null,
       "period_status": "not_in_source",
@@ -23779,18 +21398,6 @@
       "evidence_url": null
     },
     {
-      "link_id": "POL_0031",
-      "person_id": "PER_0228",
-      "org_id": "ORG_5908072070",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
       "link_id": "POL_0032",
       "person_id": "PER_0125",
       "org_id": "ORG_5944206297",
@@ -23803,59 +21410,11 @@
       "evidence_url": null
     },
     {
-      "link_id": "POL_0033",
-      "person_id": "PER_0221",
-      "org_id": "ORG_5908071598",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0034",
-      "person_id": "PER_0180",
-      "org_id": "ORG_5903117369",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0035",
-      "person_id": "PER_0246",
-      "org_id": "ORG_5906995266",
-      "relation_type": "speaker",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
       "link_id": "POL_0036",
       "person_id": "PER_0102",
       "org_id": "ORG_5916024023",
       "relation_type": "руководитель",
       "is_leader": true,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0037",
-      "person_id": "PER_0216",
-      "org_id": "ORG_5907996583",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
       "start_year": null,
       "end_year": null,
       "period_status": "not_in_source",
@@ -24055,83 +21614,11 @@
       "evidence_url": null
     },
     {
-      "link_id": "POL_0054",
-      "person_id": "PER_0212",
-      "org_id": "ORG_5906169950",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0055",
-      "person_id": "PER_0201",
-      "org_id": "ORG_5905999405",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0056",
-      "person_id": "PER_0179",
-      "org_id": "ORG_5903086093",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0057",
-      "person_id": "PER_0230",
-      "org_id": "ORG_5914997669",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0058",
-      "person_id": "PER_0214",
-      "org_id": "ORG_5906169950",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
       "link_id": "POL_0059",
       "person_id": "PER_0028",
       "org_id": "ORG_5903098081",
       "relation_type": "руководитель",
       "is_leader": true,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0060",
-      "person_id": "PER_0199",
-      "org_id": "ORG_5904220489",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
       "start_year": null,
       "end_year": null,
       "period_status": "not_in_source",
@@ -24179,18 +21666,6 @@
       "person_id": "PER_0188",
       "org_id": "ORG_5903994507",
       "relation_type": "сооснователь / публичный представитель практики",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0065",
-      "person_id": "PER_0176",
-      "org_id": "ORG_5903086093",
-      "relation_type": "публичный представитель",
       "is_leader": false,
       "start_year": null,
       "end_year": null,
@@ -24247,70 +21722,10 @@
       "evidence_url": null
     },
     {
-      "link_id": "POL_0070",
-      "person_id": "PER_0167",
-      "org_id": "ORG_5902709394",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0071",
-      "person_id": "PER_0184",
-      "org_id": "ORG_5903132529",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0072",
-      "person_id": "PER_0247",
-      "org_id": "ORG_5906995266",
-      "relation_type": "speaker",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0073",
-      "person_id": "PER_0203",
-      "org_id": "ORG_5905999405",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
       "link_id": "POL_0074",
       "person_id": "PER_0168",
       "org_id": "ORG_5902709475",
       "relation_type": "руководитель практики / публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0075",
-      "person_id": "PER_0152",
-      "org_id": "ORG_5902051740",
-      "relation_type": "публичный представитель",
       "is_leader": false,
       "start_year": null,
       "end_year": null,
@@ -24360,18 +21775,6 @@
       "org_id": "ORG_5920023696",
       "relation_type": "руководитель",
       "is_leader": true,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0080",
-      "person_id": "PER_0222",
-      "org_id": "ORG_5908071598",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
       "start_year": null,
       "end_year": null,
       "period_status": "not_in_source",
@@ -24499,18 +21902,6 @@
       "evidence_url": null
     },
     {
-      "link_id": "POL_0091",
-      "person_id": "PER_0166",
-      "org_id": "ORG_5902709394",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
       "link_id": "POL_0092",
       "person_id": "PER_0001",
       "org_id": "ORG_5902042209",
@@ -24552,30 +21943,6 @@
       "org_id": "ORG_5948995420",
       "relation_type": "руководитель",
       "is_leader": true,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0096",
-      "person_id": "PER_0161",
-      "org_id": "ORG_5902702582",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0097",
-      "person_id": "PER_0155",
-      "org_id": "ORG_5902067309",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
       "start_year": null,
       "end_year": null,
       "period_status": "not_in_source",
@@ -24643,18 +22010,6 @@
       "evidence_url": null
     },
     {
-      "link_id": "POL_0103",
-      "person_id": "PER_0183",
-      "org_id": "ORG_5903128040",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
       "link_id": "POL_0104",
       "person_id": "PER_0098",
       "org_id": "ORG_5911081980",
@@ -24691,18 +22046,6 @@
       "evidence_url": null
     },
     {
-      "link_id": "POL_0107",
-      "person_id": "PER_0189",
-      "org_id": "ORG_5903140664",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
       "link_id": "POL_0108",
       "person_id": "PER_0060",
       "org_id": "ORG_5905019303",
@@ -24732,30 +22075,6 @@
       "org_id": "ORG_5981006521",
       "relation_type": "руководитель",
       "is_leader": true,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0111",
-      "person_id": "PER_0197",
-      "org_id": "ORG_5904220489",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0112",
-      "person_id": "PER_0151",
-      "org_id": "ORG_5902045055",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
       "start_year": null,
       "end_year": null,
       "period_status": "not_in_source",
@@ -24811,18 +22130,6 @@
       "evidence_url": null
     },
     {
-      "link_id": "POL_0117",
-      "person_id": "PER_0208",
-      "org_id": "ORG_5906159712",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
       "link_id": "POL_0118",
       "person_id": "PER_0121",
       "org_id": "ORG_5933007490",
@@ -24871,30 +22178,6 @@
       "evidence_url": null
     },
     {
-      "link_id": "POL_0122",
-      "person_id": "PER_0213",
-      "org_id": "ORG_5906169950",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0123",
-      "person_id": "PER_0220",
-      "org_id": "ORG_5908071598",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
       "link_id": "POL_0124",
       "person_id": "PER_0032",
       "org_id": "ORG_5903132529",
@@ -24912,18 +22195,6 @@
       "org_id": "ORG_5903994507",
       "relation_type": "руководитель",
       "is_leader": true,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0126",
-      "person_id": "PER_0186",
-      "org_id": "ORG_5903132529",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
       "start_year": null,
       "end_year": null,
       "period_status": "not_in_source",
@@ -24955,18 +22226,6 @@
       "evidence_url": null
     },
     {
-      "link_id": "POL_0129",
-      "person_id": "PER_0223",
-      "org_id": "ORG_5908071598",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
       "link_id": "POL_0130",
       "person_id": "PER_0241",
       "org_id": "ORG_5902212468",
@@ -24991,71 +22250,11 @@
       "evidence_url": null
     },
     {
-      "link_id": "POL_0132",
-      "person_id": "PER_0198",
-      "org_id": "ORG_5904220489",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
       "link_id": "POL_0133",
       "person_id": "PER_0058",
       "org_id": "ORG_5904988577",
       "relation_type": "руководитель",
       "is_leader": true,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0134",
-      "person_id": "PER_0192",
-      "org_id": "ORG_5903994345",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0135",
-      "person_id": "PER_0205",
-      "org_id": "ORG_5905999405",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0136",
-      "person_id": "PER_0190",
-      "org_id": "ORG_5903994345",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0137",
-      "person_id": "PER_0204",
-      "org_id": "ORG_5905999405",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
       "start_year": null,
       "end_year": null,
       "period_status": "not_in_source",
@@ -25111,54 +22310,6 @@
       "evidence_url": null
     },
     {
-      "link_id": "POL_0142",
-      "person_id": "PER_0182",
-      "org_id": "ORG_5903117369",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0143",
-      "person_id": "PER_0172",
-      "org_id": "ORG_5902709475",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0144",
-      "person_id": "PER_0171",
-      "org_id": "ORG_5902709475",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0145",
-      "person_id": "PER_0178",
-      "org_id": "ORG_5903086093",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
       "link_id": "POL_0146",
       "person_id": "PER_0074",
       "org_id": "ORG_5905999405",
@@ -25207,46 +22358,10 @@
       "evidence_url": null
     },
     {
-      "link_id": "POL_0150",
-      "person_id": "PER_0224",
-      "org_id": "ORG_5908071598",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0151",
-      "person_id": "PER_0229",
-      "org_id": "ORG_5908072070",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
       "link_id": "POL_0152",
       "person_id": "PER_0242",
       "org_id": "ORG_5902212468",
       "relation_type": "organizer",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0153",
-      "person_id": "PER_0227",
-      "org_id": "ORG_5908072070",
-      "relation_type": "публичный представитель",
       "is_leader": false,
       "start_year": null,
       "end_year": null,
@@ -25260,30 +22375,6 @@
       "org_id": "ORG_5948070520",
       "relation_type": "руководитель",
       "is_leader": true,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0155",
-      "person_id": "PER_0165",
-      "org_id": "ORG_5902709394",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0156",
-      "person_id": "PER_0238",
-      "org_id": "ORG_5981011095",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
       "start_year": null,
       "end_year": null,
       "period_status": "not_in_source",
@@ -25308,30 +22399,6 @@
       "org_id": "ORG_5948052915",
       "relation_type": "руководитель",
       "is_leader": true,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0159",
-      "person_id": "PER_0177",
-      "org_id": "ORG_5903086093",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0160",
-      "person_id": "PER_0215",
-      "org_id": "ORG_5907996583",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
       "start_year": null,
       "end_year": null,
       "period_status": "not_in_source",
@@ -25423,18 +22490,6 @@
       "evidence_url": null
     },
     {
-      "link_id": "POL_0168",
-      "person_id": "PER_0164",
-      "org_id": "ORG_5902709394",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
       "link_id": "POL_0169",
       "person_id": "PER_0005",
       "org_id": "ORG_5902051740",
@@ -25464,18 +22519,6 @@
       "org_id": "ORG_5903016378",
       "relation_type": "руководитель",
       "is_leader": true,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0172",
-      "person_id": "PER_0200",
-      "org_id": "ORG_5904220489",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
       "start_year": null,
       "end_year": null,
       "period_status": "not_in_source",
@@ -25548,18 +22591,6 @@
       "org_id": "ORG_5902061868",
       "relation_type": "руководитель",
       "is_leader": true,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0179",
-      "person_id": "PER_0217",
-      "org_id": "ORG_5907996583",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
       "start_year": null,
       "end_year": null,
       "period_status": "not_in_source",
@@ -25651,18 +22682,6 @@
       "evidence_url": null
     },
     {
-      "link_id": "POL_0187",
-      "person_id": "PER_0185",
-      "org_id": "ORG_5903132529",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
       "link_id": "POL_0188",
       "person_id": "PER_0120",
       "org_id": "ORG_5933004355",
@@ -25680,18 +22699,6 @@
       "org_id": "ORG_5902703018",
       "relation_type": "руководитель",
       "is_leader": true,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0190",
-      "person_id": "PER_0156",
-      "org_id": "ORG_5902067309",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
       "start_year": null,
       "end_year": null,
       "period_status": "not_in_source",
@@ -25723,18 +22730,6 @@
       "evidence_url": null
     },
     {
-      "link_id": "POL_0193",
-      "person_id": "PER_0175",
-      "org_id": "ORG_5903086093",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
       "link_id": "POL_0194",
       "person_id": "PER_0101",
       "org_id": "ORG_5914997669",
@@ -25752,30 +22747,6 @@
       "org_id": "ORG_5905994911",
       "relation_type": "руководитель",
       "is_leader": true,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0196",
-      "person_id": "PER_0163",
-      "org_id": "ORG_5902709394",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0197",
-      "person_id": "PER_0219",
-      "org_id": "ORG_5908039435",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
       "start_year": null,
       "end_year": null,
       "period_status": "not_in_source",
@@ -25831,18 +22802,6 @@
       "evidence_url": null
     },
     {
-      "link_id": "POL_0202",
-      "person_id": "PER_0218",
-      "org_id": "ORG_5908039435",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
       "link_id": "POL_0203",
       "person_id": "PER_0081",
       "org_id": "ORG_5906169950",
@@ -25867,30 +22826,6 @@
       "evidence_url": null
     },
     {
-      "link_id": "POL_0205",
-      "person_id": "PER_0187",
-      "org_id": "ORG_5903132529",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0206",
-      "person_id": "PER_0187",
-      "org_id": "ORG_5903994507",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
       "link_id": "POL_0207",
       "person_id": "PER_0090",
       "org_id": "ORG_5908021678",
@@ -25903,46 +22838,10 @@
       "evidence_url": null
     },
     {
-      "link_id": "POL_0208",
-      "person_id": "PER_0210",
-      "org_id": "ORG_5906159712",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
       "link_id": "POL_0209",
       "person_id": "PER_0243",
       "org_id": "ORG_5948052915",
       "relation_type": "finalist",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0210",
-      "person_id": "PER_0211",
-      "org_id": "ORG_5906169950",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0211",
-      "person_id": "PER_0207",
-      "org_id": "ORG_5906159712",
-      "relation_type": "публичный представитель",
       "is_leader": false,
       "start_year": null,
       "end_year": null,
@@ -25968,18 +22867,6 @@
       "org_id": "ORG_5902709475",
       "relation_type": "руководитель",
       "is_leader": true,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0214",
-      "person_id": "PER_0154",
-      "org_id": "ORG_5902061868",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
       "start_year": null,
       "end_year": null,
       "period_status": "not_in_source",
@@ -26035,18 +22922,6 @@
       "evidence_url": null
     },
     {
-      "link_id": "POL_0219",
-      "person_id": "PER_0234",
-      "org_id": "ORG_5948071844",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
       "link_id": "POL_0220",
       "person_id": "PER_0065",
       "org_id": "ORG_5905066529",
@@ -26071,35 +22946,11 @@
       "evidence_url": null
     },
     {
-      "link_id": "POL_0222",
-      "person_id": "PER_0235",
-      "org_id": "ORG_5948071844",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
       "link_id": "POL_0223",
       "person_id": "PER_0031",
       "org_id": "ORG_5903128040",
       "relation_type": "руководитель",
       "is_leader": true,
-      "start_year": null,
-      "end_year": null,
-      "period_status": "not_in_source",
-      "verification_status": "confirmed_source_row",
-      "evidence_url": null
-    },
-    {
-      "link_id": "POL_0224",
-      "person_id": "PER_0236",
-      "org_id": "ORG_5981010944",
-      "relation_type": "публичный представитель",
-      "is_leader": false,
       "start_year": null,
       "end_year": null,
       "period_status": "not_in_source",
@@ -26164,6 +23015,18 @@
       "end_year": null,
       "period_status": "not_in_source",
       "verification_status": "confirmed_source_row",
+      "evidence_url": null
+    },
+    {
+      "link_id": "POL_0240",
+      "person_id": "PER_0003",
+      "org_id": "ORG_5902045055",
+      "relation_type": "руководитель",
+      "is_leader": true,
+      "verification_status": "confirmed_source_row",
+      "start_year": null,
+      "end_year": null,
+      "period_status": "checked_in_source_workbook",
       "evidence_url": null
     }
   ],
@@ -33901,6 +30764,42 @@
       "person_id": "PER_0046",
       "project_id": "PRJ_000259",
       "org_id": "ORG_5902072122",
+      "relation_type": "руководитель организации",
+      "start_year": null,
+      "end_year": null,
+      "period_status": "checked_in_source_workbook",
+      "evidence_url": null,
+      "verification_status": "confirmed"
+    },
+    {
+      "link_id": "PPL_0646",
+      "person_id": "PER_0003",
+      "project_id": "PRJ_000017",
+      "org_id": "ORG_5902045055",
+      "relation_type": "руководитель организации",
+      "start_year": null,
+      "end_year": null,
+      "period_status": "checked_in_source_workbook",
+      "evidence_url": null,
+      "verification_status": "confirmed"
+    },
+    {
+      "link_id": "PPL_0647",
+      "person_id": "PER_0003",
+      "project_id": "PRJ_000018",
+      "org_id": "ORG_5902045055",
+      "relation_type": "руководитель организации",
+      "start_year": null,
+      "end_year": null,
+      "period_status": "checked_in_source_workbook",
+      "evidence_url": null,
+      "verification_status": "confirmed"
+    },
+    {
+      "link_id": "PPL_0648",
+      "person_id": "PER_0003",
+      "project_id": "PRJ_000019",
+      "org_id": "ORG_5902045055",
       "relation_type": "руководитель организации",
       "start_year": null,
       "end_year": null,
@@ -43463,7 +40362,7 @@
       "activity_group_id": "ACTGRP_000171",
       "activity_kind": "event_role",
       "year": 2022,
-      "person_id": "PER_0246",
+      "person_id": null,
       "org_id": "ORG_5906995266",
       "topic_id": "T04",
       "activity_title": "Правовые вебинары «Счастье жить» для родителей детей с инвалидностью",
@@ -43478,7 +40377,7 @@
       "quote": "Спикеры вебинаров – ... старший юрист Виктория Иващенко, юрист Егор Крупин",
       "source_url": "https://rusfond.ru/news/2050",
       "qc_comment": "ФИО не найдено в базе 151; связь с организацией дана контекстом источника.",
-      "person_name": "Виктория Иващенко",
+      "person_name": null,
       "inn": 5906995266,
       "organization_name": "ПЕРМСКАЯ КРАЕВАЯ ОБЩЕСТВЕННАЯ ОРГАНИЗАЦИЯ ЗАЩИТЫ ПРАВ ДЕТЕЙ-ИНВАЛИДОВ И ИХ СЕМЕЙ \"СЧАСТЬЕ ЖИТЬ\"",
       "topic_group": "социальная сфера",
@@ -43507,7 +40406,7 @@
       "activity_group_id": "ACTGRP_000172",
       "activity_kind": "event_role",
       "year": 2022,
-      "person_id": "PER_0247",
+      "person_id": null,
       "org_id": "ORG_5906995266",
       "topic_id": "T04",
       "activity_title": "Правовые вебинары «Счастье жить» для родителей детей с инвалидностью",
@@ -43522,7 +40421,7 @@
       "quote": "Спикеры вебинаров – ... старший юрист Виктория Иващенко, юрист Егор Крупин",
       "source_url": "https://rusfond.ru/news/2050",
       "qc_comment": "ФИО не найдено в базе 151; связь с организацией дана контекстом источника.",
-      "person_name": "Егор Крупин",
+      "person_name": null,
       "inn": 5906995266,
       "organization_name": "ПЕРМСКАЯ КРАЕВАЯ ОБЩЕСТВЕННАЯ ОРГАНИЗАЦИЯ ЗАЩИТЫ ПРАВ ДЕТЕЙ-ИНВАЛИДОВ И ИХ СЕМЕЙ \"СЧАСТЬЕ ЖИТЬ\"",
       "topic_group": "социальная сфера",
@@ -43551,7 +40450,7 @@
       "activity_group_id": "ACTGRP_000173",
       "activity_kind": "event_role",
       "year": 2022,
-      "person_id": "PER_0248",
+      "person_id": null,
       "org_id": "ORG_5906995266",
       "topic_id": "T04",
       "activity_title": "Серия поддерживающих вебинаров для семей с детьми-инвалидами и ОВЗ",
@@ -43566,7 +40465,7 @@
       "quote": "Анна Николаевна Горнова, Руководитель центра поведенческого анализа ПК ОО «Счастье жить»",
       "source_url": "https://chudo.tomsk.ru/news/kalendar-sobytiy/seria-podderzivausih-vebinarov-dla-semej-s-detmi-invalidami-i-ovz",
       "qc_comment": "ФИО не найдено в базе 151; совпадение по организации.",
-      "person_name": "Анна Николаевна Горнова",
+      "person_name": null,
       "inn": 5906995266,
       "organization_name": "ПЕРМСКАЯ КРАЕВАЯ ОБЩЕСТВЕННАЯ ОРГАНИЗАЦИЯ ЗАЩИТЫ ПРАВ ДЕТЕЙ-ИНВАЛИДОВ И ИХ СЕМЕЙ \"СЧАСТЬЕ ЖИТЬ\"",
       "topic_group": "социальная сфера",
@@ -43767,50 +40666,6 @@
       "publication_status": "publish"
     },
     {
-      "fact_id": "EXP_000112",
-      "activity_group_id": "ACTGRP_000277",
-      "activity_kind": "event_role",
-      "year": 2026,
-      "person_id": "PER_PERM_NEW_07655ED0FB",
-      "org_id": null,
-      "topic_id": "T13",
-      "activity_title": "«Медиашкола НКО 2.0», четвертая встреча",
-      "platform_name": "Публичная площадка",
-      "platform_level": null,
-      "event_city": null,
-      "role_class": "speaker",
-      "publication_type": null,
-      "recognition_type": null,
-      "project_or_practice_name": null,
-      "award_or_nomination": null,
-      "quote": null,
-      "source_url": "https://xn--59-6kcaaembt1fdnsfdygm4m.xn--p1ai/public/event/29935fbf-757a-4717-baae-5f7f5a4fdea8",
-      "qc_comment": "спикер; дизайнер медиагруппы «Магма»",
-      "person_name": "Павел Власов",
-      "inn": null,
-      "organization_name": null,
-      "topic_group": "местное развитие",
-      "topic_raw": "Поддержка и развитие НКО",
-      "role_raw": "спикер",
-      "event_platforms": "Публичная площадка",
-      "publication_platforms": null,
-      "match_type": "exact_person",
-      "source_id": null,
-      "activity_id": "ACT_000091",
-      "post_id": null,
-      "source_record_id": "SRC_000277",
-      "source_row": 482,
-      "identity_check": null,
-      "source_status": null,
-      "verification_comment": "Этап 3: перенесено из pilot activities; pilot_activity_id=FACT_PERM_NEW_B8FECBF3F8D7; без повторного веб-поиска.",
-      "checked_at": 46252,
-      "duplicate_key": null,
-      "verification_status": "verified",
-      "platform_level_code": "unknown",
-      "person_evidence_status": "person_verified",
-      "publication_status": "publish"
-    },
-    {
       "fact_id": "EXP_000113",
       "activity_group_id": "ACTGRP_000278",
       "activity_kind": "event_role",
@@ -43943,50 +40798,6 @@
       "publication_status": "publish"
     },
     {
-      "fact_id": "EXP_000117",
-      "activity_group_id": "ACTGRP_000283",
-      "activity_kind": "event_role",
-      "year": 2026,
-      "person_id": "PER_PERM_NEW_A228A6A2BC",
-      "org_id": null,
-      "topic_id": "T13",
-      "activity_title": "5 модуль проекта «Медиашкола НКО 2.0»",
-      "platform_name": "Фонд грантов губернатора Пермского края",
-      "platform_level": "региональная",
-      "event_city": "Пермь",
-      "role_class": "trainer",
-      "publication_type": null,
-      "recognition_type": null,
-      "project_or_practice_name": null,
-      "award_or_nomination": null,
-      "quote": null,
-      "source_url": "https://xn--59-6kcaaembt1fdnsfdygm4m.xn--p1ai/public/event/b10d15a2-f94b-445d-8b6e-a2a66285d8af",
-      "qc_comment": "Образовательный модуль о построении и продвижении бренда некоммерческой организации.",
-      "person_name": "Екатерина Шафиева",
-      "inn": null,
-      "organization_name": null,
-      "topic_group": "местное развитие",
-      "topic_raw": "Поддержка и развитие НКО",
-      "role_raw": "тренер",
-      "event_platforms": "Фонд грантов губернатора Пермского края",
-      "publication_platforms": null,
-      "match_type": "exact_person",
-      "source_id": null,
-      "activity_id": "ACT_000096",
-      "post_id": null,
-      "source_record_id": "SRC_000283",
-      "source_row": 491,
-      "identity_check": null,
-      "source_status": null,
-      "verification_comment": "Этап 3: перенесено из pilot activities; pilot_activity_id=FACT_FINAL_0FF1E56CDD; без повторного веб-поиска.",
-      "checked_at": 46252,
-      "duplicate_key": null,
-      "verification_status": "verified",
-      "platform_level_code": "regional",
-      "person_evidence_status": "person_verified",
-      "publication_status": "publish"
-    },
-    {
       "fact_id": "EXP_000118",
       "activity_group_id": "ACTGRP_000284",
       "activity_kind": "event_role",
@@ -44027,50 +40838,6 @@
       "duplicate_key": null,
       "verification_status": "verified",
       "platform_level_code": "regional",
-      "person_evidence_status": "person_verified",
-      "publication_status": "publish"
-    },
-    {
-      "fact_id": "EXP_000119",
-      "activity_group_id": "ACTGRP_000285",
-      "activity_kind": "event_role",
-      "year": 2026,
-      "person_id": "PER_PERM_NEW_B228D27BC8",
-      "org_id": null,
-      "topic_id": "T13",
-      "activity_title": "«Медиашкола НКО 2.0», четвертая встреча",
-      "platform_name": "Публичная площадка",
-      "platform_level": null,
-      "event_city": null,
-      "role_class": "speaker",
-      "publication_type": null,
-      "recognition_type": null,
-      "project_or_practice_name": null,
-      "award_or_nomination": null,
-      "quote": null,
-      "source_url": "https://xn--59-6kcaaembt1fdnsfdygm4m.xn--p1ai/public/event/29935fbf-757a-4717-baae-5f7f5a4fdea8",
-      "qc_comment": "спикер; руководитель соцмедиа-проектов медиагруппы «Магма»",
-      "person_name": "Арсений Подгородецких",
-      "inn": null,
-      "organization_name": null,
-      "topic_group": "местное развитие",
-      "topic_raw": "Поддержка и развитие НКО",
-      "role_raw": "спикер",
-      "event_platforms": "Публичная площадка",
-      "publication_platforms": null,
-      "match_type": "exact_person",
-      "source_id": null,
-      "activity_id": "ACT_000098",
-      "post_id": null,
-      "source_record_id": "SRC_000285",
-      "source_row": 493,
-      "identity_check": null,
-      "source_status": null,
-      "verification_comment": "Этап 3: перенесено из pilot activities; pilot_activity_id=FACT_PERM_NEW_9A699FF89004; без повторного веб-поиска.",
-      "checked_at": 46252,
-      "duplicate_key": null,
-      "verification_status": "verified",
-      "platform_level_code": "unknown",
       "person_evidence_status": "person_verified",
       "publication_status": "publish"
     },
@@ -44159,50 +40926,6 @@
       "duplicate_key": null,
       "verification_status": "verified",
       "platform_level_code": "unknown",
-      "person_evidence_status": "person_verified",
-      "publication_status": "publish"
-    },
-    {
-      "fact_id": "EXP_000122",
-      "activity_group_id": "ACTGRP_000288",
-      "activity_kind": "event_role",
-      "year": 2021,
-      "person_id": "PER_WEB_8A855427BD",
-      "org_id": null,
-      "topic_id": "T03",
-      "activity_title": "Социальный контракт: Учимся вместе!",
-      "platform_name": "Мастерская социальных проектов",
-      "platform_level": "региональная",
-      "event_city": "Пермь",
-      "role_class": "trainer",
-      "publication_type": null,
-      "recognition_type": null,
-      "project_or_practice_name": null,
-      "award_or_nomination": null,
-      "quote": null,
-      "source_url": "https://xn--59-mlcusagigq2b.xn--p1ai/proekt-sk",
-      "qc_comment": "Проводила занятия в образовательной программе для получателей социального контракта.",
-      "person_name": "Александрова Елена Витальевна",
-      "inn": null,
-      "organization_name": null,
-      "topic_group": "социальная сфера",
-      "topic_raw": "Управление проектами и ресурсами",
-      "role_raw": "тренер",
-      "event_platforms": "Мастерская социальных проектов",
-      "publication_platforms": null,
-      "match_type": "exact_person",
-      "source_id": null,
-      "activity_id": "ACT_000101",
-      "post_id": null,
-      "source_record_id": "SRC_000288",
-      "source_row": 496,
-      "identity_check": null,
-      "source_status": null,
-      "verification_comment": "Этап 3: перенесено из pilot activities; pilot_activity_id=FACT_WEB_E2EA173706C5; без повторного веб-поиска.",
-      "checked_at": 46252,
-      "duplicate_key": null,
-      "verification_status": "verified",
-      "platform_level_code": "regional",
       "person_evidence_status": "person_verified",
       "publication_status": "publish"
     },
@@ -44333,50 +41056,6 @@
       "verification_comment": "Сохранён по подтверждению заказчика; роль скорректирована по источнику.",
       "checked_at": "2026-08-23",
       "duplicate_key": "PER_0188|уточнение роли дедморозим|2022",
-      "verification_status": "verified",
-      "platform_level_code": "regional",
-      "person_evidence_status": "person_verified",
-      "publication_status": "publish"
-    },
-    {
-      "fact_id": "FACT_REVISED_ERSHOVA_2023",
-      "activity_group_id": "ACTGRP_REVISED_ERSHOVA",
-      "activity_kind": "publication",
-      "year": 2023,
-      "person_id": "PER_NEW_IMPORTANCE_ERSHOVA_GV",
-      "org_id": null,
-      "topic_id": "T10",
-      "activity_title": "Глава о поисковой деятельности как воспитательной практике",
-      "platform_name": "Пермский государственный национальный исследовательский университет",
-      "platform_level": "региональная",
-      "event_city": "Березники",
-      "role_class": null,
-      "publication_type": "авторская статья",
-      "recognition_type": null,
-      "project_or_practice_name": "Поисковый отряд «Феникс»",
-      "award_or_nomination": null,
-      "quote": null,
-      "source_url": "https://dokumen.pub/7429bddae0c00081f566664c44a4025a.html",
-      "qc_comment": "Независимый издательский контекст ПГНИУ; персона найдена через importance, но публикационный источник — монография.",
-      "person_name": "Ершова Галина Васильевна",
-      "inn": null,
-      "organization_name": "МАУ ДО ДЮЦ «Каскад»",
-      "topic_group": "патриотика и память",
-      "topic_raw": "поисковое движение; музейная педагогика; историческая память",
-      "role_raw": "автор / педагог / руководитель отряда",
-      "event_platforms": null,
-      "publication_platforms": null,
-      "match_type": "exact_person_practice",
-      "source_id": null,
-      "activity_id": null,
-      "post_id": null,
-      "source_record_id": null,
-      "source_row": null,
-      "identity_check": "Полное ФИО, Березники, ДЮЦ «Каскад» и отряд «Феникс» совпадают.",
-      "source_status": "доступен",
-      "verification_comment": "Новая персона добавлена после независимого подтверждения.",
-      "checked_at": "2026-08-23",
-      "duplicate_key": "PER_NEW_IMPORTANCE_ERSHOVA_GV|отряд феникс|2023",
       "verification_status": "verified",
       "platform_level_code": "regional",
       "person_evidence_status": "person_verified",
@@ -45378,30 +42057,6 @@
         "https://perm.rbc.ru/perm/freenews/6324031d9a794734c7c9d0ad"
       ],
       "verification_status": "verified_with_user_confirmation",
-      "publication_status": "publish",
-      "limitations_summary": "Количественные результаты не добавлялись без отдельного источника.",
-      "source_dataset": "perm_workbook_person_practices"
-    },
-    {
-      "practice_id": "PRACTICE_ERSHOVA_FENIX",
-      "person_id": "PER_NEW_IMPORTANCE_ERSHOVA_GV",
-      "practice_name": "Поисковый отряд «Феникс»",
-      "practice_type": "documented_practice",
-      "person_role_in_practice": "бессменный руководитель / педагог",
-      "primary_topic_id": "T10",
-      "target_groups": "подростки и молодёжь",
-      "territory": "Березники и территории поисковых экспедиций",
-      "start_year": 2017,
-      "end_year": null,
-      "practice_status": "active",
-      "format_or_technology": "Поисковые экспедиции, архивная и исследовательская работа, музейные занятия и просветительские форматы по сохранению памяти о погибших защитниках Отечества.",
-      "community_relevance_summary": null,
-      "results_summary": null,
-      "transferability_summary": "Связка дополнительного образования, поисковой практики, архивной работы и школьного музея.",
-      "source_urls": [
-        "https://dokumen.pub/7429bddae0c00081f566664c44a4025a.html"
-      ],
-      "verification_status": "verified",
       "publication_status": "publish",
       "limitations_summary": "Количественные результаты не добавлялись без отдельного источника.",
       "source_dataset": "perm_workbook_person_practices"
