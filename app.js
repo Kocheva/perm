@@ -158,12 +158,41 @@ function header() {
           <div id="search-results" class="search-results hidden" role="listbox"></div>
         </div>
         <span class="search-hint">${integer.format(data.config.counts.people)} персон</span>
+        <a class="about-link" href="#/methodology">Как формировалась карта</a>
       </div>
     </header>`;
 }
 
 function footer() {
-  return `<footer class="footer">Данные загружаются из JSON. Неизвестные суммы не включены в итог финансирования. Обновлено: ${esc(data.config.generated_at)}.</footer>`;
+  return `<footer class="footer"><div class="footer-columns"><div><h2>Ресурсы для развития НКО</h2><nav aria-label="Ресурсы кластера поддержки"><a href="https://kocheva.github.io/-/" target="_blank" rel="noopener noreferrer">Навигатор образовательных курсов ↗</a><a href="https://navigator-nko.ru/" target="_blank" rel="noopener noreferrer">Навигатор поддержки НКО ↗</a><a href="#/methodology">Методология и источники</a></nav></div><div><p>Создано в рамках проекта «Кластер поддержки: новые решения для НКО Пермского края» при поддержке Фонда президентских грантов.</p><a href="https://grany-center.org/" target="_blank" rel="noopener noreferrer">Центр ГРАНИ ↗</a></div></div><p class="footer-note">Данные собраны из открытых источников. Обновлено: ${esc(data.config.generated_at)}. Неизвестные суммы не включены в расчёт финансирования.</p></footer>`;
+}
+
+function methodologyPage() {
+  const funds = [
+    ['Фонд президентских грантов (ФПГ) — проекты','https://президентскиегранты.рф/public/application/cards'],
+    ['Фонд грантов губернатора Пермского края (ФГГ) — проекты','https://грантыгубернатора59.рф/public/application/cards'],
+    ['Конкурс социальных и культурных проектов ПАО «ЛУКОЙЛ» — реализованные проекты','https://perm.lukoil.ru/ru/Responsibility/SocialProject/projects'],
+    ['Президентский фонд культурных инициатив (ПФКИ) — проекты','https://гранты.пфки.рф/public/application/cards'],
+    ['Городской конкурс социально значимых проектов «Город — это мы»','https://vmeste.permkrai.ru/info/categories/122']
+  ];
+  return `${header()}<main id="main" class="page-shell methodology-page"><section class="detail-hero"><a class="back-link" href="#/">← Вернуться к карте</a><h1>Методология и источники</h1><p class="lead">Как формировалась карта проектных лидеров Пермского края</p></section>
+  <section class="detail-section"><h2>Кто представлен на карте</h2><p>Основу карты составляют руководители и представители организаций Пермского края, активно участвовавших в пяти грантовых конкурсах, перечисленных ниже. Эти конкурсы традиционно востребованы среди НКО региона.</p><p>Дополнительно представлены публичные лидеры и носители практик, чья деятельность отражена в открытых источниках. Их публичная деятельность показана отдельно от проектов организаций.</p>
+  <h2>Как отбирались организации</h2><p>При отборе учитывались:</p><ul><li>реализация трёх и более проектов за период 2021–2026 годов;</li><li>победы в конкурсах двух и более фондов;</li><li>участие в конкурсах грантов в период 2024–2026 годов;</li><li>реализация крупных проектов;</li><li>включение проектов в число лучших по версии фонда.</li></ul><p>Критерии применялись гибко и не требовали одновременного выполнения всех условий. В карту могли войти организации с менее чем тремя проектами или участием только в одном конкурсе, если они реализовали крупные проекты или проекты, отмеченные фондом.</p><p>В карточках руководителей представлены проекты организации, реализованные в период их руководства. Наличие проекта у организации само по себе не означает личного участия каждого её представителя.</p><p>Карта не является рейтингом или исчерпывающим реестром НКО. Отсутствие сведений о публичной деятельности не означает отсутствия самой деятельности.</p></section>
+  <section class="detail-section"><h2>Проекты и грантовые конкурсы</h2><p>Официальные разделы проектов и конкурсов — без ссылок на отдельные заявки.</p><ul class="source-catalog">${funds.map(([title,url])=>`<li><a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(title)} ↗</a></li>`).join('')}</ul></section>
+  <section class="detail-section"><h2>Открытые источники о публичной деятельности</h2><p>Каталоги, списки победителей, программы мероприятий, публикации и описания практик из реестра «Упоминания и источники». Ссылки на конкретные материалы сохранены; повторяющиеся адреса объединены.</p><div id="public-source-catalog" aria-live="polite">Загружаем источники…</div></section></main>${footer()}`;
+}
+
+async function loadPublicSources() {
+  const target = document.querySelector('#public-source-catalog');
+  if (!target) return;
+  try {
+    const response = await fetch('./data/public_sources.json');
+    if (!response.ok) throw new Error('sources unavailable');
+    const groups = await response.json();
+    target.innerHTML = Object.entries(groups).map(([title,items])=>`<details class="source-group"><summary>${esc(title)} <span>(${items.length})</span></summary><ul class="source-catalog">${items.map(item=>`<li><a href="${esc(urlSafe(item.url))}" target="_blank" rel="noopener noreferrer">${esc(item.title)} ↗</a><small>${esc([item.year,item.platform].filter(Boolean).join(' · '))}</small></li>`).join('')}</ul></details>`).join('');
+  } catch {
+    target.innerHTML = '<p>Не удалось загрузить список источников. Попробуйте обновить страницу.</p>';
+  }
 }
 
 function option(value, label, selected = false) {
@@ -694,8 +723,10 @@ function render(options = {}) {
   else if (route.section === "topic") app.innerHTML = topicPage(route.id);
   else if (route.section === "organization") app.innerHTML = organizationPage(route.id);
   else if (route.section === "project") app.innerHTML = projectPage(route.id);
+  else if (route.section === "methodology") app.innerHTML = methodologyPage();
   else app.innerHTML = mainPage();
   bindCommon();
+  if (route.section === "methodology") loadPublicSources();
   if (route.section === "home") bindMain();
   if (route.section === "person") bindPerson();
   if (route.section === "topic") bindTopic();

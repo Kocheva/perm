@@ -270,7 +270,24 @@ h3 { font-size: 16px; }
 .project-list li { padding: 14px 0; }
 .source-link { word-break: break-word; font-size: 12px; }
 .notice { border-radius: 12px; background: #fff8e8; color: #725521; border: 1px solid #f0dba7; padding: 13px; line-height: 1.5; font-size: 13px; }
-.footer { max-width: 1540px; margin: 0 auto; padding: 10px 24px 32px; color: var(--muted); font-size: 12px; }
+.footer { margin: 32px auto 0; padding: 32px max(24px, calc((100% - 1492px) / 2)); color: var(--muted); background: #eaf0f4; font-size: 14px; line-height: 1.65; }
+.footer-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.footer h2 { font-size: 18px; color: var(--text); margin-top: 0; }
+.footer nav { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.footer a, .about-link, .source-catalog a { text-decoration: underline; text-underline-offset: 4px; overflow-wrap: anywhere; }
+.footer a:hover, .about-link:hover, .source-catalog a:hover { color: #e51a4b; }
+.footer-note { border-top: 1px solid #c9d5df; margin-top: 24px; padding-top: 16px; font-size: 12px; }
+.about-link { font-size: 13px; }
+.methodology-page { max-width: 1100px; line-height: 1.65; }
+.methodology-page .detail-section { margin-bottom: 20px; }
+.methodology-page li { margin-bottom: 8px; }
+.source-group { border-top: 1px solid #c9d5df; padding: 16px 0; }
+.source-group summary { cursor: pointer; font-weight: bold; }
+.source-group summary span { font-weight: normal; }
+.source-catalog { list-style: none; padding: 0; }
+.source-catalog li { padding: 10px 0; }
+.source-catalog small { display: block; color: var(--muted); margin-top: 6px; }
+@media (max-width: 700px) { .footer-columns { grid-template-columns: 1fr; gap: 24px; } .about-link { flex-basis: 100%; } }
 .boot-screen { min-height: 100vh; display: grid; place-content: center; text-align: center; color: var(--muted); }
 .boot-mark { margin: 0 auto 14px; width: 56px; height: 56px; display: grid; place-items: center; background: var(--navy); color: white; border-radius: 17px; font-weight: 900; }
 .error-card { margin: 10vh auto; max-width: 680px; background: white; border-radius: 18px; padding: 28px; border: 1px solid var(--line); }
