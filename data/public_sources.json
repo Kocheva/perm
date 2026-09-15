@@ -1,546 +1,588 @@
 {
-  "Форумы, конференции и общественные события": [
-    {
-      "title": "Пермский краевой форум общественности и добровольчества",
-      "url": "https://грантыгубернатора59.рф/public/event/1d640af3-d62b-4a25-9a42-0e5ae67bc65e",
-      "year": 2021,
-      "platform": "Фонд грантов губернатора Пермского края, Администрация губернатора Пермского края"
-    },
-    {
-      "title": "V Ассамблея СО НКО регионов Приволжья",
-      "url": "https://nko-pfo.ru/events/26624",
-      "year": 2021,
-      "platform": "Сеть ресурсных центров СО НКО ПФО"
-    },
-    {
-      "title": "X Пермский краевой форум общественности и добровольчества",
-      "url": "https://ombudsman.perm.ru/news/2022/12/09/9531/",
-      "year": 2022,
-      "platform": "Фонд грантов губернатора Пермского края, Администрация губернатора Пермского края"
-    },
-    {
-      "title": "Открытие Ресурсного центра добровольчества Пермского края",
-      "url": "https://asi.org.ru/report/2022/04/06/v-permskom-krae-nachinaet-rabotu-resursnyj-czentr-dobrovolchestva-volonterstva/",
-      "year": 2022,
-      "platform": "Ресурсный центр добровольчества Пермского края, #МЫВМЕСТЕ"
-    },
-    {
-      "title": "XI Пермский краевой форум общественности и добровольчества",
-      "url": "https://грантыгубернатора59.рф/public/news/adbb7591-4fa1-4a15-a1c2-016597b4144d",
-      "year": 2023,
-      "platform": "Фонд грантов губернатора Пермского края, Администрация губернатора Пермского края"
-    },
-    {
-      "title": "XII Пермский краевой форум общественности и добровольчества",
-      "url": "https://permkrai.ru/news/otkryta-registratsiya-na-xii-permskiy-kraevoy-forum-obshchestvennosti-i-dobrovolchestva/",
-      "year": 2024,
-      "platform": "Фонд грантов губернатора Пермского края, Администрация губернатора Пермского края"
-    },
-    {
-      "title": "VII Ассамблея СО НКО регионов Приволжья",
-      "url": "https://asi.org.ru/news/2024/05/02/vii-assamblee-so-nko-regionov-privolzhya-novye-vozmozhnosti-sotrudnichestva/",
-      "year": 2024,
-      "platform": "Ассоциация «Служение», сеть ресурсных центров СО НКО ПФО"
-    },
-    {
-      "title": "Конкурс достижений СО НКО Приволжья",
-      "url": "https://nko-pfo.ru/56652",
-      "year": 2024,
-      "platform": "Сеть ресурсных центров СО НКО ПФО"
-    },
-    {
-      "title": "«Стратегия ресурсной поддержки НКО Приволжья»: итоги",
-      "url": "https://www.youtube.com/watch?v=_q2pYVgc45k",
-      "year": 2024,
-      "platform": "Сеть ресурсных центров СО НКО ПФО"
-    },
-    {
-      "title": "IX Международный слет друзей заповедных островов",
-      "url": "https://asi.org.ru/event/2024/10/07/13-oktyabrya-ix-mezhdunarodnyj-slet-druzej-zapovednyh-ostrovov/",
-      "year": 2024,
-      "platform": "Движение «Друзья заповедных островов», ООПТ, партнеры"
-    },
-    {
-      "title": "XIII Пермский краевой форум общественности и добровольчества",
-      "url": "https://asi.org.ru/event/2025/11/17/xiii-permskij-kraevoj-forum-obshhestvennosti-i-dobrovolchestva/",
-      "year": 2025,
-      "platform": "Фонд грантов губернатора Пермского края, Администрация губернатора Пермского края"
-    },
-    {
-      "title": "II Мурманский форум СО НКО «Голос НКО»",
-      "url": "https://forumnko51.ru/",
-      "year": 2024,
-      "platform": "Оргкомитет форума «Голос НКО»"
-    },
-    {
-      "title": "Первый региональный форум СО НКО Мурманской области «Голос НКО»",
-      "url": "https://asi.org.ru/event/2022/12/07/pervyj-regionalnyj-forum-so-nko-murmanskoj-oblasti-golos-nko/",
-      "year": 2022,
-      "platform": "Ресурсный центр НКО Мурманской области / АСИ"
-    },
-    {
-      "title": "Башкирский гражданский форум",
-      "url": "https://grany-center.org/note/svetlana-makoveckaya-vystupit-na-grajdanskom-forume-bashkirii-po-priglasheniyu-fonda-grantov-glavy-respubliki-1655307287/",
-      "year": 2022,
-      "platform": "Фонд грантов главы Республики Башкортостан / Общественная палата Башкирии"
-    },
-    {
-      "title": "Чебоксарский экономический форум и Республиканский форум НКО",
-      "url": "https://grany-center.org/note/smena-ugla-zreniya.-ili-chto-vajno-dlya-socialnoy-sfery-chuvashii-1657020883/",
-      "year": 2022,
-      "platform": "Республиканский форум НКО / Центр ГРАНИ"
-    },
-    {
-      "title": "Шторм-конференция Центра ГРАНИ «Выйти за грань»",
-      "url": "https://grany-center.org/note/perspektivy-razvitiya-podderjki-nko-rabotayushchih-s-osobo-uyazvimymi-gruppami-1631706547/",
-      "year": 2021,
-      "platform": "Центр ГРАНИ / Фонд президентских грантов"
-    },
-    {
-      "title": "Форум благотворителей и меценатов 2024",
-      "url": "https://fcongress.forbes.ru/forum-blago2024",
-      "year": 2024,
-      "platform": "FCongress при поддержке Forbes Russia"
-    },
-    {
-      "title": "Форум благотворителей и меценатов 2025",
-      "url": "https://fcongress.forbes.ru/blago2025",
-      "year": 2025,
-      "platform": "FCongress при поддержке Forbes Russia"
-    },
-    {
-      "title": "Конференция «Половинка счастья»",
-      "url": "https://vsegdachelovek.ru/conference/polovinka-schastja/",
-      "year": 2023,
-      "platform": "#ВСЕГДАЧЕЛОВЕК / Фонд «Доктор Лиза»"
-    },
-    {
-      "title": "Форум НКО «Благодетели Красноярья»",
-      "url": "https://gornovosti.ru/news/120136/",
-      "year": 2024,
-      "platform": "Форум НКО «Благодетели Красноярья» / Горновости"
-    },
-    {
-      "title": "Конференция «Сопровождение ребенка и семьи в ранней помощи»",
-      "url": "https://happy59.ru/news/0_3098/",
-      "year": 2025,
-      "platform": "Региональная стажировочная площадка ЦНППМ ГАУ ДПО «РИРО» / «Счастье жить»"
-    }
-  ],
-  "Премии, рейтинги и публичное признание": [
-    {
-      "title": "Международная премия #МЫВМЕСТЕ, полуфиналы и окружные фестивали",
-      "url": "https://contests.dobro.ru/tpost/u4ecvrhjn1-chto-zhdet-uchastnikov-sleduyuschie-etap",
-      "year": 2021,
-      "platform": "DOBRO.RF, Росмолодежь, партнеры премии"
-    },
-    {
-      "title": "Национальная премия «Гражданская инициатива» — проект «На пути героя»",
-      "url": "https://dobro.ru/organizations/46093/info",
-      "year": 2021,
-      "platform": "Комитет гражданских инициатив, DOBRO-профиль организации"
-    },
-    {
-      "title": "XI конкурс годовых отчетов НКО «Точка отсчета»",
-      "url": "https://asi.org.ru/news/2021/02/09/obyavleny-pobediteli-xi-konkursa-otchetov-nko-tochka-otscheta/",
-      "year": 2021,
-      "platform": "Форум Доноров"
-    },
-    {
-      "title": "Конкурс годовых отчетов НКО «Точка отсчета» — победители 2023",
-      "url": "https://donorsforum.ru/idata/tochka-otscheta-pobediteli-2023/",
-      "year": 2023,
-      "platform": "Форум Доноров"
-    },
-    {
-      "title": "Региональный этап премии #МЫВМЕСТЕ в Пермском крае",
-      "url": "https://permkrai.ru/news/v-regionalnom-etape-mezhdunarodnoy-premii-myvmeste-opredelili-29-pobediteley-iz-prikamya/",
-      "year": 2024,
-      "platform": "Администрация губернатора Пермского края, DOBRO.RF"
-    },
-    {
-      "title": "Рэнкинг фандрайзинговых благотворительных НКО RAEX",
-      "url": "https://raex-rr.com/NKO/largest_NKO/fundraising_fund_rating/2024/",
-      "year": 2024,
-      "platform": "RAEX"
-    },
-    {
-      "title": "RAEX: карточка участника «Фонд Дедморозим»",
-      "url": "https://raex-rr.com/database/contender/10014194",
-      "year": 2024,
-      "platform": "RAEX"
-    },
-    {
-      "title": "Конкурс годовых отчетов НКО «Точка отсчета» — победители 2024",
-      "url": "https://donorsforum.ru/idata/tochka-otscheta-pobediteli-2024/",
-      "year": 2024,
-      "platform": "Форум Доноров"
-    },
-    {
-      "title": "Проект «Рэнкинг благотворительных организаций РФ как инструмент устойчивого развития НКО Пермского края»",
-      "url": "https://грантыгубернатора59.рф/public/application/item?id=92ab7232-fcd2-4dfe-a16d-793591c5bd1d",
-      "year": 2024,
-      "platform": "Фонд грантов губернатора Пермского края"
-    },
-    {
-      "title": "Региональный этап премии #МЫВМЕСТЕ 2025, награждение на XIII форуме",
-      "url": "https://permkrai.ru/news/obyavleny-pobediteli-regionalnogo-etapa-i-polufinalisty-mezhdunarodnoy-premii-myvmeste-2025/",
-      "year": 2025,
-      "platform": "Администрация губернатора Пермского края, DOBRO.RF"
-    },
-    {
-      "title": "Конкурс годовых отчетов НКО «Точка отсчета» — победители 2025",
-      "url": "https://donorsforum.ru/idata/pobediteli-2025/",
-      "year": 2025,
-      "platform": "Форум Доноров"
-    },
-    {
-      "title": "Премия «НКО-Профи» — прием заявок",
-      "url": "https://asi.org.ru/news/2025/12/18/otkryt-priem-zayavok-na-i-vserossiiskuyu-premiyu-nko-profi/",
-      "year": 2025,
-      "platform": "АСИ, Фонд Потанина"
-    },
-    {
-      "title": "Премия «НКО-Профи» — шорт-лист",
-      "url": "https://asi.org.ru/news/2026/04/21/agentstvo-soczialnoj-informaczii-obyavilo-spisok-nominantov-i-vserossijskoj-premii-nko-profi/",
-      "year": 2026,
-      "platform": "АСИ, Фонд Потанина"
-    },
-    {
-      "title": "Премия #МЫВМЕСТЕ — победители регионального этапа 2022, Пермский край",
-      "url": "https://bf69.ru/wp-content/uploads/2022/09/Pobediteli-regionalnogo-etapa.pdf",
-      "year": 2022,
-      "platform": "Премия #МЫВМЕСТЕ"
-    },
-    {
-      "title": "Премия #МЫВМЕСТЕ — победители регионального этапа 2023, Пермский край",
-      "url": "https://elsu.ru/uploads/files/2023-07/1690695843_rezultaty_regionalnogo_jetapa_premii_myvmeste_2023_230730_083550.pdf",
-      "year": 2023,
-      "platform": "Премия #МЫВМЕСТЕ"
-    },
-    {
-      "title": "Премия #МЫВМЕСТЕ — победители регионального этапа 2024, Пермский край",
-      "url": "https://www.istu.edu/upload/iblock/0b6/381b33hzgp2gim1rhpht1c2grc1zpn3s/MYVMESTE_regionalnyy-etap.pdf",
-      "year": 2024,
-      "platform": "Премия #МЫВМЕСТЕ"
-    },
-    {
-      "title": "RAEX: рейтинг годовых отчётов НКО 2024 — Фонд «Дедморозим»",
-      "url": "https://raex-rr.com/b2b/public_relations/NKO_annual_reports/2024/",
-      "year": 2024,
-      "platform": "RAEX"
-    },
-    {
-      "title": "Премия фонда «Подари жизнь» — «Дедморозим» в номинации «Качество жизни»",
-      "url": "https://podari-zhizn.ru/ru/publications/sostoyalos-vruchenie-vtoroi-premii-fonda-podari-zhizn",
-      "year": 2018,
-      "platform": "Фонд «Подари жизнь»"
-    },
-    {
-      "title": "Премия «Прозрачная благотворительность» — лауреаты 2022",
-      "url": "https://yasnoeutro.ru/sluzhba-yasnoe-utro-stala-pobeditelem-premii-prozrachnaya-blagotvoritelnost-v-nominacii-informativnyj-sajt/",
-      "year": 2022,
-      "platform": "Ассоциация «Все вместе»"
-    },
-    {
-      "title": "РБК Пермь: итоги года НКО, «Территория семьи» в топ-100 ФПГ",
-      "url": "https://perm.rbc.ru/perm/freenews/658e8ff69a7947516efa6746",
-      "year": 2024,
-      "platform": "РБК Пермь"
-    },
-    {
-      "title": "АиФ «Формула успеха»: список «Лидеры НКО»",
-      "url": "https://formula.aif.ru/nko-leaders",
-      "year": 2024,
-      "platform": "АиФ / Формула успеха"
-    }
-  ],
-  "Обучение, вебинары и экспертные площадки": [
-    {
-      "title": "Акселератор НКО-проектов к 300-летию Перми",
-      "url": "https://perm-300.ru/novosti/iyun-2022/ekspertnomu-sovetu-predstavili-principy-budushhej-programmy-yubilejnyh-meropriyatij",
-      "year": 2022,
-      "platform": "Центр ГРАНИ, проектный офис «Пермь-300»"
-    },
-    {
-      "title": "Обучающая стажировка в сфере добровольчества на базе РЦ добровольчества Пермского края",
-      "url": "https://nko-pfo.ru/54375",
-      "year": 2023,
-      "platform": "Ресурсный центр добровольчества Пермского края, сеть НКО ПФО"
-    },
-    {
-      "title": "Стажировки представителей ресурсных центров СО НКО ПФО",
-      "url": "https://asi.org.ru/2023/08/22/predstaviteli-resursnyh-czentrov-so-nko-privolzhskogo-federalnogo-okruga-projdut-stazhirovki/",
-      "year": 2023,
-      "platform": "Ассоциация «Служение», сеть ресурсных центров СО НКО ПФО"
-    },
-    {
-      "title": "«Акселератор НКО — 2025»",
-      "url": "https://грантыгубернатора59.рф/public/news/e76bb846-7edf-4a36-8734-c4ce0d951928",
-      "year": 2025,
-      "platform": "Фонд грантов губернатора Пермского края"
-    },
-    {
-      "title": "Программа «Добрые города»: муниципальные команды и практики",
-      "url": "https://dobrino.dobro.ru/tpost/fg6f4xp4s1-v-yugre-startovala-flagmanskaya-obrazova",
-      "year": 2025,
-      "platform": "Ассоциация волонтерских центров, DOBRO.RF"
-    },
-    {
-      "title": "«Медиашкола НКО 2.0», четвертая встреча",
-      "url": "https://грантыгубернатора59.рф/public/event/29935fbf-757a-4717-baae-5f7f5a4fdea8",
-      "year": 2026,
-      "platform": "Фонд грантов губернатора Пермского края, медиагруппа «Магма»"
-    },
-    {
-      "title": "«Медиашкола НКО 2.0», пятый модуль",
-      "url": "https://грантыгубернатора59.рф/public/news/76b33497-1813-4b76-971c-9227ea28fecd",
-      "year": 2026,
-      "platform": "Фонд грантов губернатора Пермского края"
-    },
-    {
-      "title": "АСИ / НКО-СОКРАТ: вебинар Дениса Самойлова «Соцуслуги как инструмент достижения целей деятельности организаций»",
-      "url": "https://asi.org.ru/event/2021/06/15/nko-sokrat-vebinar-denisa-samojlova-soczuslugi-kak-instrument-dostizheniya-czelej-deyatelnosti-organizaczij/",
-      "year": 2021,
-      "platform": "Агентство социальной информации / НКО-СОКРАТ"
-    },
-    {
-      "title": "Центр ГРАНИ: вебинар Марии Обориной «Социальное предпринимательство как инструмент достижения целей деятельности организаций»",
-      "url": "https://grany-center.org/anons/vebinar-socialnoe-predprinimatelstvo-kak-instrument-dostijeniya-celey-deyatelnosti-organizaciy-1621327612/",
-      "year": 2021,
-      "platform": "Центр ГРАНИ / НКО-СОКРАТ"
-    },
-    {
-      "title": "Русфонд: «Счастье жить» проводит правовые вебинары для родителей детей с инвалидностью",
-      "url": "https://rusfond.ru/news/2050",
-      "year": 2022,
-      "platform": "Русфонд / Счастье жить"
-    },
-    {
-      "title": "БФ «Обыкновенное чудо»: серия поддерживающих вебинаров для семей с детьми-инвалидами и ОВЗ",
-      "url": "https://chudo.tomsk.ru/news/kalendar-sobytiy/seria-podderzivausih-vebinarov-dla-semej-s-detmi-invalidami-i-ovz",
-      "year": 2022,
-      "platform": "БФ «Обыкновенное чудо» / Счастье жить"
-    },
-    {
-      "title": "Управление Минюста России по Пермскому краю: вебинар «Деятельность СО НКО – исполнителей общественно полезных услуг»",
-      "url": "https://smi59.ru/obschestvo/13280-meroprijatija-ko-dnju-pamjati-zhertv-politicheskih-repressij.html",
-      "year": 2021,
-      "platform": "Управление Минюста России по Пермскому краю / ОП Пермского края / Фонд грантов губернатора"
-    },
-    {
-      "title": "Центр ГРАНИ: онлайн-летучки руководителей и специалистов РЦ и СОНКО регионов России",
-      "url": "https://grany-center.org/note/rabota-so-stigmatizirovannymi-soobshchestvami-i-sudba-ofisov-nko---rezyume-i-prakticheskie-sovety-po-itogam-zavershayushchih-letuchek-predstaviteley-rc-i-sonko-regionov-rossii-1686059688/",
-      "year": 2023,
-      "platform": "Центр ГРАНИ / Фонд Потанина"
-    },
-    {
-      "title": "АСИ: вебинар «Профессионализация НКО-сектора и привлечение молодых специалистов»",
-      "url": "https://asi.org.ru/event/2025/04/03/11-aprelya-vebinar-professionalizacziya-nko-sektora-i-privlechenie-molodyh-speczialistov/",
-      "year": 2025,
-      "platform": "Коалиция «Забота рядом» / АСИ / Фонд Тимченко"
-    },
-    {
-      "title": "Soundstream: «Чудокаст» — выпуск-беседа с Надеждой Ли о жизни в закрытых учреждениях",
-      "url": "https://soundstream.media/clip/chudokast-vypusk-beseda-s-nadezhdoy-li-o-zhizni-v-zakrytykh-uchrezhdeniyakh",
-      "year": 2026,
-      "platform": "Фонд «Дедморозим» / Soundstream"
-    },
-    {
-      "title": "НКО-Кухня / Школа региональных экспертов: карточка эксперта Дениса Самойлова",
-      "url": "https://expert.ngokitchen.ru/expert/samojlov-denis/",
-      "year": 2026,
-      "platform": "НКО-Кухня / Школа региональных экспертов"
-    }
-  ],
-  "Сборники и описания практик": [
-    {
-      "title": "Центр ГРАНИ: ресурсные практики и проекты",
-      "url": "https://asi.org.ru/2023/10/10/czentr-grani-speczialisty-po-nastrojke-reshenij/",
-      "year": 2023,
-      "platform": "АСИ / Центр ГРАНИ"
-    },
-    {
-      "title": "«Атлас добровольческих практик Пермского края»",
-      "url": "https://nko-pfo.ru/61112",
-      "year": 2025,
-      "platform": "Ресурсный центр добровольчества / НКО-ПФО"
-    },
-    {
-      "title": "«Новые решения для НКО Пермского края»: карта проектных лидеров и каталог тренерских ресурсов",
-      "url": "https://nko-pfo.ru/62988",
-      "year": 2025,
-      "platform": "НКО-ПФО, ресурсные организации"
-    },
-    {
-      "title": "Всероссийский конкурс лучших практик СО НКО «Меняем мир вместе» — анонс/положение для Пермского края",
-      "url": "https://perm-deti.ru/news/2023/04/04/3093/",
-      "year": 2023,
-      "platform": "ВОРДИ; Уполномоченный по правам ребенка в Пермском крае"
-    },
-    {
-      "title": "Сборник лучших практик СО НКО «Меняем мир вместе» — 2023",
-      "url": "https://inklysia.uni-dubna.ru/?p=2348",
-      "year": 2024,
-      "platform": "ВОРДИ"
-    },
-    {
-      "title": "Пермский центр «МАНЯ» — победитель конкурса «Меняем мир вместе — 2026»",
-      "url": "https://www.perm.kp.ru/online/news/6999902/",
-      "year": 2026,
-      "platform": "ВОРДИ; Общественная палата РФ; КП-Пермь"
-    },
-    {
-      "title": "«Мой добрый бизнес»: объявлены лучшие практики социального предпринимательства России",
-      "url": "https://mbrm.ru/news/fpprm/moy-dobryy-biznes-obyavleny-luchshie-praktiki-sotsialnogo-predprinimatelstva-rossii/",
-      "year": 2024,
-      "platform": "Минэкономразвития РФ; ГУУ; Центр «Мой бизнес»"
-    },
-    {
-      "title": "«Дети едут к детям»: 5-й сезон и федеральный статус практики",
-      "url": "https://msppk.ru/news/v-permskom-krae-startoval-5-y-sezon-proekta-deti-edut-k-detyam-semeynaya-proforientatsiya-v-god-prom/",
-      "year": 2026,
-      "platform": "Центр «Мой бизнес» Пермского края"
-    },
-    {
-      "title": "Карточка проекта «Дети едут к детям: ПРОМориентация»",
-      "url": "https://xn--80afcdbalict6afooklqi5o.xn--p1ai/public/application/item?id=f5d200ca-03c1-4889-8774-6f329ba6e4f3",
-      "year": 2025,
-      "platform": "Фонд президентских грантов"
-    },
-    {
-      "title": "Смартека: практика «Мультипас.Садик»",
-      "url": "https://smarteka.com/practices/mul-tipas-sadik-kompleksnoe-resenie-zadac-rukovoditela-pedagoga-i-roditela-v-edinoj-cifrovoj-srede",
-      "year": 2026,
-      "platform": "АСИ / Смартека"
-    },
-    {
-      "title": "Профиль «Вдохновители»: Анастасия Гилёва, «Счастье жить»",
-      "url": "https://xn--b1aaffobumib0c5a.xn--p1ai/vdohnovitel/66",
-      "year": 2026,
-      "platform": "Команда «Вдохновители»"
-    },
-    {
-      "title": "«Территория семьи»: профиль организации с упоминанием конкурса лучших социальных практик",
-      "url": "https://semya59.ru/about",
-      "year": 2026,
-      "platform": "ПРОО «Территория семьи»"
-    },
-    {
-      "title": "РО ВОРДИ Забайкальского края: круглый стол «Успешные практики и возможность их усиления» с Анастасией Гилёвой",
-      "url": "https://zabkray.vordi.org/proekti_vordi/novosti_o_lilovom_dome",
-      "year": 2023,
-      "platform": "РО ВОРДИ Забайкальского края; #МЫВМЕСТЕ"
-    }
-  ],
   "Публикации, интервью и экспертные комментарии": [
     {
-      "title": "«Мы не просто собирали для детей игрушки, мы исполняли мечты» — интервью Надежды Ли",
-      "url": "https://www.newsko.ru/articles/nk-8274058.html",
-      "year": 2024,
-      "platform": "«Новый компаньон»"
+      "title": "59.RU",
+      "url": "https://59.ru/"
     },
     {
-      "title": "АСИ: как изменились НКО за 30 лет — рассказывает Светлана Маковецкая",
-      "url": "https://asi.org.ru/2025/05/30/sohranyat-ustojchivost-nahodyas-v-neustojchivom-sostoyanii-kak-izmenilis-nko-za-poslednie-30-let-rasskazyvaet-svetlana-makoveczkaya/",
-      "year": 2025,
-      "platform": "Агентство социальной информации"
+      "title": "Business Class",
+      "url": "https://business-class.su/"
     },
     {
-      "title": "Вадим Вяткин: как работает HR в НКО",
-      "url": "https://asi.org.ru/2024/10/02/vadim-vyatkin/",
-      "year": 2024,
-      "platform": "Агентство социальной информации"
+      "title": "fundregion.ru",
+      "url": "https://fundregion.ru/"
     },
     {
-      "title": "«Улыбки детей — наш целевой показатель» — интервью Анастасии Гилёвой",
-      "url": "https://www.newsko.ru/articles/nk-7923042.html",
-      "year": 2023,
-      "platform": "«Новый компаньон»"
+      "title": "kpolibrary.ucoz.ru",
+      "url": "https://kpolibrary.ucoz.ru/"
     },
     {
-      "title": "Светлана Шергина об «Инклюзивном бале»",
-      "url": "https://www.sobaka.ru/prm/city/society/185141",
-      "year": 2024,
-      "platform": "Sobaka.ru Пермь"
+      "title": "nko76.ru",
+      "url": "https://nko76.ru/"
     },
     {
-      "title": "«НКО не конкуренты и не критики, а помощники» — Анна Фадеева",
-      "url": "https://www.newsko.ru/articles/nk-7840784.html",
-      "year": 2023,
-      "platform": "«Новый компаньон»"
+      "title": "parmanews.ru",
+      "url": "https://parmanews.ru/"
     },
     {
-      "title": "Анна Фадеева: «Тысячи пермяков поверили в нашу идею...»",
-      "url": "https://www.sobaka.ru/prm/city/society/185221",
-      "year": 2024,
-      "platform": "Sobaka.ru Пермь"
+      "title": "permnews.ru",
+      "url": "https://permnews.ru/"
     },
     {
-      "title": "«Территория семьи» получила помещения молочной кухни — комментарий Галины Прорубниковой",
-      "url": "https://www.newsko.ru/news/nk-8414791.html",
-      "year": 2024,
-      "platform": "«Новый компаньон»"
+      "title": "polessu.by",
+      "url": "https://polessu.by/"
     },
     {
-      "title": "Business Class: интервью Ивана Свистунова об эндаумент-фонде в Добрянке",
-      "url": "https://www.business-class.su/news/2024/02/21/vlozhitsya-v-gorod-intervyu-s-direktorom-endaument-fonda-v-dobryanke",
-      "year": 2024,
-      "platform": "Business Class"
+      "title": "Properm.ru",
+      "url": "https://properm.ru/"
     },
     {
-      "title": "АиФ: юридический комментарий Георгия Ситникова о жестоком обращении с животными",
-      "url": "https://perm.aif.ru/society/yurist-zhitelyu-permskogo-kraya-skormivshemu-kotyonka-zmee-grozit-srok",
-      "year": 2024,
-      "platform": "АиФ-Пермь"
+      "title": "Soundstream",
+      "url": "https://soundstream.media/"
     },
     {
-      "title": "Giving Journal: некоммерческая карта Пермского края — комментарий Георгия Ситникова",
-      "url": "https://givingjournal.ru/2025/06/28/kultura-pomoshhi-tehnologii-i-narodnyj-kapital-nekommercheskaja-karta-permskogo-kraja/",
-      "year": 2025,
-      "platform": "Журнал о благотворительности"
+      "title": "Telegram: @president_sovet",
+      "url": "https://t.me/president_sovet"
     },
     {
-      "title": "АСИ: «Профессиональные мастерские» ОРПИ — прямая речь Дениса Самойлова",
-      "url": "https://asi.org.ru/report/2026/04/24/otkryt-nabor-v-proekt-professionalnye-masterskie-soobshhestvo-praktikov-dlya-nko/",
-      "year": 2026,
-      "platform": "Агентство социальной информации"
+      "title": "URA.RU",
+      "url": "https://ura.news/"
     },
     {
-      "title": "Милосердие.ru: комментарий Светланы Маковецкой о реестре поставщиков соцуслуг",
-      "url": "https://www.miloserdie.ru/article/kak-vojti-v-reestr-postavshhikov-soczialnyh-uslug-gid-dlya-nko/",
-      "year": 2024,
-      "platform": "Милосердие.ru"
+      "title": "Агентство социальной информации (АСИ)",
+      "url": "https://asi.org.ru/"
     },
     {
-      "title": "РБК Пермь: комментарий Анны Зуевой о кризисных центрах",
-      "url": "https://perm.rbc.ru/perm/freenews/66bf3cbf9a794708f32e8dfe",
-      "year": 2024,
-      "platform": "РБК Пермь"
+      "title": "Аргументы и факты — Прикамье",
+      "url": "https://perm.aif.ru/"
     },
     {
-      "title": "ИА «Текст»: комментарий Анны Зуевой о закрытии благотворительного магазина «Тепло»",
-      "url": "https://chitaitext.ru/novosti/v-permi-zakryvaetsya-blagotvoritelnyy-magazin-teplo/",
-      "year": 2025,
-      "platform": "ИА «Текст»"
+      "title": "ВКонтакте: club223365053",
+      "url": "https://vk.com/club223365053"
     },
     {
-      "title": "КП-Пермь: Музей странных вещей — комментарий Анны Зуевой",
-      "url": "https://www.perm.kp.ru/online/news/5861311/",
-      "year": 2024,
-      "platform": "Комсомольская правда — Пермь"
+      "title": "Газета «Нива»",
+      "url": "https://gazetaniva-perm.ru/"
     },
     {
-      "title": "АСИ: как НКО исследуют бездомность в регионах — комментарий Анны Фадеевой",
-      "url": "https://asi.org.ru/2024/03/30/bezdomnyj-chelovek-eto-nevidimyj-chelovek-kak-nko-issleduyut-bezdomnost-v-regionah/",
-      "year": 2024,
-      "platform": "Агентство социальной информации"
+      "title": "Гильдия неигрового кино и телевидения",
+      "url": "https://rgdoc.ru/"
     },
     {
-      "title": "URA.RU: планы «Счастье жить» открыть инклюзивное кафе",
-      "url": "https://ura.news/news/1053064044",
-      "year": 2026,
-      "platform": "URA.RU"
+      "title": "Добро Mail",
+      "url": "https://dobro.mail.ru/"
+    },
+    {
+      "title": "Журнал «Деньги и благотворительность»",
+      "url": "https://givingjournal.ru/"
+    },
+    {
+      "title": "Звезда",
+      "url": "https://zwezda.su/"
+    },
+    {
+      "title": "Интернет-газета «Текст»",
+      "url": "https://chitaitext.ru/"
+    },
+    {
+      "title": "КиберЛенинка",
+      "url": "https://cyberleninka.ru/"
+    },
+    {
+      "title": "Коммерсантъ",
+      "url": "https://kommersant.ru/"
+    },
+    {
+      "title": "Комсомольская правда — Пермь",
+      "url": "https://perm.kp.ru/"
+    },
+    {
+      "title": "Милосердие.ru",
+      "url": "https://miloserdie.ru/"
+    },
+    {
+      "title": "Московский комсомолец — Пермь",
+      "url": "https://perm.mk.ru/"
+    },
+    {
+      "title": "мояроссия.рф",
+      "url": "https://мояроссия.рф/"
+    },
+    {
+      "title": "Мувистарт",
+      "url": "https://moviestart.ru/"
+    },
+    {
+      "title": "НИУ ВШЭ — Пермь",
+      "url": "https://perm.hse.ru/"
+    },
+    {
+      "title": "НКО-Кухня — Школа региональных экспертов",
+      "url": "https://expert.ngokitchen.ru/"
+    },
+    {
+      "title": "Новый компаньон",
+      "url": "https://newsko.ru/"
+    },
+    {
+      "title": "РБК Пермь",
+      "url": "https://perm.rbc.ru/"
+    },
+    {
+      "title": "Собака.ru",
+      "url": "https://sobaka.ru/"
+    },
+    {
+      "title": "Совет при Президенте РФ по развитию гражданского общества и правам человека",
+      "url": "https://president-sovet.ru/"
+    },
+    {
+      "title": "Совкомблог",
+      "url": "https://journal.sovcombank.ru/"
+    },
+    {
+      "title": "Фонд Тимченко",
+      "url": "https://fondtimchenko.ru/"
+    },
+    {
+      "title": "Центр ГРАНИ",
+      "url": "https://grany-center.org/"
+    },
+    {
+      "title": "Центр ГРАНИ — публичный отчёт",
+      "url": "https://report-2020.grany-center.org/"
+    },
+    {
+      "title": "Эхо Перми",
+      "url": "https://echoperm.ru/"
+    }
+  ],
+  "Площадки и события": [
+    {
+      "title": "2022.socioforum.pro",
+      "url": "https://2022.socioforum.pro/"
+    },
+    {
+      "title": "anounitedworld.com",
+      "url": "https://anounitedworld.com/"
+    },
+    {
+      "title": "dobrino.dobro.ru",
+      "url": "https://dobrino.dobro.ru/"
+    },
+    {
+      "title": "erc-portal.ru",
+      "url": "https://erc-portal.ru/"
+    },
+    {
+      "title": "Forbes Congress",
+      "url": "https://fcongress.forbes.ru/"
+    },
+    {
+      "title": "forumnko51.ru",
+      "url": "https://forumnko51.ru/"
+    },
+    {
+      "title": "glazov-business.ru",
+      "url": "https://glazov-business.ru/"
+    },
+    {
+      "title": "gornovosti.ru",
+      "url": "https://gornovosti.ru/"
+    },
+    {
+      "title": "grans.hse.ru",
+      "url": "https://grans.hse.ru/"
+    },
+    {
+      "title": "kochovo-shkola.ucoz.ru",
+      "url": "https://kochovo-shkola.ucoz.ru/"
+    },
+    {
+      "title": "muraveynik59.ru",
+      "url": "https://muraveynik59.ru/"
+    },
+    {
+      "title": "nko76.ru",
+      "url": "https://nko76.ru/"
+    },
+    {
+      "title": "perm-300.ru",
+      "url": "https://perm-300.ru/"
+    },
+    {
+      "title": "pronyagan.online",
+      "url": "https://pronyagan.online/"
+    },
+    {
+      "title": "rdntur.ru",
+      "url": "https://rdntur.ru/"
+    },
+    {
+      "title": "smi59.ru",
+      "url": "https://smi59.ru/"
+    },
+    {
+      "title": "Soundstream",
+      "url": "https://soundstream.media/"
+    },
+    {
+      "title": "Telegram: @voginfo",
+      "url": "https://t.me/voginfo"
+    },
+    {
+      "title": "vsegdachelovek.ru",
+      "url": "https://vsegdachelovek.ru/"
+    },
+    {
+      "title": "Агентство социальной информации (АСИ)",
+      "url": "https://asi.org.ru/"
+    },
+    {
+      "title": "ВКонтакте: club166757743",
+      "url": "https://vk.com/club166757743"
+    },
+    {
+      "title": "ВКонтакте: club52805552",
+      "url": "https://vk.com/club52805552"
+    },
+    {
+      "title": "ВКонтакте: club82285691",
+      "url": "https://vk.com/club82285691"
+    },
+    {
+      "title": "ВКонтакте: club93005764",
+      "url": "https://vk.com/club93005764"
+    },
+    {
+      "title": "ВОРДИ Забайкальского края",
+      "url": "https://zabkray.vordi.org/"
+    },
+    {
+      "title": "гражданскийфорум.рф",
+      "url": "https://гражданскийфорум.рф/"
+    },
+    {
+      "title": "НИУ ВШЭ — Пермь",
+      "url": "https://perm.hse.ru/"
+    },
+    {
+      "title": "НКО Приволжья",
+      "url": "https://nko-pfo.ru/"
+    },
+    {
+      "title": "НКО-Кухня — Школа региональных экспертов",
+      "url": "https://expert.ngokitchen.ru/"
+    },
+    {
+      "title": "Общественная палата Республики Татарстан",
+      "url": "https://oprt.tatarstan.ru/"
+    },
+    {
+      "title": "Пермская торгово-промышленная палата",
+      "url": "https://permtpp.ru/"
+    },
+    {
+      "title": "Пермский национальный исследовательский политехнический университет",
+      "url": "https://pstu.ru/"
+    },
+    {
+      "title": "Петербургский международный юридический форум",
+      "url": "https://legalforum.info/"
+    },
+    {
+      "title": "Портал Правительства Пермского края",
+      "url": "https://permkrai.ru/"
+    },
+    {
+      "title": "Премия «НКО-Профи»",
+      "url": "https://nko-profi.asi.org.ru/"
+    },
+    {
+      "title": "Русфонд",
+      "url": "https://rusfond.ru/"
+    },
+    {
+      "title": "Совет при Президенте РФ по развитию гражданского общества и правам человека",
+      "url": "https://president-sovet.ru/"
+    },
+    {
+      "title": "соцпроект59.рф",
+      "url": "https://соцпроект59.рф/"
+    },
+    {
+      "title": "Счастье жить",
+      "url": "https://happy59.ru/"
+    },
+    {
+      "title": "Счастье жить",
+      "url": "https://happy59.com/"
+    },
+    {
+      "title": "ТАСС",
+      "url": "https://tass.ru/"
+    },
+    {
+      "title": "Уполномоченный по правам человека в Пермском крае",
+      "url": "https://ombudsman.perm.ru/"
+    },
+    {
+      "title": "Уполномоченный по правам человека в РФ",
+      "url": "https://ombudsmanrf.org/"
+    },
+    {
+      "title": "Фонд «Обыкновенное чудо»",
+      "url": "https://chudo.tomsk.ru/"
+    },
+    {
+      "title": "Фонд грантов губернатора Пермского края",
+      "url": "https://грантыгубернатора59.рф/"
+    },
+    {
+      "title": "Фонд Тимченко",
+      "url": "https://fondtimchenko.ru/"
+    },
+    {
+      "title": "фондсообщество.рф",
+      "url": "https://фондсообщество.рф/"
+    },
+    {
+      "title": "Центр ГРАНИ",
+      "url": "https://grany-center.org/"
+    }
+  ],
+  "Советы и рабочие группы": [
+    {
+      "title": "URA.RU",
+      "url": "https://ura.news/"
+    },
+    {
+      "title": "Добро.рф",
+      "url": "https://dobro.ru/"
+    },
+    {
+      "title": "Звезда",
+      "url": "https://zwezda.su/"
+    },
+    {
+      "title": "Краевая детская клиническая больница",
+      "url": "https://permkdkb.ru/"
+    },
+    {
+      "title": "Молодёжный портал Пермского края",
+      "url": "https://tymolod59.ru/"
+    },
+    {
+      "title": "Новый компаньон",
+      "url": "https://newsko.ru/"
+    },
+    {
+      "title": "Общественная палата Пермского края",
+      "url": "https://perm-community.ru/"
+    },
+    {
+      "title": "Совет при Президенте РФ по развитию гражданского общества и правам человека",
+      "url": "https://president-sovet.ru/"
+    },
+    {
+      "title": "ТелекомПлюс",
+      "url": "https://telecom.perm.ru/"
+    },
+    {
+      "title": "Центр ГРАНИ",
+      "url": "https://grany-center.org/"
+    }
+  ],
+  "Публичное признание": [
+    {
+      "title": "aikido-perm.ru",
+      "url": "https://aikido-perm.ru/"
+    },
+    {
+      "title": "bezbarierov.permkrai.ru",
+      "url": "https://bezbarierov.permkrai.ru/"
+    },
+    {
+      "title": "sluzhenye-nn.ru",
+      "url": "https://sluzhenye-nn.ru/"
+    },
+    {
+      "title": "tos-zm.ru",
+      "url": "https://tos-zm.ru/"
+    },
+    {
+      "title": "Агентство социальной информации (АСИ)",
+      "url": "https://asi.org.ru/"
+    },
+    {
+      "title": "АиФ — «Формула успеха»",
+      "url": "https://formula.aif.ru/"
+    },
+    {
+      "title": "Благотворительный фонд «Константа»",
+      "url": "https://bf69.ru/"
+    },
+    {
+      "title": "Движение «Вдохновители»",
+      "url": "https://вдохновители.рф/"
+    },
+    {
+      "title": "Добро.рф",
+      "url": "https://dobro.ru/"
+    },
+    {
+      "title": "Еловский муниципальный округ",
+      "url": "https://elsu.ru/"
+    },
+    {
+      "title": "Иркутский национальный исследовательский технический университет",
+      "url": "https://istu.edu/"
+    },
+    {
+      "title": "Конкурсы Добро.рф",
+      "url": "https://contests.dobro.ru/"
+    },
+    {
+      "title": "НКО Приволжья",
+      "url": "https://nko-pfo.ru/"
+    },
+    {
+      "title": "Общественная палата Пермского края",
+      "url": "https://perm-community.ru/"
+    },
+    {
+      "title": "Портал Правительства Пермского края",
+      "url": "https://permkrai.ru/"
+    },
+    {
+      "title": "РБК Пермь",
+      "url": "https://perm.rbc.ru/"
+    },
+    {
+      "title": "Рейтинговое агентство RAEX",
+      "url": "https://raex-rr.com/"
+    },
+    {
+      "title": "РИА Новости",
+      "url": "https://ria.ru/"
+    },
+    {
+      "title": "Служба «Ясное утро»",
+      "url": "https://yasnoeutro.ru/"
+    },
+    {
+      "title": "ТелекомПлюс",
+      "url": "https://telecom.perm.ru/"
+    },
+    {
+      "title": "Территория семьи",
+      "url": "https://semya59.ru/"
+    },
+    {
+      "title": "Фонд «Подари жизнь»",
+      "url": "https://podari-zhizn.ru/"
+    },
+    {
+      "title": "Фонд грантов губернатора Пермского края",
+      "url": "https://грантыгубернатора59.рф/"
+    },
+    {
+      "title": "Форум Доноров",
+      "url": "https://donorsforum.ru/"
+    }
+  ],
+  "Практики": [
+    {
+      "title": "inklysia.uni-dubna.ru",
+      "url": "https://inklysia.uni-dubna.ru/"
+    },
+    {
+      "title": "mbrm.ru",
+      "url": "https://mbrm.ru/"
+    },
+    {
+      "title": "perm-deti.ru",
+      "url": "https://perm-deti.ru/"
+    },
+    {
+      "title": "Telegram: @voginfo",
+      "url": "https://t.me/voginfo"
+    },
+    {
+      "title": "Агентство социальной информации (АСИ)",
+      "url": "https://asi.org.ru/"
+    },
+    {
+      "title": "Аргументы и факты — Прикамье",
+      "url": "https://perm.aif.ru/"
+    },
+    {
+      "title": "ВОРДИ Забайкальского края",
+      "url": "https://zabkray.vordi.org/"
+    },
+    {
+      "title": "Газета «Нива»",
+      "url": "https://gazetaniva-perm.ru/"
+    },
+    {
+      "title": "Движение «Вдохновители»",
+      "url": "https://вдохновители.рф/"
+    },
+    {
+      "title": "Журнал «Деньги и благотворительность»",
+      "url": "https://givingjournal.ru/"
+    },
+    {
+      "title": "Звезда",
+      "url": "https://zwezda.su/"
+    },
+    {
+      "title": "Комсомольская правда — Пермь",
+      "url": "https://perm.kp.ru/"
+    },
+    {
+      "title": "Министерство труда и социального развития Пермского края",
+      "url": "https://msppk.ru/"
+    },
+    {
+      "title": "НКО Приволжья",
+      "url": "https://nko-pfo.ru/"
+    },
+    {
+      "title": "Пермь-300 — фильмы",
+      "url": "https://perm300films.ru/"
+    },
+    {
+      "title": "Портал Правительства Пермского края",
+      "url": "https://permkrai.ru/"
+    },
+    {
+      "title": "Приют «Матроскин»",
+      "url": "https://matroskin-perm.ru/"
+    },
+    {
+      "title": "РБК Пермь",
+      "url": "https://perm.rbc.ru/"
+    },
+    {
+      "title": "Смартека — практики развития территорий",
+      "url": "https://smarteka.com/"
+    },
+    {
+      "title": "Территория передышки",
+      "url": "https://homelessperm.ru/"
+    },
+    {
+      "title": "Территория семьи",
+      "url": "https://semya59.ru/"
+    },
+    {
+      "title": "Фонд президентских грантов",
+      "url": "https://президентскиегранты.рф/"
+    },
+    {
+      "title": "Центр ГРАНИ",
+      "url": "https://grany-center.org/"
     }
   ]
 }
