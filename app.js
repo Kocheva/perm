@@ -1,7 +1,10 @@
+import { createRegionalMap } from "./regional-map.js";
+
 const DATA_URL = "./data/perm_leaders_map.json";
 
 const app = document.querySelector("#app");
 let data;
+let regionalMap;
 
 const state = {
   mode: "organizations",
@@ -158,7 +161,11 @@ function header() {
           <div id="search-results" class="search-results hidden" role="listbox"></div>
         </div>
         <span class="search-hint">${integer.format(data.config.counts.people)} персон</span>
-        <a class="about-link" href="#/methodology">Как формировалась карта</a>
+        <nav class="site-views" aria-label="Разделы сайта">
+          <a href="#/" ${parseRoute().section === "home" ? 'aria-current="page"' : ""}>Обзор</a>
+          <a href="${regionalMap.lastUrl()}" ${parseRoute().section === "map" ? 'aria-current="page"' : ""}>Карта края</a>
+          <a class="about-link" href="#/methodology">Как формировалась карта</a>
+        </nav>
       </div>
     </header>`;
 }
@@ -711,20 +718,28 @@ function notFound(title) {
 }
 
 function parseRoute() {
-  const path = location.hash.replace(/^#\/?/, "").split("/").filter(Boolean);
+  const path = location.hash.split("?")[0].replace(/^#\/?/, "").split("/").filter(Boolean);
   return { section: path[0] || "home", id: decodeURIComponent(path[1] || "") };
 }
 
 function render(options = {}) {
+  const isMapUpdate = parseRoute().section === "map" && !!document.getElementById("regional-map");
+  if (isMapUpdate) {
+    regionalMap.update();
+    document.title = `${document.querySelector("#regional-map h1").textContent} — ${data.config.title}`;
+    return;
+  }
   const preserveScroll = Boolean(options?.preserveScroll);
   const previousScroll = Number.isFinite(window.scrollY) ? window.scrollY : 0;
   const route = parseRoute();
-  if (route.section === "person") app.innerHTML = personPage(route.id);
+  if (route.section === "map") app.innerHTML = `${header()}<main id="main" class="page-shell atlas-shell"><div id="regional-map"></div></main>${footer()}`;
+  else if (route.section === "person") app.innerHTML = personPage(route.id);
   else if (route.section === "topic") app.innerHTML = topicPage(route.id);
   else if (route.section === "organization") app.innerHTML = organizationPage(route.id);
   else if (route.section === "project") app.innerHTML = projectPage(route.id);
   else if (route.section === "methodology") app.innerHTML = methodologyPage();
   else app.innerHTML = mainPage();
+  if (route.section === "map") regionalMap.mount();
   bindCommon();
   if (route.section === "methodology") loadPublicSources();
   if (route.section === "home") bindMain();
@@ -820,7 +835,15 @@ async function start() {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     data = await response.json();
     buildIndexes();
+    regionalMap = createRegionalMap(data, { esc, peoplePanel });
     window.addEventListener("hashchange", render);
+    document.querySelector(".skip-link")?.addEventListener("click", event => {
+      if (parseRoute().section !== "map") return;
+      event.preventDefault();
+      const main = document.getElementById("main");
+      main.tabIndex = -1;
+      main.focus();
+    });
     render();
   } catch (error) {
     app.innerHTML = `<main class="error-card"><h1>Не удалось загрузить данные</h1><p>Откройте сайт через HTTP-сервер, а не напрямую как локальный файл.</p><pre>${esc(error.message)}</pre></main>`;
